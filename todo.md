@@ -46,3 +46,6 @@
 - [x] Classificar os vídeos de portfólio por lavagem, polimento e higienização.
 - [x] Implementar filtros visuais por categoria de serviço.
 - [x] Validar a filtragem em desktop e mobile.
+- [x] Identificar os modelos de caminhão visíveis nos vídeos existentes.
+- [x] Criar o filtro de modelos combinado com as categorias de serviço.
+- [x] Validar a busca por modelo em desktop e mobile.

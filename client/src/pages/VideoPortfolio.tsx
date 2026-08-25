@@ -19,6 +19,7 @@ const portfolioVideos = [
     description: "Cabine, rodas e acabamento em uma saída que mostra presença de longe.",
     source: "/manus-storage/auto-truck-movimento_5df2b6a9.mp4",
     category: "polimento",
+    model: "volvo-fh",
   },
   {
     id: "lavagem",
@@ -28,6 +29,7 @@ const portfolioVideos = [
     description: "Jato, espuma e atenção aos pontos que sustentam o visual do caminhão.",
     source: "/manus-storage/auto-truck-lavagem_4b19e78d.mp4",
     category: "lavagem",
+    model: "outros",
   },
   {
     id: "acabamento",
@@ -37,6 +39,7 @@ const portfolioVideos = [
     description: "O brilho do tanque e a leitura limpa da carroceria em cada ângulo.",
     source: "/manus-storage/auto-truck-acabamento_35f061ac.mp4",
     category: "polimento",
+    model: "outros",
   },
   {
     id: "unidade",
@@ -46,6 +49,7 @@ const portfolioVideos = [
     description: "A unidade Auto Truck e os bastidores de uma rotina feita para linha pesada.",
     source: "/manus-storage/auto-truck-unidade_20b57d12.mp4",
     category: "lavagem",
+    model: "outros",
   },
 ];
 
@@ -56,13 +60,20 @@ const serviceFilters = [
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
 
+const modelFilters = [
+  { id: "todos", label: "Todos os modelos", count: "04" },
+  { id: "volvo-fh", label: "Volvo FH", count: "01" },
+  { id: "outros", label: "Outros caminhões", count: "03" },
+] as const;
+
 export default function VideoPortfolio() {
   const [activeId, setActiveId] = useState(portfolioVideos[0].id);
   const [activeCategory, setActiveCategory] = useState<(typeof serviceFilters)[number]["id"]>("todos");
+  const [activeModel, setActiveModel] = useState<(typeof modelFilters)[number]["id"]>("todos");
   const [soundEnabled, setSoundEnabled] = useState(false);
   const soundtrackRef = useRef<HTMLAudioElement>(null);
   const featuredRef = useRef<HTMLElement>(null);
-  const filteredVideos = activeCategory === "todos" ? portfolioVideos : portfolioVideos.filter((video) => video.category === activeCategory);
+  const filteredVideos = portfolioVideos.filter((video) => (activeCategory === "todos" || video.category === activeCategory) && (activeModel === "todos" || video.model === activeModel));
   const activeVideo = filteredVideos.find((video) => video.id === activeId) ?? filteredVideos[0] ?? portfolioVideos.find((video) => video.id === activeId) ?? portfolioVideos[0];
 
   useEffect(() => () => soundtrackRef.current?.pause(), []);
@@ -74,7 +85,13 @@ export default function VideoPortfolio() {
 
   const selectCategory = (category: (typeof serviceFilters)[number]["id"]) => {
     setActiveCategory(category);
-    const firstVideo = category === "todos" ? portfolioVideos[0] : portfolioVideos.find((video) => video.category === category);
+    const firstVideo = portfolioVideos.find((video) => (category === "todos" || video.category === category) && (activeModel === "todos" || video.model === activeModel));
+    if (firstVideo) setActiveId(firstVideo.id);
+  };
+
+  const selectModel = (model: (typeof modelFilters)[number]["id"]) => {
+    setActiveModel(model);
+    const firstVideo = portfolioVideos.find((video) => (activeCategory === "todos" || video.category === activeCategory) && (model === "todos" || video.model === model));
     if (firstVideo) setActiveId(firstVideo.id);
   };
 
@@ -153,13 +170,23 @@ export default function VideoPortfolio() {
 
       <section className="portfolio-grid-section">
         <div className="portfolio-width">
-          <div className="portfolio-section-heading"><div><span className="portfolio-detail-label">Arquivo audiovisual</span><h2>Escolha por<br /><em>serviço.</em></h2></div><p>Filtre os registros por lavagem, polimento ou higienização e encontre o tipo de cuidado que deseja ver.</p></div>
+          <div className="portfolio-section-heading"><div><span className="portfolio-detail-label">Arquivo audiovisual</span><h2>Escolha por<br /><em>serviço e modelo.</em></h2></div><p>Combine o tipo de cuidado ao modelo de caminhão e encontre com mais rapidez o conteúdo mais próximo da sua operação.</p></div>
           <div className="portfolio-service-filters" role="tablist" aria-label="Filtrar vídeos por serviço">
             {serviceFilters.map((filter) => (
               <button key={filter.id} type="button" role="tab" aria-selected={activeCategory === filter.id} className={activeCategory === filter.id ? "active" : ""} onClick={() => selectCategory(filter.id)}>
                 <span>{filter.label}</span><b>{filter.count}</b>
               </button>
             ))}
+          </div>
+          <div className="portfolio-model-filter-wrap">
+            <span className="portfolio-detail-label">Modelo do caminhão</span>
+            <div className="portfolio-model-filters" role="tablist" aria-label="Filtrar vídeos por modelo de caminhão">
+              {modelFilters.map((filter) => (
+                <button key={filter.id} type="button" role="tab" aria-selected={activeModel === filter.id} className={activeModel === filter.id ? "active" : ""} onClick={() => selectModel(filter.id)}>
+                  <span>{filter.label}</span><b>{filter.count}</b>
+                </button>
+              ))}
+            </div>
           </div>
           {filteredVideos.length > 0 ? (
             <div className="portfolio-video-grid" role="list">
@@ -184,10 +211,10 @@ export default function VideoPortfolio() {
             </div>
           ) : (
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="portfolio-empty-state">
-              <span className="portfolio-detail-label">Higienização de cabine</span>
-              <h3>Os próximos bastidores<br />entram aqui.</h3>
-              <p>Esta categoria está pronta para receber vídeos reais de higienização simples e completa de cabine.</p>
-              <button type="button" onClick={() => selectCategory("todos")}>Ver todos os vídeos <ArrowUpRight size={16} /></button>
+              <span className="portfolio-detail-label">{activeCategory === "higienizacao" ? "Higienização de cabine" : "Combinação sem vídeos"}</span>
+              <h3>{activeCategory === "higienizacao" ? <>Os próximos bastidores<br />entram aqui.</> : <>Ainda não há registros<br />para este filtro.</>}</h3>
+              <p>{activeCategory === "higienizacao" ? "Esta categoria está pronta para receber vídeos reais de higienização simples e completa de cabine." : "Experimente ajustar o serviço ou o modelo de caminhão para ver os vídeos disponíveis."}</p>
+              <button type="button" onClick={() => { setActiveCategory("todos"); setActiveModel("todos"); setActiveId(portfolioVideos[0].id); }}>Ver todos os vídeos <ArrowUpRight size={16} /></button>
             </motion.div>
           )}
         </div>

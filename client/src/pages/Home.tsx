@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import {
   ArrowDownRight,
   ArrowUpRight,
+  Building2,
   ChevronRight,
+  MapPin,
   Menu,
   MessageCircle,
   Phone,
@@ -27,6 +29,7 @@ const PHONE_URL = "tel:+5562992158095";
 const navItems = [
   { label: "Serviços", href: "#servicos" },
   { label: "Experiência", href: "#experiencia" },
+  { label: "História", href: "#historia" },
   { label: "Padrão Auto Truck", href: "#padrao" },
 ];
 
@@ -55,6 +58,24 @@ const steps = [
   ["01", "Avaliação visual", "Entendemos o estado do veículo e o padrão de resultado que você procura."],
   ["02", "Tratamento correto", "Definimos processos e produtos compatíveis com cada superfície e acabamento."],
   ["03", "Entrega que impõe presença", "Seu caminhão volta para a rua com aspecto cuidado em cada detalhe."],
+];
+
+const timelineEvents = [
+  {
+    year: "2015",
+    label: "Início formal",
+    text: "A AUTO TRUCK ESTETICA LTDA foi aberta em 02 de março de 2015, estabelecendo sua base empresarial em Anápolis, Goiás.",
+  },
+  {
+    year: "2022",
+    label: "Cadastro ativo",
+    text: "A situação cadastral consta como ativa desde 15 de setembro de 2022 no comprovante oficial apresentado.",
+  },
+  {
+    year: "2025",
+    label: "Identidade consolidada",
+    text: "O comprovante emitido em fevereiro de 2025 apresenta a Auto Truck Estética como microempresa de serviços de lavagem, lubrificação e polimento automotivo.",
+  },
 ];
 
 const reveal = {
@@ -210,10 +231,55 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="historia" className="company-story">
+          <div className="story-dust" aria-hidden="true" />
+          <div className="page-width story-grid">
+            <motion.div {...reveal} className="story-main">
+              <p className="eyebrow orange"><span /> 03 — A empresa</p>
+              <h2>Feita para quem<br />vive <em>na estrada.</em></h2>
+              <p className="body-copy">
+                A Auto Truck Estética é uma empresa de Anápolis, Goiás, formalizada em 2015 para atuar com lavagem, lubrificação e polimento de veículos automotores. Hoje, sua identidade é dedicada a entregar estética, cuidado e presença para caminhões que fazem a operação acontecer.
+              </p>
+              <div className="story-origin">
+                <span className="origin-year">DESDE<br /><b>2015</b></span>
+                <span className="origin-rule" />
+                <p>Um padrão de cuidado pensado para a máquina que carrega a força do seu trabalho.</p>
+              </div>
+            </motion.div>
+
+            <motion.aside {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="story-facts" aria-label="Dados institucionais da Auto Truck Estética">
+              <span className="micro-label">Dados institucionais</span>
+              <div className="fact-row"><Building2 size={19} /><span><b>Auto Truck Estética LTDA</b><small>CNPJ 21.956.358/0001-62 · ME</small></span></div>
+              <div className="fact-row"><MapPin size={19} /><span><b>Anápolis · Goiás</b><small>Jardim Flor de Liz · CEP 75103-170</small></span></div>
+              <div className="fact-rule" />
+              <p>Sociedade empresária limitada, com atividade principal de serviços de lavagem, lubrificação e polimento de veículos automotores.</p>
+              <span className="fact-source">DADOS DO COMPROVANTE CNPJ · 03.02.2025</span>
+            </motion.aside>
+          </div>
+        </section>
+
+        <section className="timeline-stage">
+          <div className="page-width">
+            <motion.div {...reveal} className="timeline-heading">
+              <p className="eyebrow graphite"><span /> Linha do tempo</p>
+              <h2>Uma história em<br /><em>movimento.</em></h2>
+              <p>Marcos institucionais registrados no comprovante de inscrição e de situação cadastral da empresa.</p>
+            </motion.div>
+            <div className="company-timeline">
+              {timelineEvents.map((event, index) => (
+                <motion.article {...reveal} transition={{ ...reveal.transition, delay: index * 0.08 }} className="timeline-entry" key={event.year}>
+                  <div className="timeline-year"><span>{event.year}</span><i /></div>
+                  <div className="timeline-detail"><span className="micro-label">{event.label}</span><p>{event.text}</p></div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="padrao" className="process-section">
           <div className="page-width process-grid">
             <div className="process-copy">
-              <motion.p {...reveal} className="eyebrow graphite"><span /> 03 — Padrão Auto Truck</motion.p>
+              <motion.p {...reveal} className="eyebrow graphite"><span /> 04 — Padrão Auto Truck</motion.p>
               <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.05 }}>
                 Não é só brilho.<br />É <em>presença.</em></motion.h2>
               <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.1 }} className="body-copy dark-copy">
@@ -248,7 +314,7 @@ export default function Home() {
           <div className="contact-shimmer" aria-hidden="true" />
           <div className="page-width contact-grid">
             <motion.div {...reveal}>
-              <p className="eyebrow orange"><span /> 04 — Atendimento</p>
+              <p className="eyebrow orange"><span /> 05 — Atendimento</p>
               <h2>Seu próximo<br /><em>melhor ângulo</em><br />começa aqui.</h2>
               <p className="contact-copy">Entre em contato, conte o que seu caminhão precisa e agende seu atendimento com a Auto Truck.</p>
             </motion.div>
@@ -269,7 +335,7 @@ export default function Home() {
         <div className="page-width footer-grid">
           <BrandLogo footer />
           <p>Estética para caminhões com presença, cuidado técnico e acabamento premium.</p>
-          <div className="footer-details"><span>Goiânia, Goiás</span><span>© 2026 Auto Truck</span></div>
+          <div className="footer-details"><span>Anápolis, Goiás</span><span>© 2026 Auto Truck</span></div>
         </div>
       </footer>
     </div>

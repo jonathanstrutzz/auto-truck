@@ -17,3 +17,6 @@
 - [x] Preparar a foto oficial da oficina para uso persistente no site.
 - [x] Criar uma galeria visual com a imagem da unidade Auto Truck.
 - [x] Validar a galeria em desktop e mobile.
+- [x] Configurar a rota da unidade Auto Truck no Google Maps.
+- [x] Inserir os botões de rota na galeria e no contato.
+- [x] Validar a abertura da rota em desktop e mobile.

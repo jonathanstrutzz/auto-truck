@@ -259,6 +259,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .gallery-heading > p:not(.eyebrow) { max-width: 370px; margin: 0; color: #625e57; font-size: 14px; line-height: 1.8; }
 .gallery-heading-rule { width: min(100%, 300px); height: 1px; margin: 37px 0 14px; background: var(--line-light); }
 .gallery-microcopy { color: #756f66; font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .075em; }
+.gallery-route { display: inline-flex; align-items: center; gap: 8px; margin-top: 23px; padding: 12px 14px; border: 1px solid var(--black); color: var(--black); font-size: 10px; font-weight: 800; transition: color .16s ease, background .16s ease, transform .16s ease; }
+.gallery-route:hover { background: var(--black); color: #fff; transform: translateY(-2px); }
 .workshop-gallery-card { position: relative; min-height: 632px; margin: 0; overflow: hidden; border: 1px solid rgba(12,12,13,.18); clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%); background: var(--black); box-shadow: 17px 19px 0 rgba(12,12,13,.13); }
 .workshop-gallery-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .45s cubic-bezier(.23,1,.32,1); }
 .workshop-gallery-card:hover img { transform: scale(1.035); }
@@ -284,6 +286,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .button-primary.full { width: 100%; margin-bottom: 19px; }
 .phone-link { display: inline-flex; align-items: center; gap: 8px; color: #5c5750; font-size: 11px; font-weight: 800; }
 .phone-link:hover { color: var(--orange); }
+.contact-route { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: #5c5750; font-size: 11px; font-weight: 800; }
+.contact-route:hover { color: var(--orange); }
 
 .premium-footer { padding: 38px 0; border-top: 1px solid rgba(255,255,255,.15); background: #090909; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 45px; align-items: center; }

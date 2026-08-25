@@ -23,12 +23,14 @@ const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
+const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
   { label: "Experiência", href: "#experiencia" },
+  { label: "Galeria", href: "#galeria" },
   { label: "História", href: "#historia" },
   { label: "Padrão Auto Truck", href: "#padrao" },
 ];
@@ -408,6 +410,28 @@ export default function Home() {
             <span className="micro-label">Cabine renovada</span>
             <h2>O conforto também<br /><em>faz parte da jornada.</em></h2>
               <p>Higienização interna e cuidado para devolver conforto ao espaço onde o motorista vive a estrada.</p>
+          </div>
+        </section>
+
+        <section id="galeria" className="gallery-stage">
+          <div className="page-width gallery-layout">
+            <motion.div {...reveal} className="gallery-heading">
+              <p className="eyebrow graphite"><span /> Galeria Auto Truck</p>
+              <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
+              <p>A unidade Auto Truck Estética em Anápolis, preparada para receber caminhões e tratar cada detalhe com o padrão da marca.</p>
+              <div className="gallery-heading-rule" />
+              <span className="gallery-microcopy">REGISTRO REAL DA UNIDADE · FOTO 01</span>
+            </motion.div>
+
+            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card">
+              <img src={WORKSHOP_GALLERY_IMAGE} alt="Fachada da Auto Truck Estética com caminhões no pátio da oficina" />
+              <div className="gallery-photo-tint" />
+              <div className="gallery-photo-number">01</div>
+              <figcaption>
+                <span className="micro-label">Unidade Auto Truck</span>
+                <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
+              </figcaption>
+            </motion.figure>
           </div>
         </section>
 

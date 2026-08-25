@@ -14,3 +14,6 @@
 - [x] Substituir os serviços genéricos pela lista oficial da Auto Truck.
 - [x] Conectar cada serviço oficial a um orçamento pré-preenchido no WhatsApp.
 - [x] Validar a apresentação da lista em desktop e mobile.
+- [x] Preparar a foto oficial da oficina para uso persistente no site.
+- [x] Criar uma galeria visual com a imagem da unidade Auto Truck.
+- [x] Validar a galeria em desktop e mobile.

@@ -80,3 +80,7 @@ Nas páginas audiovisuais, rótulos, metadados e CTAs usam linguagem operacional
 As zonas principais — cabeçalho, hero, conversão e rodapé — usam o logo oficial como uma **placa de marca premium**, com respiro, borda de sinalização e recorte diagonal. O recorte de cabine é a geometria padrão para superfícies de ação, placas informativas, módulos de FAQ e molduras de imagem.
 
 O Laranja Carga permanece reservado a CTAs, palavras de prioridade, marcadores técnicos e números. Os ambientes devem ser sustentados por preto acetinado, areia metálica, branco-gelo e sobreposições fumê, com reflexos e linhas de inspeção para evocar acabamento automotivo.
+
+O ritmo da página alterna deliberadamente entre oficina escura e painéis de carroceria em areia metálica. Somente hero, conversão e uma prova principal utilizam headlines máximos; serviços, FAQ, dados e bastidores adotam títulos técnicos mais contidos para manter o respiro editorial.
+
+As fotos reais de equipe recebem tratamento consistente de contraste, saturação controlada e sombra de pintura. A imagem precisa comunicar mãos em operação, brilho, lavagem, cabine, proteção ou acabamento — nunca apenas transporte ou manutenção genérica.

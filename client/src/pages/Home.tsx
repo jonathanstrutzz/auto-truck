@@ -37,6 +37,9 @@ const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg";
+const TEAM_WASH_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-01_0a8d6046.jpg";
+const TEAM_WASH_DETAIL_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-02_8b1f59c6.jpg";
+const TEAM_WORKSHOP_IMAGE = "/manus-storage/auto-truck-equipe-bastidores-03_443c7aea.jpg";
 const VIDEO_MOVIMENTO = "/manus-storage/auto-truck-movimento_5df2b6a9.mp4";
 const VIDEO_LAVAGEM = "/manus-storage/auto-truck-lavagem_4b19e78d.mp4";
 const VIDEO_ACABAMENTO = "/manus-storage/auto-truck-acabamento_35f061ac.mp4";
@@ -55,6 +58,7 @@ const navItems = [
   { label: "Experiência", href: "#experiencia" },
   { label: "Vídeos", href: "/portfolio" },
   { label: "Galeria", href: "#galeria" },
+  { label: "Bastidores", href: "#bastidores" },
   { label: "História", href: "#historia" },
   { label: "Padrão Auto Truck", href: "#padrao" },
 ];
@@ -688,10 +692,43 @@ export default function Home() {
             ) : (
               <motion.article {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="backstage-gallery-card">
                 <div className="backstage-symbol"><Camera size={37} strokeWidth={1.4} /><span>03</span></div>
-                <div><span className="micro-label">Equipe em ação e bastidores</span><h3>O próximo registro<br />é da nossa <em>equipe.</em></h3><p>Esta categoria está preparada para receber fotos reais da equipe trabalhando e dos processos dentro da oficina.</p></div>
-                <span className="backstage-footer">ENVIE NOVAS FOTOS PARA COMPLETAR O ARQUIVO VISUAL</span>
+                <div><span className="micro-label">Equipe em ação e bastidores</span><h3>Registros reais<br />da nossa <em>equipe.</em></h3><p>Veja o cuidado da equipe em processos de lavagem e os bastidores que fazem a oficina acontecer.</p></div>
+                <a className="backstage-link" href="#bastidores">Explorar bastidores reais <ArrowDownRight size={16} /></a>
               </motion.article>
             )}
+          </div>
+        </section>
+
+        <section id="bastidores" className="team-stage">
+          <div className="page-width team-heading">
+            <motion.div {...reveal}>
+              <p className="eyebrow orange"><span /> Bastidores reais</p>
+              <h2>Processo real.<br /><em>Padrão visível.</em></h2>
+              <div className="team-brand-chip"><img src={OFFICIAL_LOGO} alt="Auto Truck Estética Para Caminhões" /><span>Equipe em operação</span></div>
+            </motion.div>
+            <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>Registros reais da rotina da Auto Truck: profissionais em ação, equipamentos em operação e o padrão de atenção que acompanha cada caminhão.</motion.p>
+          </div>
+          <div className="page-width team-media-grid">
+            <motion.figure {...reveal} className="team-photo team-photo-primary">
+              <img src={TEAM_WASH_IMAGE} alt="Profissional realizando lavagem detalhada na roda e cabine de um caminhão azul" />
+              <div className="team-photo-shade" />
+              <figcaption><span className="micro-label">Registro real 01</span><b>Lavagem<br />em ação.</b></figcaption>
+            </motion.figure>
+            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.06 }} className="team-photo team-photo-workshop">
+              <img src={TEAM_WORKSHOP_IMAGE} alt="Profissional trabalhando em plataforma elevatória em frente à oficina Auto Truck" />
+              <div className="team-photo-shade" />
+              <figcaption><span className="micro-label">Registro real 02</span><b>Estrutura<br />em operação.</b></figcaption>
+            </motion.figure>
+            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.12 }} className="team-photo team-photo-detail">
+              <img src={TEAM_WASH_DETAIL_IMAGE} alt="Registro do processo de lavagem detalhada realizado pela equipe Auto Truck" />
+              <div className="team-photo-shade" />
+              <figcaption><span className="micro-label">Registro real 03</span><b>Processo<br />com precisão.</b></figcaption>
+            </motion.figure>
+            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.16 }} className="team-manifesto">
+              <span className="micro-label">Auto Truck por dentro</span>
+              <p>Cada etapa começa na rotina. É ali que o cuidado técnico, o equipamento certo e a atenção ao acabamento se encontram.</p>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Falar com a equipe <ArrowUpRight size={16} /></a>
+            </motion.div>
           </div>
         </section>
 

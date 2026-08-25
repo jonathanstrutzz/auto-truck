@@ -59,3 +59,6 @@
 - [x] Adicionar recursos premium de conversão e confiança com dados reais disponíveis.
 - [x] Reforçar a qualidade de interação, acessibilidade e acabamento visual.
 - [x] Validar a experiência premium em desktop e mobile.
+- [x] Estruturar a seção dedicada à equipe e aos bastidores.
+- [x] Preparar a seção para receber fotos reais da oficina.
+- [x] Validar a apresentação em desktop e mobile.

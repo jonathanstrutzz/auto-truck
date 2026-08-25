@@ -227,6 +227,36 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .inline-link { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,.45); color: #fff; font-size: 12px; font-weight: 800; transition: color .16s ease, border-color .16s ease; }
 .inline-link:hover { border-color: var(--orange); color: var(--orange-soft); }
 
+.video-stage { position: relative; overflow: hidden; padding: 132px 0; background: #09090a; color: #fff; }
+.video-stage::before { content: ""; position: absolute; inset: 0; opacity: .44; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 76px 76px; mask-image: linear-gradient(90deg, black, transparent 82%); }
+.video-stage::after { content: "AUTO TRUCK / FILME DE PROCESSO"; position: absolute; top: 28px; right: -27px; color: rgba(255,255,255,.2); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .16em; transform: rotate(90deg); }
+.video-layout { position: relative; z-index: 1; display: grid; grid-template-columns: .76fr 1.24fr; gap: clamp(50px, 8vw, 118px); align-items: center; }
+.video-intro h2 { margin-bottom: 25px; color: #fff; }
+.video-intro > p:not(.eyebrow) { max-width: 385px; margin: 0; color: #aca69e; font-size: 13px; line-height: 1.8; }
+.video-selector { display: grid; margin-top: 35px; border-top: 1px solid rgba(255,255,255,.18); }
+.video-selector button { display: grid; grid-template-columns: 32px 1fr 18px; align-items: center; gap: 10px; padding: 13px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.18); background: transparent; color: #a9a39a; text-align: left; transition: color .16s ease, padding .16s ease; }
+.video-selector button > span { color: rgba(255,255,255,.42); font: 700 9px "IBM Plex Mono", monospace; }
+.video-selector button b { font-size: 11px; }
+.video-selector button svg { justify-self: end; opacity: 0; transform: translate(-5px, 5px); transition: opacity .16s ease, transform .16s ease; }
+.video-selector button.active, .video-selector button:hover { padding-left: 11px; color: #fff; }
+.video-selector button.active > span { color: var(--orange-soft); }
+.video-selector button.active svg, .video-selector button:hover svg { opacity: 1; color: var(--orange-soft); transform: translate(0, 0); }
+.soundtrack-control { display: grid; width: 100%; grid-template-columns: 24px 1fr auto; align-items: center; gap: 10px; margin-top: 30px; padding: 13px 14px; border: 1px solid rgba(255,255,255,.22); border-left: 2px solid var(--orange); background: rgba(255,255,255,.04); color: #fff; text-align: left; transition: background .16s ease, border-color .16s ease; }
+.soundtrack-control:hover, .soundtrack-control.is-playing { border-color: var(--orange); background: rgba(255,87,27,.1); }
+.soundtrack-control > svg { color: var(--orange-soft); }
+.soundtrack-control span { display: flex; flex-direction: column; gap: 3px; font-size: 10px; font-weight: 800; }
+.soundtrack-control small { color: rgba(255,255,255,.47); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+.soundtrack-control i { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; font-style: normal; }
+.video-frame { position: relative; min-height: 585px; overflow: hidden; border: 1px solid rgba(255,255,255,.21); clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 38px, 100% 100%, 0 100%); background: #171719; box-shadow: 19px 20px 0 rgba(255,87,27,.18); }
+.video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #171719; }
+.video-frame-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(8,8,9,.16) 0%, transparent 44%, rgba(8,8,9,.82) 100%); }
+.video-frame-meta { position: absolute; top: 20px; right: 22px; left: 22px; display: flex; align-items: center; justify-content: space-between; color: #fff; }
+.video-frame-meta .micro-label { padding: 6px 8px; background: rgba(7,7,8,.68); backdrop-filter: blur(7px); }
+.video-frame-meta i { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .09em; font-style: normal; }
+.video-frame-caption { position: absolute; right: 25px; bottom: 51px; left: 25px; max-width: 410px; color: #fff; }
+.video-frame-caption h3 { margin: 0 0 9px; font-size: clamp(39px, 4vw, 60px); line-height: .81; }
+.video-frame-caption p { max-width: 335px; margin: 0; color: rgba(255,255,255,.75); font-size: 11px; line-height: 1.65; }
+
 .company-story { position: relative; overflow: hidden; padding: 132px 0; background: #111113; color: #fff; }
 .story-dust { position: absolute; inset: 0; opacity: .52; background-image: radial-gradient(circle at 18% 20%, rgba(255,87,27,.28) 0 1px, transparent 1.5px), linear-gradient(120deg, transparent 0 48%, rgba(255,255,255,.05) 48.1% 48.3%, transparent 48.4%); background-size: 34px 34px, 100% 100%; mask-image: linear-gradient(90deg, black, transparent 95%); }
 .story-grid { position: relative; display: grid; grid-template-columns: 1.1fr .72fr; gap: clamp(65px, 10vw, 155px); align-items: center; }
@@ -394,6 +424,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .prequote-form { max-width: 560px; }
   .prequote-success { max-width: 560px; }
   .experience-grid { gap: 57px; }
+  .video-layout { grid-template-columns: 1fr; gap: 52px; }
+  .video-frame { max-width: 720px; min-height: 500px; }
   .experience-shot { max-width: 610px; min-height: 460px; }
   .process-grid { gap: 52px; }
   .story-grid { grid-template-columns: 1fr; gap: 52px; }
@@ -453,6 +485,12 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .detail-experience { padding: 82px 0; }
   .experience-shot { min-height: 355px; }
   .experience-copy h2 { font-size: 48px; }
+  .video-stage { padding: 84px 0; }
+  .video-layout { gap: 43px; }
+  .video-frame { min-height: 405px; box-shadow: 10px 11px 0 rgba(255,87,27,.17); }
+  .video-frame-meta { top: 15px; right: 15px; left: 15px; }
+  .video-frame-caption { right: 18px; bottom: 51px; left: 18px; }
+  .video-frame-caption h3 { font-size: 41px; }
   .company-story, .timeline-stage { padding: 84px 0; }
   .story-origin { align-items: flex-start; }
   .story-facts { padding: 27px 23px 23px; }

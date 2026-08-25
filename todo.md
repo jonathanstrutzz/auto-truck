@@ -35,3 +35,7 @@
 - [x] Validar os fluxos em desktop e mobile.
 - [x] Criar o estado visual de confirmação e agradecimento do pré-orçamento.
 - [x] Validar a mensagem de confirmação em desktop e mobile.
+- [x] Analisar os vídeos fornecidos e selecionar os melhores usos no site.
+- [x] Preparar os vídeos selecionados para carregamento de alta definição.
+- [x] Criar uma trilha sonora profissional e controles de áudio respeitosos ao usuário.
+- [x] Implementar e validar a seção audiovisual em desktop e mobile.

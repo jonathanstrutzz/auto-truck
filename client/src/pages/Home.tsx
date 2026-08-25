@@ -21,9 +21,11 @@ import {
   ShieldCheck,
   Sparkles,
   SprayCan,
+  Volume2,
+  VolumeX,
   X,
 } from "lucide-react";
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
@@ -31,6 +33,11 @@ const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg";
+const VIDEO_MOVIMENTO = "/manus-storage/auto-truck-movimento_5df2b6a9.mp4";
+const VIDEO_LAVAGEM = "/manus-storage/auto-truck-lavagem_4b19e78d.mp4";
+const VIDEO_ACABAMENTO = "/manus-storage/auto-truck-acabamento_35f061ac.mp4";
+const VIDEO_UNIDADE = "/manus-storage/auto-truck-unidade_20b57d12.mp4";
+const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
 const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
@@ -168,6 +175,41 @@ const businessHours = [
   ["Sábado", "Fechada"],
 ];
 
+const videoShowcase = [
+  {
+    id: "movimento",
+    number: "01",
+    label: "Presença em movimento",
+    title: "Brilho que acompanha a estrada.",
+    text: "Cabine, rodas e acabamento em uma saída que mostra presença de longe.",
+    source: VIDEO_MOVIMENTO,
+  },
+  {
+    id: "lavagem",
+    number: "02",
+    label: "Lavagem detalhada",
+    title: "Cuidado que começa no processo.",
+    text: "Jato, espuma e atenção aos pontos que sustentam o visual do caminhão.",
+    source: VIDEO_LAVAGEM,
+  },
+  {
+    id: "acabamento",
+    number: "03",
+    label: "Acabamento premium",
+    title: "Reflexo que entrega resultado.",
+    text: "O brilho do tanque e a leitura limpa da carroceria em cada ângulo.",
+    source: VIDEO_ACABAMENTO,
+  },
+  {
+    id: "unidade",
+    number: "04",
+    label: "Oficina em operação",
+    title: "Estrutura para fazer acontecer.",
+    text: "A unidade Auto Truck e os bastidores de uma rotina feita para linha pesada.",
+    source: VIDEO_UNIDADE,
+  },
+];
+
 const reveal = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -188,6 +230,10 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores">("servicos");
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
+  const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+  const soundtrackRef = useRef<HTMLAudioElement>(null);
+  const activeVideo = videoShowcase.find((video) => video.id === activeVideoId) ?? videoShowcase[0];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -195,6 +241,8 @@ export default function Home() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => () => soundtrackRef.current?.pause(), []);
 
   const handlePreQuote = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -207,6 +255,20 @@ export default function Home() {
     const whatsappUrl = `https://wa.me/5562992158095?text=${encodeURIComponent(message)}`;
     setPreQuoteConfirmation({ customerName, whatsappUrl });
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const toggleSoundtrack = () => {
+    const soundtrack = soundtrackRef.current;
+    if (!soundtrack) return;
+
+    if (soundEnabled) {
+      soundtrack.pause();
+      setSoundEnabled(false);
+      return;
+    }
+
+    soundtrack.volume = 0.28;
+    soundtrack.play().then(() => setSoundEnabled(true)).catch(() => setSoundEnabled(false));
   };
 
   return (
@@ -415,6 +477,52 @@ export default function Home() {
                 Conversar sobre seu caminhão <ArrowUpRight size={18} />
               </motion.a>
             </div>
+          </div>
+        </section>
+
+        <section id="videos" className="video-stage">
+          <audio ref={soundtrackRef} loop preload="metadata">
+            <source src={SOUNDTRACK_URL} type="audio/mpeg" />
+          </audio>
+          <div className="page-width video-layout">
+            <motion.div {...reveal} className="video-intro">
+              <p className="eyebrow orange"><span /> Vídeos em alta definição</p>
+              <h2>O padrão aparece<br />em <em>movimento.</em></h2>
+              <p>Selecione uma cena para ver a Auto Truck em ação: lavagem, acabamento, estrutura e caminhões prontos para a estrada.</p>
+
+              <div className="video-selector" role="tablist" aria-label="Cenas em vídeo da Auto Truck">
+                {videoShowcase.map((video) => (
+                  <button
+                    key={video.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeVideo.id === video.id}
+                    className={activeVideo.id === video.id ? "active" : ""}
+                    onClick={() => setActiveVideoId(video.id)}
+                  >
+                    <span>{video.number}</span>
+                    <b>{video.label}</b>
+                    <ArrowUpRight size={16} />
+                  </button>
+                ))}
+              </div>
+
+              <button type="button" className={`soundtrack-control ${soundEnabled ? "is-playing" : ""}`} onClick={toggleSoundtrack} aria-pressed={soundEnabled}>
+                {soundEnabled ? <Volume2 size={19} /> : <VolumeX size={19} />}
+                <span><small>Trilha original da Auto Truck</small>{soundEnabled ? "Pausar trilha sonora" : "Ativar trilha sonora"}</span>
+                <i>{soundEnabled ? "ON" : "OFF"}</i>
+              </button>
+            </motion.div>
+
+            <motion.div key={activeVideo.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.38, ease: "easeOut" }} className="video-frame">
+              <video autoPlay muted loop playsInline controls preload="metadata" aria-label={activeVideo.title}>
+                <source src={activeVideo.source} type="video/mp4" />
+                Seu navegador não suporta reprodução de vídeo.
+              </video>
+              <div className="video-frame-shade" />
+              <div className="video-frame-meta"><span className="micro-label">Cena {activeVideo.number} · {activeVideo.label}</span><i>4K / HD</i></div>
+              <div className="video-frame-caption"><h3>{activeVideo.title}</h3><p>{activeVideo.text}</p></div>
+            </motion.div>
           </div>
         </section>
 

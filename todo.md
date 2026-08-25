@@ -49,3 +49,6 @@
 - [x] Identificar os modelos de caminhão visíveis nos vídeos existentes.
 - [x] Criar o filtro de modelos combinado com as categorias de serviço.
 - [x] Validar a busca por modelo em desktop e mobile.
+- [x] Indexar marcas, modelos e termos de serviço para a pesquisa.
+- [x] Criar a barra de pesquisa integrada aos filtros existentes.
+- [x] Validar a pesquisa em desktop e mobile.

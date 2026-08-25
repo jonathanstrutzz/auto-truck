@@ -3,7 +3,7 @@
  * Esta página organiza o conteúdo audiovisual da marca com foco em seleção, ritmo e controle explícito do visitante.
  */
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, MessageCircle, Play, Volume2, VolumeX } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, MessageCircle, Play, Search, Volume2, VolumeX, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
@@ -20,6 +20,7 @@ const portfolioVideos = [
     source: "/manus-storage/auto-truck-movimento_5df2b6a9.mp4",
     category: "polimento",
     model: "volvo-fh",
+    searchTerms: ["volvo", "fh", "volvo fh", "polimento", "acabamento", "cabine", "rodas", "brilho"],
   },
   {
     id: "lavagem",
@@ -30,6 +31,7 @@ const portfolioVideos = [
     source: "/manus-storage/auto-truck-lavagem_4b19e78d.mp4",
     category: "lavagem",
     model: "outros",
+    searchTerms: ["lavagem", "lavagem detalhada", "espuma", "jato", "roda", "caminhão", "outros caminhões"],
   },
   {
     id: "acabamento",
@@ -40,6 +42,7 @@ const portfolioVideos = [
     source: "/manus-storage/auto-truck-acabamento_35f061ac.mp4",
     category: "polimento",
     model: "outros",
+    searchTerms: ["polimento", "acabamento", "tanque", "brilho", "reflexo", "outros caminhões"],
   },
   {
     id: "unidade",
@@ -50,6 +53,7 @@ const portfolioVideos = [
     source: "/manus-storage/auto-truck-unidade_20b57d12.mp4",
     category: "lavagem",
     model: "outros",
+    searchTerms: ["lavagem", "oficina", "unidade", "bastidores", "caminhão", "outros caminhões"],
   },
 ];
 
@@ -70,10 +74,18 @@ export default function VideoPortfolio() {
   const [activeId, setActiveId] = useState(portfolioVideos[0].id);
   const [activeCategory, setActiveCategory] = useState<(typeof serviceFilters)[number]["id"]>("todos");
   const [activeModel, setActiveModel] = useState<(typeof modelFilters)[number]["id"]>("todos");
+  const [searchQuery, setSearchQuery] = useState("");
   const [soundEnabled, setSoundEnabled] = useState(false);
   const soundtrackRef = useRef<HTMLAudioElement>(null);
   const featuredRef = useRef<HTMLElement>(null);
-  const filteredVideos = portfolioVideos.filter((video) => (activeCategory === "todos" || video.category === activeCategory) && (activeModel === "todos" || video.model === activeModel));
+  const normalizedQuery = searchQuery.trim().toLocaleLowerCase("pt-BR");
+  const filteredVideos = portfolioVideos.filter((video) => {
+    const matchesService = activeCategory === "todos" || video.category === activeCategory;
+    const matchesModel = activeModel === "todos" || video.model === activeModel;
+    const searchableContent = [video.label, video.title, video.description, video.category, video.model, ...video.searchTerms].join(" ").toLocaleLowerCase("pt-BR");
+    const matchesSearch = !normalizedQuery || searchableContent.includes(normalizedQuery);
+    return matchesService && matchesModel && matchesSearch;
+  });
   const activeVideo = filteredVideos.find((video) => video.id === activeId) ?? filteredVideos[0] ?? portfolioVideos.find((video) => video.id === activeId) ?? portfolioVideos[0];
 
   useEffect(() => () => soundtrackRef.current?.pause(), []);
@@ -178,6 +190,11 @@ export default function VideoPortfolio() {
               </button>
             ))}
           </div>
+          <label className="portfolio-search" aria-label="Buscar vídeos por marca, modelo ou serviço">
+            <Search size={18} />
+            <input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar por marca, modelo ou serviço" />
+            {searchQuery && <button type="button" onClick={() => setSearchQuery("")} aria-label="Limpar busca"><X size={16} /></button>}
+          </label>
           <div className="portfolio-model-filter-wrap">
             <span className="portfolio-detail-label">Modelo do caminhão</span>
             <div className="portfolio-model-filters" role="tablist" aria-label="Filtrar vídeos por modelo de caminhão">
@@ -211,10 +228,10 @@ export default function VideoPortfolio() {
             </div>
           ) : (
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="portfolio-empty-state">
-              <span className="portfolio-detail-label">{activeCategory === "higienizacao" ? "Higienização de cabine" : "Combinação sem vídeos"}</span>
-              <h3>{activeCategory === "higienizacao" ? <>Os próximos bastidores<br />entram aqui.</> : <>Ainda não há registros<br />para este filtro.</>}</h3>
-              <p>{activeCategory === "higienizacao" ? "Esta categoria está pronta para receber vídeos reais de higienização simples e completa de cabine." : "Experimente ajustar o serviço ou o modelo de caminhão para ver os vídeos disponíveis."}</p>
-              <button type="button" onClick={() => { setActiveCategory("todos"); setActiveModel("todos"); setActiveId(portfolioVideos[0].id); }}>Ver todos os vídeos <ArrowUpRight size={16} /></button>
+              <span className="portfolio-detail-label">{normalizedQuery ? "Busca sem resultados" : activeCategory === "higienizacao" ? "Higienização de cabine" : "Combinação sem vídeos"}</span>
+              <h3>{normalizedQuery ? <>Nenhum vídeo para<br /><em>“{searchQuery.trim()}”.</em></> : activeCategory === "higienizacao" ? <>Os próximos bastidores<br />entram aqui.</> : <>Ainda não há registros<br />para este filtro.</>}</h3>
+              <p>{normalizedQuery ? "Tente outra marca, modelo ou termo de serviço. A busca também funciona junto com os filtros atuais." : activeCategory === "higienizacao" ? "Esta categoria está pronta para receber vídeos reais de higienização simples e completa de cabine." : "Experimente ajustar o serviço ou o modelo de caminhão para ver os vídeos disponíveis."}</p>
+              <button type="button" onClick={() => { setActiveCategory("todos"); setActiveModel("todos"); setSearchQuery(""); setActiveId(portfolioVideos[0].id); }}>Ver todos os vídeos <ArrowUpRight size={16} /></button>
             </motion.div>
           )}
         </div>

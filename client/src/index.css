@@ -363,6 +363,14 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .backstage-gallery-card h3 { margin: 13px 0 14px; font-size: clamp(40px, 4vw, 61px); line-height: .8; }
 .backstage-gallery-card h3 em { color: var(--orange); font-style: normal; }
 .backstage-gallery-card p { max-width: 370px; margin: 0; color: #645f57; font-size: 13px; line-height: 1.75; }
+.vehicle-gallery-archive { display: grid; grid-template-columns: 1.08fr .92fr; gap: 12px; width: 100%; }
+.vehicle-gallery-lead { min-height: 632px; }
+.vehicle-gallery-rail { display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
+.vehicle-gallery-card { position: relative; min-height: 0; margin: 0; overflow: hidden; border: 1px solid rgba(12,12,13,.18); background: var(--black); clip-path: polygon(0 0, calc(100% - 21px) 0, 100% 21px, 100% 100%, 0 100%); }
+.vehicle-gallery-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.05) saturate(.94); transition: transform .45s cubic-bezier(.23,1,.32,1); }
+.vehicle-gallery-card:hover img { transform: scale(1.045); }
+.vehicle-gallery-card figcaption { position: absolute; right: 14px; bottom: 13px; left: 14px; display: flex; align-items: end; justify-content: space-between; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.38); color: #fff; font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.vehicle-gallery-card figcaption b { color: var(--orange-soft); font-size: 13px; }
 .backstage-footer { padding-top: 15px; border-top: 1px solid var(--line-light); color: #746f66; font: 700 8px/1.5 "IBM Plex Mono", monospace; letter-spacing: .075em; }
 .backstage-link { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 5px; border-bottom: 1px solid var(--black); color: var(--black); font-size: 10px; font-weight: 800; transition: color .16s ease, border-color .16s ease; }
 .backstage-link:hover { border-color: var(--orange); color: var(--orange); }
@@ -451,7 +459,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-page { min-height: 100vh; overflow: hidden; background: #0a0a0b; color: #fff; }
 .portfolio-width { width: min(1200px, calc(100% - 64px)); margin: 0 auto; }
 .portfolio-nav { position: relative; z-index: 5; display: flex; min-height: 92px; align-items: center; justify-content: space-between; padding: 0 clamp(24px, 4.6vw, 70px); border-bottom: 1px solid rgba(255,255,255,.15); background: rgba(9,9,10,.96); }
-.portfolio-brand { position: relative; display: flex; align-items: center; gap: 15px; min-height: 63px; padding-left: 12px; border-left: 2px solid var(--orange); }
+.portfolio-brand { position: relative; display: flex; align-items: center; gap: 15px; min-height: 63px; padding: 4px 22px 4px 12px; border-left: 2px solid var(--orange); outline: 1px solid rgba(255,87,27,.23); outline-offset: -1px; background: linear-gradient(105deg, rgba(15,15,17,.92) 0%, rgba(15,15,17,.92) 87%, transparent 87%); clip-path: polygon(0 0, 100% 0, calc(100% - 15px) 100%, 0 100%); box-shadow: 8px 9px 0 rgba(255,87,27,.1); }
 .portfolio-brand::after { content: ""; position: absolute; top: 0; left: -2px; width: 35px; height: 2px; background: var(--orange); }
 .portfolio-brand img { width: 163px; height: 58px; object-fit: contain; object-position: left center; }
 .portfolio-brand span { color: rgba(255,255,255,.43); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
@@ -529,8 +537,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-video-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .portfolio-card { position: relative; min-height: 318px; overflow: hidden; padding: 17px; border: 1px solid rgba(12,12,13,.2); clip-path: polygon(0 0, calc(100% - 21px) 0, 100% 21px, 100% 100%, 0 100%); background: #141416; color: #fff; text-align: left; transition: box-shadow .16s ease, transform .16s ease; }
 .portfolio-card:hover, .portfolio-card.active { box-shadow: 8px 9px 0 rgba(255,87,27,.25); transform: translateY(-4px); }
-.portfolio-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .84; transition: transform .35s cubic-bezier(.23,1,.32,1); }
-.portfolio-card:hover video, .portfolio-card.active video { transform: scale(1.06); }
+.portfolio-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .92; filter: contrast(1.05) saturate(.9); transition: transform .35s cubic-bezier(.23,1,.32,1), filter .35s cubic-bezier(.23,1,.32,1); }
+.portfolio-card:hover video, .portfolio-card.active video { filter: contrast(1.08) saturate(1); transform: scale(1.06); }
 .portfolio-card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,8,.12) 25%, rgba(7,7,8,.84) 100%); }
 .portfolio-card-head { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; }
 .portfolio-card-head span { padding: 5px 6px; background: var(--orange); font: 700 8px "IBM Plex Mono", monospace; }
@@ -538,6 +546,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-card-copy { position: absolute; z-index: 1; right: 17px; bottom: 18px; left: 17px; display: flex; flex-direction: column; gap: 6px; }
 .portfolio-card-copy small { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
 .portfolio-card-copy strong { font-family: "Barlow Condensed", sans-serif; font-size: 28px; line-height: .84; text-transform: uppercase; }
+.portfolio-card::after { content: "REGISTRO REAL"; position: absolute; right: 14px; bottom: 14px; z-index: 1; color: rgba(255,255,255,.56); font: 700 6px "IBM Plex Mono", monospace; letter-spacing: .1em; writing-mode: vertical-rl; }
 .portfolio-empty-state { position: relative; z-index: 1; display: flex; min-height: 330px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 36px; border: 1px solid rgba(12,12,13,.19); border-top: 3px solid var(--orange); clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%); background: repeating-linear-gradient(0deg, rgba(255,255,255,.42) 0, rgba(255,255,255,.42) 31px, rgba(12,12,13,.035) 32px), #e4ded4; }
 .portfolio-empty-state h3 { margin: 13px 0 14px; font-size: clamp(42px, 5vw, 67px); line-height: .8; }
 .portfolio-empty-state p { max-width: 450px; margin: 0 0 25px; color: #635e56; font-size: 13px; line-height: 1.75; }
@@ -637,6 +646,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .hours-panel { max-width: 500px; }
   .gallery-layout { grid-template-columns: 1fr; gap: 52px; }
   .workshop-gallery-card { max-width: 660px; }
+  .vehicle-gallery-archive { max-width: 660px; }
   .team-heading { grid-template-columns: 1fr; gap: 25px; }
   .team-heading > p { margin-left: 0; }
   .team-media-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 350px 275px; }
@@ -749,6 +759,9 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .workshop-gallery-card figcaption strong { font-size: 28px; }
   .backstage-gallery-card { min-height: 475px; padding: 25px 23px; box-shadow: 10px 11px 0 rgba(12,12,13,.12); }
   .backstage-gallery-card h3 { font-size: 44px; }
+  .vehicle-gallery-archive { grid-template-columns: 1fr; gap: 11px; }
+  .vehicle-gallery-lead { min-height: 440px; }
+  .vehicle-gallery-rail { grid-template-columns: 1fr 1fr; grid-template-rows: 210px; gap: 11px; }
   .team-stage { padding: 84px 0; }
   .team-heading { margin-bottom: 42px; }
   .team-media-grid { grid-template-columns: 1fr; grid-template-rows: 470px 330px 330px auto; gap: 12px; }

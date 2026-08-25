@@ -88,3 +88,5 @@ As fotos reais de equipe recebem tratamento consistente de contraste, saturaçã
 O logo oficial funciona como uma **placa assinada** em cabeçalho, hero, conversão e rodapé, sempre com margem de respiro, contorno de sinalização e o recorte diagonal inspirado na cabine. Apenas o hero, a principal prova de resultado e a conversão final usam a escala máxima de headline; as demais seções seguem uma hierarquia técnica, compacta e operacional.
 
 As superfícies claras devem parecer painéis de carroceria: reflexos acetinados, linhas de inspeção finas e diagonais controladas. Rótulos, molduras de imagem, CTAs, controles de modal e placas de FAQ compartilham o mesmo recorte angular, reforçando a origem visual no logotipo Auto Truck.
+
+No arquivo audiovisual, cada vídeo deve abrir com uma capa de processo ou resultado real, acompanhada por corte angular, número técnico e marcador de registro. A imagem principal de cada página privilegia brilho, lavagem, cabine, proteção, pintura ou equipe em operação; caminhões sem relação explícita com o serviço não ocupam a posição de destaque.

@@ -43,10 +43,14 @@ const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf
 const TEAM_WASH_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-01_0a8d6046.jpg";
 const TEAM_WASH_DETAIL_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-02_8b1f59c6.jpg";
 const TEAM_WORKSHOP_IMAGE = "/manus-storage/auto-truck-equipe-bastidores-03_443c7aea.jpg";
+const FLEET_VOLVOS_IMAGE = "/manus-storage/auto-truck-frota-volvos_4159812e.jpg";
+const SCANIA_RED_IMAGE = "/manus-storage/auto-truck-scania-vermelha_d1b7fe78.png";
+const SCANIA_ORANGE_IMAGE = "/manus-storage/auto-truck-scania-laranja_ff646cbd.jpg";
 const VIDEO_MOVIMENTO = "/manus-storage/auto-truck-movimento_5df2b6a9.mp4";
 const VIDEO_LAVAGEM = "/manus-storage/auto-truck-lavagem_4b19e78d.mp4";
 const VIDEO_ACABAMENTO = "/manus-storage/auto-truck-acabamento_35f061ac.mp4";
 const VIDEO_UNIDADE = "/manus-storage/auto-truck-unidade_20b57d12.mp4";
+const VIDEO_SCANIA_CHEGADA = "/manus-storage/auto-truck-scania-chegada_ae5bd587.mp4";
 const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
@@ -263,6 +267,14 @@ const videoShowcase = [
     text: "A unidade Auto Truck e os bastidores de uma rotina feita para linha pesada.",
     source: VIDEO_UNIDADE,
   },
+  {
+    id: "scania-chegada",
+    number: "05",
+    label: "Chegada em destaque",
+    title: "Presença que entra em cena.",
+    text: "Scania laranja em movimento diante da estrutura real da Auto Truck.",
+    source: VIDEO_SCANIA_CHEGADA,
+  },
 ];
 
 const reveal = {
@@ -285,7 +297,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
-  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores">("servicos");
+  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores" | "veiculos">("servicos");
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
   const [soundEnabled, setSoundEnabled] = useState(false);
@@ -708,11 +720,12 @@ export default function Home() {
               <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
               <p>Imagens que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
               <div className="gallery-heading-rule" />
-              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "REGISTRO REAL DA UNIDADE · FOTO 02" : "ARQUIVO DE BASTIDORES · CATEGORIA 03"}</span>
+              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "REGISTRO REAL DA UNIDADE · FOTO 02" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
               <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
                 <button type="button" role="tab" aria-selected={galleryCategory === "servicos"} className={galleryCategory === "servicos" ? "active" : ""} onClick={() => setGalleryCategory("servicos")}>Serviços <span>01</span></button>
                 <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>02</span></button>
                 <button type="button" role="tab" aria-selected={galleryCategory === "bastidores"} className={galleryCategory === "bastidores" ? "active" : ""} onClick={() => setGalleryCategory("bastidores")}>Equipe & bastidores <span>03</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "veiculos"} className={galleryCategory === "veiculos" ? "active" : ""} onClick={() => setGalleryCategory("veiculos")}>Veículos <span>04</span></button>
               </div>
               <a className="gallery-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer">
                 <MapPinned size={17} /> Traçar rota no Google Maps <ArrowUpRight size={16} />
@@ -739,6 +752,27 @@ export default function Home() {
                   <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
                 </figcaption>
               </motion.figure>
+            ) : galleryCategory === "veiculos" ? (
+              <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="vehicle-gallery-archive">
+                <figure className="workshop-gallery-card vehicle-gallery-lead">
+                  <img src={FLEET_VOLVOS_IMAGE} alt="Frota de caminhões Volvo atendidos pela Auto Truck, com veículo azul em primeiro plano" />
+                  <div className="gallery-photo-tint" />
+                  <div className="gallery-photo-number">04</div>
+                  <figcaption><span className="micro-label">Registro real de frota</span><strong>Presença que<br />se reconhece.</strong></figcaption>
+                </figure>
+                <div className="vehicle-gallery-rail">
+                  <figure className="vehicle-gallery-card">
+                    <img src={SCANIA_RED_IMAGE} alt="Scania vermelha registrada ao ar livre" />
+                    <div className="gallery-photo-tint" />
+                    <figcaption><span>Scania em destaque</span><b>01</b></figcaption>
+                  </figure>
+                  <figure className="vehicle-gallery-card">
+                    <img src={SCANIA_ORANGE_IMAGE} alt="Scania laranja com implemento registrada ao ar livre" />
+                    <div className="gallery-photo-tint" />
+                    <figcaption><span>Registro de operação</span><b>02</b></figcaption>
+                  </figure>
+                </div>
+              </motion.div>
             ) : (
               <motion.article {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="backstage-gallery-card">
                 <div className="backstage-symbol"><Camera size={37} strokeWidth={1.4} /><span>03</span></div>

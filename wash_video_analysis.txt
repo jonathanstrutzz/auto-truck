@@ -1,0 +1,16 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-60fbc875-0fd4-4e73-abaa-57e54359c343)
+[8s] Status: Analyzing video content with AI...
+[10s] Status: Analysis completed
+[10s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_auto-truck-lavagem_analysis_20260825_203914.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo não mostra uma comparação de "antes e depois" do caminhão. Em vez disso, ele registra o **processo contínuo de lavagem** de um caminhão azul.
+
+*   **Início (00:00 - 00:02):** O trabalhador está lavando a roda dianteira e a lateral da cabine com um jato de água de alta pressão. O caminhão já está molhado e com sabão no chão.
+*   **Final (00:03 - 00:09):** O trabalhador move-se para lavar a área atrás da cabine, entre o cavalo mecânico e o implemento.
+
+Não há imagens do caminhão totalmente sujo antes de iniciar a limpeza, nem dele totalmente limpo e seco após a finalização. O vídeo foca exclusivamente na execução da lavagem.

@@ -65,3 +65,9 @@
 - [x] Definir a interação de ampliação para os registros de bastidores.
 - [x] Implementar modal acessível com controles de navegação entre as fotos.
 - [x] Validar a ampliação em desktop e mobile.
+- [ ] Definir pares visuais reais para comparação de antes e depois.
+- [ ] Implementar comparador interativo nos serviços em destaque.
+- [ ] Validar o comparador em desktop e mobile.
+- [x] Catalogar as novas fotos e vídeos reais enviados.
+- [x] Selecionar registros para galeria, bastidores e portfólio audiovisual.
+- [x] Integrar e validar os novos conteúdos em desktop e mobile.

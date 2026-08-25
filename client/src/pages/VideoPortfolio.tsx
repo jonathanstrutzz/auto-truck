@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
-const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-r450_7db39b27.png";
+const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-vermelha_d1b7fe78.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20Auto%20Truck.";
 
 const portfolioVideos = [
@@ -19,6 +19,7 @@ const portfolioVideos = [
     title: "Brilho que acompanha a estrada.",
     description: "Cabine, rodas e acabamento em uma saída que mostra presença de longe.",
     source: "/manus-storage/auto-truck-movimento_5df2b6a9.mp4",
+    poster: "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg",
     category: "polimento",
     model: "volvo-fh",
     searchTerms: ["volvo", "fh", "volvo fh", "polimento", "acabamento", "cabine", "rodas", "brilho"],
@@ -30,6 +31,7 @@ const portfolioVideos = [
     title: "Cuidado que começa no processo.",
     description: "Jato, espuma e atenção aos pontos que sustentam o visual do caminhão.",
     source: "/manus-storage/auto-truck-lavagem_4b19e78d.mp4",
+    poster: "/manus-storage/auto-truck-equipe-lavagem-01_0a8d6046.jpg",
     category: "lavagem",
     model: "outros",
     searchTerms: ["lavagem", "lavagem detalhada", "espuma", "jato", "roda", "caminhão", "outros caminhões"],
@@ -41,6 +43,7 @@ const portfolioVideos = [
     title: "Reflexo que entrega resultado.",
     description: "O brilho do tanque e a leitura limpa da carroceria em cada ângulo.",
     source: "/manus-storage/auto-truck-acabamento_35f061ac.mp4",
+    poster: "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg",
     category: "polimento",
     model: "outros",
     searchTerms: ["polimento", "acabamento", "tanque", "brilho", "reflexo", "outros caminhões"],
@@ -52,22 +55,76 @@ const portfolioVideos = [
     title: "Estrutura para fazer acontecer.",
     description: "A unidade Auto Truck e os bastidores de uma rotina feita para linha pesada.",
     source: "/manus-storage/auto-truck-unidade_20b57d12.mp4",
+    poster: "/manus-storage/auto-truck-oficina_dfb7eb07.png",
     category: "lavagem",
     model: "outros",
     searchTerms: ["lavagem", "oficina", "unidade", "bastidores", "caminhão", "outros caminhões"],
   },
+  {
+    id: "scania-chegada",
+    number: "05",
+    label: "Chegada em destaque",
+    title: "Presença que entra em cena.",
+    description: "Scania laranja em movimento diante da fachada e da estrutura real da Auto Truck.",
+    source: "/manus-storage/auto-truck-scania-chegada_ae5bd587.mp4",
+    poster: "/manus-storage/auto-truck-scania-chegada-poster_e9dde57a.jpg",
+    category: "destaques",
+    model: "scania",
+    searchTerms: ["scania", "laranja", "chegada", "fachada", "estrutura", "destaque", "caminhão"],
+  },
+  {
+    id: "volvo-noturno",
+    number: "06",
+    label: "Volvo após o expediente",
+    title: "Reflexo que sustenta presença.",
+    description: "Volvo 540 verde em registro noturno, com brilho e estrutura da oficina em evidência.",
+    source: "/manus-storage/auto-truck-volvo-noturno_99303350.mp4",
+    poster: "/manus-storage/auto-truck-volvo-noturno-poster_5c3e15ad.jpg",
+    category: "destaques",
+    model: "volvo",
+    searchTerms: ["volvo", "540", "verde", "noturno", "brilho", "pintura", "destaque", "acabamento"],
+  },
+  {
+    id: "volvo-daf-finalizados",
+    number: "07",
+    label: "Veículos finalizados",
+    title: "Resultado que ocupa o pátio.",
+    description: "Volvo branco e DAF cinza em uma leitura ampla de acabamento e presença na unidade.",
+    source: "/manus-storage/auto-truck-volvo-daf-finalizados_05f70fef.mp4",
+    poster: "/manus-storage/auto-truck-volvo-daf-poster_5ab0f5f0.jpg",
+    category: "destaques",
+    model: "multimarca",
+    searchTerms: ["volvo", "daf", "multimarca", "finalizados", "pátio", "brilho", "acabamento", "resultado"],
+  },
+  {
+    id: "bastidores-daf",
+    number: "08",
+    label: "Bastidores em ação",
+    title: "Equipe, estrutura e cuidado.",
+    description: "Registro vertical da oficina com caminhões DAF e profissional em movimento durante a rotina de cuidado.",
+    source: "/manus-storage/auto-truck-bastidores-daf_260a967f.mp4",
+    poster: "/manus-storage/auto-truck-bastidores-daf-poster_90345d2f.jpg",
+    category: "lavagem",
+    model: "daf",
+    searchTerms: ["daf", "bastidores", "equipe", "lavagem", "mangueira", "oficina", "processo", "rotina"],
+  },
 ];
 
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "04" },
-  { id: "lavagem", label: "Lavagem", count: "02" },
+  { id: "todos", label: "Todos", count: "08" },
+  { id: "lavagem", label: "Lavagem", count: "03" },
   { id: "polimento", label: "Polimento", count: "02" },
+  { id: "destaques", label: "Destaques", count: "03" },
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
 
 const modelFilters = [
-  { id: "todos", label: "Todos os modelos", count: "04" },
+  { id: "todos", label: "Todos os modelos", count: "08" },
   { id: "volvo-fh", label: "Volvo FH", count: "01" },
+  { id: "volvo", label: "Volvo", count: "01" },
+  { id: "scania", label: "Scania", count: "01" },
+  { id: "daf", label: "DAF", count: "01" },
+  { id: "multimarca", label: "Multimarca", count: "01" },
   { id: "outros", label: "Outros caminhões", count: "03" },
 ] as const;
 
@@ -146,7 +203,7 @@ export default function VideoPortfolio() {
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.14 }} className="portfolio-hero-bottom">
             <p>Um arquivo de cenas da Auto Truck: resultado, cuidado, estrutura e caminhões preparados para voltar à estrada.</p>
-            <div><b>04</b><span>vídeos<br />selecionados</span></div>
+            <div><b>08</b><span>vídeos<br />selecionados</span></div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.18 }} className="portfolio-hero-plate">
             <img src={OFFICIAL_LOGO} alt="" />
@@ -159,7 +216,7 @@ export default function VideoPortfolio() {
       <section ref={featuredRef} className="portfolio-feature">
         <div className="portfolio-width feature-grid">
           <motion.div key={activeVideo.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="feature-player">
-            <video autoPlay muted loop playsInline controls preload="metadata" aria-label={activeVideo.title}>
+            <video autoPlay muted loop playsInline controls preload="metadata" poster={activeVideo.poster} aria-label={activeVideo.title}>
               <source src={activeVideo.source} type="video/mp4" />
               Seu navegador não suporta reprodução de vídeo.
             </video>
@@ -218,7 +275,7 @@ export default function VideoPortfolio() {
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.99 }}
                 >
-                  <video muted loop playsInline preload="metadata" aria-hidden="true">
+                  <video muted loop playsInline preload="metadata" poster={video.poster} aria-hidden="true">
                     <source src={video.source} type="video/mp4" />
                   </video>
                   <div className="portfolio-card-shade" />
@@ -243,13 +300,13 @@ export default function VideoPortfolio() {
           <div className="photo-spotlight-copy">
             <span className="portfolio-detail-label">Caminhão em destaque</span>
             <h2>Presença que<br /><em>se transforma.</em></h2>
-            <p>Registro exclusivo de um Scania R450, incluído no portfólio para valorizar a força visual da linha pesada.</p>
+            <p>Registro real de uma Scania vermelha, incluído no portfólio para valorizar brilho, pintura e presença da linha pesada.</p>
             <span className="photo-spotlight-note">IMAGEM FORNECIDA PELA AUTO TRUCK · DESTAQUE 01</span>
           </div>
           <figure className="scania-spotlight-card">
-            <img src={SCANIA_SPOTLIGHT_IMAGE} alt="Caminhão Scania R450 branco em registro fornecido para o portfólio" />
+            <img src={SCANIA_SPOTLIGHT_IMAGE} alt="Caminhão Scania vermelho em registro fornecido para o portfólio" />
             <div className="scania-spotlight-shade" />
-            <figcaption><span>01</span><b>Scania<br />R450</b></figcaption>
+            <figcaption><span>01</span><b>Scania<br />em destaque</b></figcaption>
           </figure>
         </div>
       </section>

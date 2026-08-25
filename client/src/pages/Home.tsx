@@ -7,7 +7,9 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   Building2,
+  Camera,
   ChevronRight,
+  ClipboardPenLine,
   Clock3,
   MapPin,
   MapPinned,
@@ -20,7 +22,7 @@ import {
   SprayCan,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
@@ -36,6 +38,7 @@ const WHATSAPP_LOCATION_SHARE_URL = `https://wa.me/?text=${encodeURIComponent(`�
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
+  { label: "Pré-orçamento", href: "#pre-orcamento" },
   { label: "Experiência", href: "#experiencia" },
   { label: "Galeria", href: "#galeria" },
   { label: "História", href: "#historia" },
@@ -181,6 +184,7 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [galleryCategory, setGalleryCategory] = useState<"unidade" | "bastidores">("unidade");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -188,6 +192,15 @@ export default function Home() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handlePreQuote = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const model = String(data.get("truckModel") || "Não informado");
+    const service = String(data.get("service") || "Não informado");
+    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nModelo do caminhão: ${model}\nServiço desejado: ${service}`;
+    window.open(`https://wa.me/5562992158095?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="luxury-site">
@@ -328,6 +341,34 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="pre-orcamento" className="prequote-stage">
+          <div className="page-width prequote-layout">
+            <motion.div {...reveal} className="prequote-copy">
+              <p className="eyebrow graphite"><span /> Pré-orçamento</p>
+              <h2>Conte o que<br />seu caminhão <em>precisa.</em></h2>
+              <p>Selecione o modelo e o serviço desejado. Em seguida, sua solicitação segue pronta para o WhatsApp da Auto Truck.</p>
+              <div className="prequote-note"><ClipboardPenLine size={20} /><span><b>Atendimento objetivo</b>Sem formulário longo: sua seleção chega direto à nossa equipe.</span></div>
+            </motion.div>
+
+            <motion.form {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="prequote-form" onSubmit={handlePreQuote}>
+              <div className="form-title"><span className="micro-label">Dados do seu caminhão</span><b>Solicite seu pré-orçamento</b></div>
+              <label className="form-field">
+                <span>Modelo do caminhão</span>
+                <input name="truckModel" required placeholder="Ex.: Scania R450, Volvo FH, Mercedes Actros" autoComplete="off" />
+              </label>
+              <label className="form-field">
+                <span>Serviço desejado</span>
+                <select name="service" required defaultValue="">
+                  <option value="" disabled>Selecione um serviço</option>
+                  {serviceDetails.map((service) => <option key={service.number} value={service.title}>{service.title}</option>)}
+                </select>
+              </label>
+              <button type="submit" className="prequote-submit"><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></button>
+              <p className="form-privacy">Ao enviar, você será direcionado ao WhatsApp com a sua seleção preenchida.</p>
+            </motion.form>
+          </div>
+        </section>
+
         <section id="experiencia" className="detail-experience">
           <div className="page-width experience-grid">
             <motion.div {...reveal} className="experience-shot">
@@ -438,20 +479,32 @@ export default function Home() {
               <p>A unidade Auto Truck Estética em Anápolis, preparada para receber caminhões e tratar cada detalhe com o padrão da marca.</p>
               <div className="gallery-heading-rule" />
               <span className="gallery-microcopy">REGISTRO REAL DA UNIDADE · FOTO 01</span>
+              <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
+                <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>01</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "bastidores"} className={galleryCategory === "bastidores" ? "active" : ""} onClick={() => setGalleryCategory("bastidores")}>Equipe & bastidores <span>02</span></button>
+              </div>
               <a className="gallery-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer">
                 <MapPinned size={17} /> Traçar rota no Google Maps <ArrowUpRight size={16} />
               </a>
             </motion.div>
 
-            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card">
-              <img src={WORKSHOP_GALLERY_IMAGE} alt="Fachada da Auto Truck Estética com caminhões no pátio da oficina" />
-              <div className="gallery-photo-tint" />
-              <div className="gallery-photo-number">01</div>
-              <figcaption>
-                <span className="micro-label">Unidade Auto Truck</span>
-                <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
-              </figcaption>
-            </motion.figure>
+            {galleryCategory === "unidade" ? (
+              <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card">
+                <img src={WORKSHOP_GALLERY_IMAGE} alt="Fachada da Auto Truck Estética com caminhões no pátio da oficina" />
+                <div className="gallery-photo-tint" />
+                <div className="gallery-photo-number">01</div>
+                <figcaption>
+                  <span className="micro-label">Unidade Auto Truck</span>
+                  <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
+                </figcaption>
+              </motion.figure>
+            ) : (
+              <motion.article {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="backstage-gallery-card">
+                <div className="backstage-symbol"><Camera size={37} strokeWidth={1.4} /><span>02</span></div>
+                <div><span className="micro-label">Equipe em ação e bastidores</span><h3>O próximo registro<br />é da nossa <em>equipe.</em></h3><p>Esta categoria está preparada para receber fotos reais da equipe trabalhando e dos processos dentro da oficina.</p></div>
+                <span className="backstage-footer">ENVIE NOVAS FOTOS PARA COMPLETAR O ARQUIVO VISUAL</span>
+              </motion.article>
+            )}
           </div>
         </section>
 
@@ -497,9 +550,9 @@ export default function Home() {
         </section>
       </main>
 
-      <a className="budget-float" href={budgetLink("estética para caminhões")} target="_blank" rel="noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
+      <a className="budget-float" href="#pre-orcamento" aria-label="Abrir formulário de pré-orçamento">
         <MessageCircle size={22} />
-        <span><small>Atendimento rápido</small>Solicitar orçamento</span>
+        <span><small>Atendimento rápido</small>Fazer pré-orçamento</span>
       </a>
 
       <footer className="premium-footer">

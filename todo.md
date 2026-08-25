@@ -25,3 +25,7 @@
 - [x] Incorporar o mapa interativo do Google Maps na seção de contato.
 - [x] Criar e validar uma habilidade reutilizável para esse fluxo de localização e atendimento.
 - [x] Validar a nova experiência em desktop e mobile.
+- [x] Definir os campos e serviços disponíveis para o pré-orçamento.
+- [x] Criar o formulário conectado ao WhatsApp com a mensagem preenchida.
+- [x] Adicionar a categoria de equipe em ação e bastidores à galeria.
+- [x] Validar o formulário e a galeria em desktop e mobile.

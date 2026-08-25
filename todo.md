@@ -33,3 +33,5 @@
 - [x] Atualizar a mensagem enviada ao WhatsApp com os novos dados.
 - [x] Implementar filtros de serviços, unidade e bastidores na galeria.
 - [x] Validar os fluxos em desktop e mobile.
+- [x] Criar o estado visual de confirmação e agradecimento do pré-orçamento.
+- [x] Validar a mensagem de confirmação em desktop e mobile.

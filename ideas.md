@@ -70,3 +70,7 @@ O logo oficial da **Auto Truck Estética Para Caminhões** passa a ser a referê
 O conteúdo passa a apresentar serviços de estética de linha pesada, tais como detalhamento externo, polimento técnico, higienização interna e proteção de pintura. O telefone oficial **(62) 99215-8095** será o principal ponto de conversão, com ligação e WhatsApp configurados diretamente nos CTAs.
 
 O refinamento visual acrescenta acabamentos inspirados em pintura automotiva: reflexos controlados, linhas de carroceria, superfícies escuras acetinadas e cartões em vidro fumê. O laranja do logo deve ser usado com parcimônia como sinal de ação, preservando a sofisticação da composição.
+
+Os módulos claros devem funcionar como painéis de carroceria em areia metálica, com reflexos acetinados, recortes diagonais de cabine e linhas de inspeção. A estética de serviços deve ser comunicada por resultados operacionais — **brilho**, **proteção**, **cabine**, **acabamento** e **presença** — e não por uma aparência de catálogo mecânico.
+
+O recorte angular do logo passa a orientar etiquetas, placas de marca, cabeçalhos e divisores. Assim, mesmo sem o logotipo visível, a página mantém uma assinatura visual reconhecível da Auto Truck.

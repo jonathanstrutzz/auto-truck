@@ -9,6 +9,7 @@ import {
   Building2,
   Camera,
   ChevronRight,
+  CheckCircle2,
   ClipboardPenLine,
   Clock3,
   MapPin,
@@ -49,20 +50,20 @@ const navItems = [
 const services = [
   {
     number: "01",
-    title: "Lavagens especializadas",
-    text: "Lavagem externa, do motor, de chassi e do cavalo para diferentes áreas da linha pesada.",
+    title: "Brilho de estrada",
+    text: "Lavagens que devolvem presença à carroceria, ao chassi, ao motor e ao cavalo mecânico.",
     icon: Sparkles,
   },
   {
     number: "02",
-    title: "Polimentos e enceramento",
-    text: "Polimento de cabine, tanque e roda, além de enceramento específico para cabine.",
+    title: "Proteção que preserva",
+    text: "Polimento e enceramento para valorizar acabamento, tanque, rodas e superfícies da cabine.",
     icon: SprayCan,
   },
   {
     number: "03",
-    title: "Cabine higienizada",
-    text: "Higienização simples ou completa com desmontagem, conforme a necessidade do caminhão.",
+    title: "Cabine de presença",
+    text: "Higienização simples ou completa para renovar o ambiente de quem vive a estrada.",
     icon: ShieldCheck,
   },
 ];
@@ -186,6 +187,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores">("servicos");
+  const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -202,7 +204,9 @@ export default function Home() {
     const model = String(data.get("truckModel") || "Não informado");
     const service = String(data.get("service") || "Não informado");
     const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}`;
-    window.open(`https://wa.me/5562992158095?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    const whatsappUrl = `https://wa.me/5562992158095?text=${encodeURIComponent(message)}`;
+    setPreQuoteConfirmation({ customerName, whatsappUrl });
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -320,7 +324,7 @@ export default function Home() {
                 <p className="eyebrow orange"><span /> Serviços detalhados</p>
                 <h2>O cuidado certo para<br /><em>cada parte</em> do seu caminhão.</h2>
               </div>
-              <p>O orçamento é definido após entender o estado do veículo e o resultado que você espera. Escolha uma especialidade para falar diretamente com a nossa equipe.</p>
+              <p>Brilho, proteção, cabine e acabamento são pontos de inspeção. Escolha o tratamento desejado e fale diretamente com a nossa equipe.</p>
             </motion.div>
 
             <div className="service-detail-list">
@@ -353,30 +357,41 @@ export default function Home() {
               <div className="prequote-note"><ClipboardPenLine size={20} /><span><b>Atendimento objetivo</b>Sem formulário longo: sua seleção chega direto à nossa equipe.</span></div>
             </motion.div>
 
-            <motion.form {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="prequote-form" onSubmit={handlePreQuote}>
-              <div className="form-title"><span className="micro-label">Dados do seu caminhão</span><b>Solicite seu pré-orçamento</b></div>
-              <label className="form-field">
-                <span>Seu nome</span>
-                <input name="customerName" required placeholder="Como devemos chamar você?" autoComplete="name" />
-              </label>
-              <label className="form-field">
-                <span>Placa do veículo</span>
-                <input name="plate" required placeholder="Ex.: ABC1D23 ou ABC-1234" autoCapitalize="characters" autoComplete="off" maxLength={8} />
-              </label>
-              <label className="form-field">
-                <span>Modelo do caminhão</span>
-                <input name="truckModel" required placeholder="Ex.: Scania R450, Volvo FH, Mercedes Actros" autoComplete="off" />
-              </label>
-              <label className="form-field">
-                <span>Serviço desejado</span>
-                <select name="service" required defaultValue="">
-                  <option value="" disabled>Selecione um serviço</option>
-                  {serviceDetails.map((service) => <option key={service.number} value={service.title}>{service.title}</option>)}
-                </select>
-              </label>
-              <button type="submit" className="prequote-submit"><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></button>
-              <p className="form-privacy">Ao enviar, você será direcionado ao WhatsApp com a sua seleção preenchida.</p>
-            </motion.form>
+            {preQuoteConfirmation ? (
+              <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }} className="prequote-success" role="status" aria-live="polite">
+                <div className="success-icon"><CheckCircle2 size={30} strokeWidth={1.75} /></div>
+                <span className="micro-label">Solicitação preparada</span>
+                <h3>Obrigado,<br /><em>{preQuoteConfirmation.customerName}.</em></h3>
+                <p>Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto para você concluir o atendimento.</p>
+                <a className="success-whatsapp" href={preQuoteConfirmation.whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Abrir WhatsApp novamente <ArrowUpRight size={16} /></a>
+                <button type="button" className="success-reset" onClick={() => setPreQuoteConfirmation(null)}>Fazer outro pré-orçamento</button>
+              </motion.div>
+            ) : (
+              <motion.form {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="prequote-form" onSubmit={handlePreQuote}>
+                <div className="form-title"><span className="micro-label">Dados do seu caminhão</span><b>Solicite seu pré-orçamento</b></div>
+                <label className="form-field">
+                  <span>Seu nome</span>
+                  <input name="customerName" required placeholder="Como devemos chamar você?" autoComplete="name" />
+                </label>
+                <label className="form-field">
+                  <span>Placa do veículo</span>
+                  <input name="plate" required placeholder="Ex.: ABC1D23 ou ABC-1234" autoCapitalize="characters" autoComplete="off" maxLength={8} />
+                </label>
+                <label className="form-field">
+                  <span>Modelo do caminhão</span>
+                  <input name="truckModel" required placeholder="Ex.: Scania R450, Volvo FH, Mercedes Actros" autoComplete="off" />
+                </label>
+                <label className="form-field">
+                  <span>Serviço desejado</span>
+                  <select name="service" required defaultValue="">
+                    <option value="" disabled>Selecione um serviço</option>
+                    {serviceDetails.map((service) => <option key={service.number} value={service.title}>{service.title}</option>)}
+                  </select>
+                </label>
+                <button type="submit" className="prequote-submit"><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></button>
+                <p className="form-privacy">Ao enviar, você será direcionado ao WhatsApp com a sua seleção preenchida.</p>
+              </motion.form>
+            )}
           </div>
         </section>
 

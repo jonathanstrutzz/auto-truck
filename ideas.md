@@ -84,3 +84,7 @@ O Laranja Carga permanece reservado a CTAs, palavras de prioridade, marcadores t
 O ritmo da página alterna deliberadamente entre oficina escura e painéis de carroceria em areia metálica. Somente hero, conversão e uma prova principal utilizam headlines máximos; serviços, FAQ, dados e bastidores adotam títulos técnicos mais contidos para manter o respiro editorial.
 
 As fotos reais de equipe recebem tratamento consistente de contraste, saturação controlada e sombra de pintura. A imagem precisa comunicar mãos em operação, brilho, lavagem, cabine, proteção ou acabamento — nunca apenas transporte ou manutenção genérica.
+
+O logo oficial funciona como uma **placa assinada** em cabeçalho, hero, conversão e rodapé, sempre com margem de respiro, contorno de sinalização e o recorte diagonal inspirado na cabine. Apenas o hero, a principal prova de resultado e a conversão final usam a escala máxima de headline; as demais seções seguem uma hierarquia técnica, compacta e operacional.
+
+As superfícies claras devem parecer painéis de carroceria: reflexos acetinados, linhas de inspeção finas e diagonais controladas. Rótulos, molduras de imagem, CTAs, controles de modal e placas de FAQ compartilham o mesmo recorte angular, reforçando a origem visual no logotipo Auto Truck.

@@ -817,7 +817,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 }
 
 /* Ritmo premium: pausa metálica para os bastidores e hierarquia documental nas seções secundárias. */
-.team-stage { background: linear-gradient(120deg, #f1ede5 0%, #d5cec3 52%, #ece6dd 100%); color: var(--black); }
+.team-stage { border-top: 1px solid rgba(12,12,13,.2); border-bottom: 1px solid rgba(12,12,13,.22); background: linear-gradient(120deg, rgba(241,237,229,.97) 0%, rgba(213,206,195,.98) 52%, rgba(236,230,221,.98) 100%), repeating-linear-gradient(90deg, transparent 0 68px, rgba(12,12,13,.045) 69px 70px), radial-gradient(ellipse at 84% 16%, rgba(255,255,255,.85), transparent 29%); color: var(--black); }
 .team-stage::before { top: auto; right: -135px; bottom: 42px; border-color: rgba(12,12,13,.13); box-shadow: 0 26px 0 rgba(12,12,13,.025); }
 .team-stage::after { color: rgba(12,12,13,.38); }
 .team-heading h2 { max-width: 680px; color: var(--black); font-size: clamp(48px, 5.2vw, 74px); line-height: .84; }
@@ -828,6 +828,23 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .team-brand-chip span { padding-right: 7px; color: rgba(255,255,255,.68); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
 .team-photo { border-color: rgba(12,12,13,.22); box-shadow: 8px 10px 0 rgba(12,12,13,.13); }
 .team-photo img { filter: contrast(1.06) saturate(.88) brightness(.9); }
+.team-photo-action { position: absolute; inset: 0; width: 100%; border: 0; padding: 0; color: inherit; background: transparent; text-align: left; }
+.team-photo-action:focus-visible { outline: 3px solid var(--orange); outline-offset: -5px; }
+.team-photo-expand { position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 17px 7px 9px; color: #fff; background: rgba(10,10,11,.78); clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 100%, 0 100%); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .08em; opacity: 0; text-transform: uppercase; transform: translateY(-5px); transition: opacity .18s ease, transform .18s ease; }
+.team-photo:hover .team-photo-expand, .team-photo:focus-within .team-photo-expand { opacity: 1; transform: translateY(0); }
+
+/* Modal de bastidores: uma inspeção de imagem com materiais escuros, controles técnicos e foco visível. */
+.team-lightbox { width: min(960px, calc(100vw - 32px)); max-width: none; gap: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 0; padding: 0; background: linear-gradient(135deg, #101012 0 82%, #151518 82%); clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%); color: #fff; box-shadow: 18px 20px 0 rgba(255,87,27,.2); }
+.team-lightbox-topline { display: flex; justify-content: space-between; padding: 15px 20px 0; color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.team-lightbox-title { margin: 10px 62px 0 20px; color: #fff; font: 700 clamp(30px, 4vw, 52px)/.88 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.team-lightbox-description { margin: 10px 78px 17px 20px; color: #aaa49d; font-size: 12px; line-height: 1.55; }
+.team-lightbox-image { display: block; width: 100%; height: min(60vh, 640px); object-fit: contain; background: #050506; }
+.team-lightbox-controls { display: flex; justify-content: space-between; gap: 12px; padding: 13px 20px 17px; }
+.team-lightbox-controls button { display: inline-flex; align-items: center; gap: 7px; border: 0; padding: 7px 13px; color: #f2eee7; background: rgba(255,255,255,.07); clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%); font: 800 9px "IBM Plex Mono", monospace; letter-spacing: .05em; text-transform: uppercase; transition: color .16s ease, background .16s ease; }
+.team-lightbox-controls button:hover { color: var(--orange-soft); background: rgba(255,87,27,.13); }
+.team-lightbox-controls button:focus-visible, .team-lightbox-close:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.team-lightbox-close { position: absolute; top: 15px; right: 16px; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(255,255,255,.35); color: #fff; background: rgba(16,16,18,.85); clip-path: polygon(0 0, 100% 0, 100% 74%, 74% 100%, 0 100%); transition: border-color .16s ease, color .16s ease; }
+.team-lightbox-close:hover { border-color: var(--orange); color: var(--orange-soft); }
 .team-manifesto { background: #111113; color: #fff; box-shadow: 8px 10px 0 rgba(255,87,27,.18); }
 .team-manifesto .micro-label { color: var(--orange-soft); }
 .team-manifesto p { color: #fff; }
@@ -838,7 +855,21 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .faq-item button b { font-size: 22px; }
 .service-detail-heading h2, .services-head h2, .timeline-heading h2 { font-size: clamp(48px, 5.15vw, 74px); }
 
+/* Hierarquia operacional: só os momentos de decisão usam escala máxima de display. */
+.services-head h2, .service-detail-heading h2, .timeline-heading h2, .gallery-heading h2, .faq-intro h2 { max-width: 760px; font-size: clamp(42px, 4.1vw, 62px); line-height: .88; }
+.brand-logo, .hero-brand-plate, .contact-brand-plate, .footer-logo { outline: 1px solid rgba(255,87,27,.26); outline-offset: -1px; }
+.brand-logo, .footer-logo { box-shadow: 8px 9px 0 rgba(255,87,27,.12); }
+
 @media (max-width: 600px) {
-  .team-heading h2, .faq-intro h2, .service-detail-heading h2, .services-head h2, .timeline-heading h2 { font-size: 48px; }
+  .team-heading h2 { font-size: 48px; }
+  .faq-intro h2, .service-detail-heading h2, .services-head h2, .timeline-heading h2, .gallery-heading h2 { font-size: 43px; }
   .team-brand-chip { margin-top: 19px; }
+  .team-photo-expand { top: 12px; left: 12px; opacity: 1; transform: none; }
+  .team-lightbox { width: calc(100vw - 20px); }
+  .team-lightbox-topline { padding: 13px 14px 0; }
+  .team-lightbox-title { margin: 9px 52px 0 14px; font-size: 35px; }
+  .team-lightbox-description { margin: 8px 53px 14px 14px; font-size: 11px; }
+  .team-lightbox-image { height: min(58vh, 500px); }
+  .team-lightbox-controls { padding: 12px 14px 15px; }
+  .team-lightbox-close { top: 11px; right: 11px; }
 }

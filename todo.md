@@ -62,3 +62,6 @@
 - [x] Estruturar a seção dedicada à equipe e aos bastidores.
 - [x] Preparar a seção para receber fotos reais da oficina.
 - [x] Validar a apresentação em desktop e mobile.
+- [x] Definir a interação de ampliação para os registros de bastidores.
+- [x] Implementar modal acessível com controles de navegação entre as fotos.
+- [x] Validar a ampliação em desktop e mobile.

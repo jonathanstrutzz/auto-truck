@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
   Building2,
   Camera,
+  ChevronLeft,
   ChevronRight,
   ChevronDown,
   CheckCircle2,
@@ -18,6 +19,7 @@ import {
   MapPinned,
   Menu,
   MessageCircle,
+  Maximize2,
   Minus,
   Phone,
   Plus,
@@ -30,6 +32,7 @@ import {
   X,
 } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
@@ -51,6 +54,30 @@ const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardi
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
 const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
 const WHATSAPP_LOCATION_SHARE_URL = `https://wa.me/?text=${encodeURIComponent(`📍 Auto Truck Estética Para Caminhões\n${OFFICIAL_ADDRESS}\n\nComo chegar: ${MAPS_ROUTE_URL}`)}`;
+
+const teamRecords = [
+  {
+    source: TEAM_WASH_IMAGE,
+    label: "Registro real 01",
+    title: "Lavagem em ação.",
+    description: "Lavagem detalhada em andamento na cabine e roda do caminhão.",
+    alt: "Profissional realizando lavagem detalhada na roda e cabine de um caminhão azul",
+  },
+  {
+    source: TEAM_WORKSHOP_IMAGE,
+    label: "Registro real 02",
+    title: "Estrutura em operação.",
+    description: "Profissional trabalhando em plataforma elevatória em frente à oficina Auto Truck.",
+    alt: "Profissional trabalhando em plataforma elevatória em frente à oficina Auto Truck",
+  },
+  {
+    source: TEAM_WASH_DETAIL_IMAGE,
+    label: "Registro real 03",
+    title: "Processo com precisão.",
+    description: "Registro do processo de lavagem detalhada realizado pela equipe Auto Truck.",
+    alt: "Registro do processo de lavagem detalhada realizado pela equipe Auto Truck",
+  },
+];
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
@@ -262,8 +289,11 @@ export default function Home() {
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
   const [soundEnabled, setSoundEnabled] = useState(false);
+  const [activeTeamRecordIndex, setActiveTeamRecordIndex] = useState<number | null>(null);
   const soundtrackRef = useRef<HTMLAudioElement>(null);
   const activeVideo = videoShowcase.find((video) => video.id === activeVideoId) ?? videoShowcase[0];
+  const activeTeamRecord = activeTeamRecordIndex === null ? null : teamRecords[activeTeamRecordIndex];
+  const activeTeamRecordNumber = activeTeamRecordIndex === null ? 0 : activeTeamRecordIndex + 1;
 
   useEffect(() => {
     const onScroll = () => {
@@ -277,6 +307,26 @@ export default function Home() {
   }, []);
 
   useEffect(() => () => soundtrackRef.current?.pause(), []);
+
+  useEffect(() => {
+    if (activeTeamRecordIndex === null) return;
+
+    const navigateTeamRecords = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        setActiveTeamRecordIndex((current) => current === null ? null : (current + 1) % teamRecords.length);
+      }
+      if (event.key === "ArrowLeft") {
+        setActiveTeamRecordIndex((current) => current === null ? null : (current - 1 + teamRecords.length) % teamRecords.length);
+      }
+    };
+
+    window.addEventListener("keydown", navigateTeamRecords);
+    return () => window.removeEventListener("keydown", navigateTeamRecords);
+  }, [activeTeamRecordIndex]);
+
+  const changeTeamRecord = (direction: -1 | 1) => {
+    setActiveTeamRecordIndex((current) => current === null ? null : (current + direction + teamRecords.length) % teamRecords.length);
+  };
 
   const handlePreQuote = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -709,21 +759,20 @@ export default function Home() {
             <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>Registros reais da rotina da Auto Truck: profissionais em ação, equipamentos em operação e o padrão de atenção que acompanha cada caminhão.</motion.p>
           </div>
           <div className="page-width team-media-grid">
-            <motion.figure {...reveal} className="team-photo team-photo-primary">
-              <img src={TEAM_WASH_IMAGE} alt="Profissional realizando lavagem detalhada na roda e cabine de um caminhão azul" />
-              <div className="team-photo-shade" />
-              <figcaption><span className="micro-label">Registro real 01</span><b>Lavagem<br />em ação.</b></figcaption>
-            </motion.figure>
-            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.06 }} className="team-photo team-photo-workshop">
-              <img src={TEAM_WORKSHOP_IMAGE} alt="Profissional trabalhando em plataforma elevatória em frente à oficina Auto Truck" />
-              <div className="team-photo-shade" />
-              <figcaption><span className="micro-label">Registro real 02</span><b>Estrutura<br />em operação.</b></figcaption>
-            </motion.figure>
-            <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.12 }} className="team-photo team-photo-detail">
-              <img src={TEAM_WASH_DETAIL_IMAGE} alt="Registro do processo de lavagem detalhada realizado pela equipe Auto Truck" />
-              <div className="team-photo-shade" />
-              <figcaption><span className="micro-label">Registro real 03</span><b>Processo<br />com precisão.</b></figcaption>
-            </motion.figure>
+            {teamRecords.map((record, index) => (
+              <motion.figure
+                {...reveal}
+                transition={{ ...reveal.transition, delay: index * 0.06 }}
+                className={`team-photo ${index === 0 ? "team-photo-primary" : index === 1 ? "team-photo-workshop" : "team-photo-detail"}`}
+                key={record.source}
+              >
+                <img src={record.source} alt={record.alt} />
+                <div className="team-photo-shade" />
+                <span className="team-photo-expand"><Maximize2 size={15} /> Ver detalhes</span>
+                <figcaption><span className="micro-label">{record.label}</span><b>{record.title.replace(" ", "\n")}</b></figcaption>
+                <button type="button" className="team-photo-action" onClick={() => setActiveTeamRecordIndex(index)} aria-label={`Ampliar foto: ${record.title}`} />
+              </motion.figure>
+            ))}
             <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.16 }} className="team-manifesto">
               <span className="micro-label">Auto Truck por dentro</span>
               <p>Cada etapa começa na rotina. É ali que o cuidado técnico, o equipamento certo e a atenção ao acabamento se encontram.</p>
@@ -731,6 +780,24 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        <Dialog open={activeTeamRecordIndex !== null} onOpenChange={(open) => { if (!open) setActiveTeamRecordIndex(null); }}>
+          <DialogContent showCloseButton={false} className="team-lightbox" aria-describedby="team-lightbox-description">
+            {activeTeamRecord && (
+              <>
+                <div className="team-lightbox-topline"><span>{activeTeamRecord.label}</span><span>{String(activeTeamRecordNumber).padStart(2, "0")} / {String(teamRecords.length).padStart(2, "0")}</span></div>
+                <DialogTitle className="team-lightbox-title">{activeTeamRecord.title}</DialogTitle>
+                <DialogDescription id="team-lightbox-description" className="team-lightbox-description">{activeTeamRecord.description}</DialogDescription>
+                <img className="team-lightbox-image" src={activeTeamRecord.source} alt={activeTeamRecord.alt} />
+                <div className="team-lightbox-controls">
+                  <button type="button" onClick={() => changeTeamRecord(-1)} aria-label="Ver registro anterior"><ChevronLeft size={20} /> Anterior</button>
+                  <button type="button" onClick={() => changeTeamRecord(1)} aria-label="Ver próximo registro">Próximo <ChevronRight size={20} /></button>
+                </div>
+                <DialogClose asChild><button type="button" className="team-lightbox-close" aria-label="Fechar visualização ampliada"><X size={19} /></button></DialogClose>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
 
         <section id="duvidas" className="faq-stage">
           <div className="page-width faq-layout">

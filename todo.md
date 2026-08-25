@@ -11,3 +11,6 @@
 - [x] Estruturar os serviços detalhados de estética para caminhões.
 - [x] Criar o botão flutuante de orçamento com mensagem pré-preenchida no WhatsApp.
 - [x] Validar a nova seção e a experiência de contato em desktop e mobile.
+- [x] Substituir os serviços genéricos pela lista oficial da Auto Truck.
+- [x] Conectar cada serviço oficial a um orçamento pré-preenchido no WhatsApp.
+- [x] Validar a apresentação da lista em desktop e mobile.

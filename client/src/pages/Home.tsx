@@ -36,20 +36,20 @@ const navItems = [
 const services = [
   {
     number: "01",
-    title: "Lavagem detalhada",
-    text: "Cuidado completo por fora, com atenção às áreas que fazem seu caminhão se destacar na estrada.",
+    title: "Lavagens especializadas",
+    text: "Lavagem externa, do motor, de chassi e do cavalo para diferentes áreas da linha pesada.",
     icon: Sparkles,
   },
   {
     number: "02",
-    title: "Polimento técnico",
-    text: "Refinamento de pintura para recuperar profundidade, brilho e leitura perfeita das linhas da carroceria.",
+    title: "Polimentos e enceramento",
+    text: "Polimento de cabine, tanque e roda, além de enceramento específico para cabine.",
     icon: SprayCan,
   },
   {
     number: "03",
-    title: "Higienização interna",
-    text: "Cabine renovada para quem passa horas transformando cada rota em resultado.",
+    title: "Cabine higienizada",
+    text: "Higienização simples ou completa com desmontagem, conforme a necessidade do caminhão.",
     icon: ShieldCheck,
   },
 ];
@@ -81,27 +81,63 @@ const timelineEvents = [
 const serviceDetails = [
   {
     number: "01",
-    title: "Lavagem detalhada externa",
-    description: "Um processo pensado para retirar a sujeira acumulada da operação e devolver leitura limpa à carroceria, rodas, caixas, pneus e acabamentos externos.",
-    includes: ["Pré-lavagem", "Descontaminação", "Rodas e pneus", "Acabamentos externos"],
+    title: "Lavagem externa",
+    description: "Lavagem dedicada à parte externa do caminhão, para manter a apresentação visual da operação em dia.",
+    includes: ["LAVAGEM", "EXTERNA"],
   },
   {
     number: "02",
-    title: "Polimento técnico e revitalização",
-    description: "Avaliação do estado da pintura e tratamento orientado ao nível de desgaste para recuperar profundidade, brilho e uniformidade visual.",
-    includes: ["Avaliação da pintura", "Refino de brilho", "Revitalização visual", "Finalização técnica"],
+    title: "Lavagem do motor",
+    description: "Lavagem direcionada ao motor, conforme a necessidade de cuidado e apresentação do conjunto.",
+    includes: ["LAVAGEM", "MOTOR"],
   },
   {
     number: "03",
-    title: "Higienização de cabine",
-    description: "Cuidado interno para renovar o ambiente de trabalho do motorista, com atenção a superfícies, bancos, painéis, vidros e pontos de uso frequente.",
-    includes: ["Painéis e comandos", "Bancos e revestimentos", "Vidros internos", "Acabamentos da cabine"],
+    title: "Lavagem de chassi",
+    description: "Lavagem voltada ao chassi do caminhão, reforçando o cuidado com as áreas de uso intenso.",
+    includes: ["LAVAGEM", "CHASSI"],
   },
   {
     number: "04",
-    title: "Proteção e acabamento",
-    description: "Etapas de finalização que ajudam a preservar o visual tratado e reforçam a presença de cada detalhe no uso diário do caminhão.",
-    includes: ["Plásticos e borrachas", "Pneus e rodas", "Vidros externos", "Acabamento visual"],
+    title: "Lavagem do cavalo",
+    description: "Lavagem específica do cavalo mecânico para uma apresentação mais limpa e alinhada à sua rotina de trabalho.",
+    includes: ["LAVAGEM", "CAVALO"],
+  },
+  {
+    number: "05",
+    title: "Higienização de cabine simples",
+    description: "Higienização para renovar o ambiente da cabine e melhorar a experiência de quem vive a estrada todos os dias.",
+    includes: ["HIGIENIZAÇÃO", "CABINE"],
+  },
+  {
+    number: "06",
+    title: "Higienização de cabine completa",
+    description: "Higienização completa de cabine com desmontagem, indicada para um cuidado mais aprofundado do ambiente interno.",
+    includes: ["HIGIENIZAÇÃO", "COM DESMONTAGEM"],
+  },
+  {
+    number: "07",
+    title: "Polimento de cabine",
+    description: "Polimento voltado à cabine para valorizar o brilho e a presença do caminhão.",
+    includes: ["POLIMENTO", "CABINE"],
+  },
+  {
+    number: "08",
+    title: "Polimento de tanque",
+    description: "Polimento realizado por tanque, para elevar o padrão visual de cada componente tratado.",
+    includes: ["POLIMENTO", "CADA TANQUE"],
+  },
+  {
+    number: "09",
+    title: "Polimento de roda",
+    description: "Polimento realizado por roda, com foco em acabamento visual e apresentação do conjunto.",
+    includes: ["POLIMENTO", "CADA RODA"],
+  },
+  {
+    number: "10",
+    title: "Enceramento de cabine",
+    description: "Enceramento de cabine para realçar o acabamento visual após o cuidado estético do caminhão.",
+    includes: ["ENCERAMENTO", "CABINE"],
   },
 ];
 
@@ -261,7 +297,7 @@ export default function Home() {
                     <p>{service.description}</p>
                   </div>
                   <div className="detail-includes">
-                    <span className="micro-label">Pode incluir</span>
+                    <span className="micro-label">Categoria</span>
                     <div>{service.includes.map((item) => <span key={item}>{item}</span>)}</div>
                   </div>
                   <a className="detail-budget" href={budgetLink(service.title)} target="_blank" rel="noreferrer">

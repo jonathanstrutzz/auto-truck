@@ -29,3 +29,7 @@
 - [x] Criar o formulário conectado ao WhatsApp com a mensagem preenchida.
 - [x] Adicionar a categoria de equipe em ação e bastidores à galeria.
 - [x] Validar o formulário e a galeria em desktop e mobile.
+- [x] Adicionar nome do cliente e placa do veículo ao pré-orçamento.
+- [x] Atualizar a mensagem enviada ao WhatsApp com os novos dados.
+- [x] Implementar filtros de serviços, unidade e bastidores na galeria.
+- [x] Validar os fluxos em desktop e mobile.

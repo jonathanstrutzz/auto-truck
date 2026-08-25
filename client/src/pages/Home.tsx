@@ -29,6 +29,7 @@ const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
+const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
 const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
@@ -184,7 +185,7 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [galleryCategory, setGalleryCategory] = useState<"unidade" | "bastidores">("unidade");
+  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores">("servicos");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -196,9 +197,11 @@ export default function Home() {
   const handlePreQuote = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const customerName = String(data.get("customerName") || "Não informado");
+    const plate = String(data.get("plate") || "Não informada");
     const model = String(data.get("truckModel") || "Não informado");
     const service = String(data.get("service") || "Não informado");
-    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nModelo do caminhão: ${model}\nServiço desejado: ${service}`;
+    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}`;
     window.open(`https://wa.me/5562992158095?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
@@ -353,6 +356,14 @@ export default function Home() {
             <motion.form {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="prequote-form" onSubmit={handlePreQuote}>
               <div className="form-title"><span className="micro-label">Dados do seu caminhão</span><b>Solicite seu pré-orçamento</b></div>
               <label className="form-field">
+                <span>Seu nome</span>
+                <input name="customerName" required placeholder="Como devemos chamar você?" autoComplete="name" />
+              </label>
+              <label className="form-field">
+                <span>Placa do veículo</span>
+                <input name="plate" required placeholder="Ex.: ABC1D23 ou ABC-1234" autoCapitalize="characters" autoComplete="off" maxLength={8} />
+              </label>
+              <label className="form-field">
                 <span>Modelo do caminhão</span>
                 <input name="truckModel" required placeholder="Ex.: Scania R450, Volvo FH, Mercedes Actros" autoComplete="off" />
               </label>
@@ -476,23 +487,34 @@ export default function Home() {
             <motion.div {...reveal} className="gallery-heading">
               <p className="eyebrow graphite"><span /> Galeria Auto Truck</p>
               <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
-              <p>A unidade Auto Truck Estética em Anápolis, preparada para receber caminhões e tratar cada detalhe com o padrão da marca.</p>
+              <p>Imagens que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
               <div className="gallery-heading-rule" />
-              <span className="gallery-microcopy">REGISTRO REAL DA UNIDADE · FOTO 01</span>
+              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "REGISTRO REAL DA UNIDADE · FOTO 02" : "ARQUIVO DE BASTIDORES · CATEGORIA 03"}</span>
               <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
-                <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>01</span></button>
-                <button type="button" role="tab" aria-selected={galleryCategory === "bastidores"} className={galleryCategory === "bastidores" ? "active" : ""} onClick={() => setGalleryCategory("bastidores")}>Equipe & bastidores <span>02</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "servicos"} className={galleryCategory === "servicos" ? "active" : ""} onClick={() => setGalleryCategory("servicos")}>Serviços <span>01</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>02</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "bastidores"} className={galleryCategory === "bastidores" ? "active" : ""} onClick={() => setGalleryCategory("bastidores")}>Equipe & bastidores <span>03</span></button>
               </div>
               <a className="gallery-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer">
                 <MapPinned size={17} /> Traçar rota no Google Maps <ArrowUpRight size={16} />
               </a>
             </motion.div>
 
-            {galleryCategory === "unidade" ? (
+            {galleryCategory === "servicos" ? (
+              <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card service-gallery-card">
+                <img src={SERVICE_GALLERY_IMAGE} alt="Processo de polimento e acabamento em caminhão" />
+                <div className="gallery-photo-tint" />
+                <div className="gallery-photo-number">01</div>
+                <figcaption>
+                  <span className="micro-label">Serviços em ação</span>
+                  <strong>Precisão no processo.<br />Presença no resultado.</strong>
+                </figcaption>
+              </motion.figure>
+            ) : galleryCategory === "unidade" ? (
               <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card">
                 <img src={WORKSHOP_GALLERY_IMAGE} alt="Fachada da Auto Truck Estética com caminhões no pátio da oficina" />
                 <div className="gallery-photo-tint" />
-                <div className="gallery-photo-number">01</div>
+                <div className="gallery-photo-number">02</div>
                 <figcaption>
                   <span className="micro-label">Unidade Auto Truck</span>
                   <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
@@ -500,7 +522,7 @@ export default function Home() {
               </motion.figure>
             ) : (
               <motion.article {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="backstage-gallery-card">
-                <div className="backstage-symbol"><Camera size={37} strokeWidth={1.4} /><span>02</span></div>
+                <div className="backstage-symbol"><Camera size={37} strokeWidth={1.4} /><span>03</span></div>
                 <div><span className="micro-label">Equipe em ação e bastidores</span><h3>O próximo registro<br />é da nossa <em>equipe.</em></h3><p>Esta categoria está preparada para receber fotos reais da equipe trabalhando e dos processos dentro da oficina.</p></div>
                 <span className="backstage-footer">ENVIE NOVAS FOTOS PARA COMPLETAR O ARQUIVO VISUAL</span>
               </motion.article>

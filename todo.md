@@ -52,3 +52,6 @@
 - [x] Indexar marcas, modelos e termos de serviço para a pesquisa.
 - [x] Criar a barra de pesquisa integrada aos filtros existentes.
 - [x] Validar a pesquisa em desktop e mobile.
+- [x] Preparar a foto fornecida do caminhão Scania para uso persistente.
+- [x] Inserir exclusivamente a foto do caminhão no portfólio.
+- [x] Validar a nova apresentação em desktop e mobile.

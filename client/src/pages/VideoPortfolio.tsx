@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
+const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-r450_7db39b27.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20Auto%20Truck.";
 
 const portfolioVideos = [
@@ -234,6 +235,22 @@ export default function VideoPortfolio() {
               <button type="button" onClick={() => { setActiveCategory("todos"); setActiveModel("todos"); setSearchQuery(""); setActiveId(portfolioVideos[0].id); }}>Ver todos os vídeos <ArrowUpRight size={16} /></button>
             </motion.div>
           )}
+        </div>
+      </section>
+
+      <section className="portfolio-photo-spotlight">
+        <div className="portfolio-width photo-spotlight-layout">
+          <div className="photo-spotlight-copy">
+            <span className="portfolio-detail-label">Caminhão em destaque</span>
+            <h2>Presença que<br /><em>se transforma.</em></h2>
+            <p>Registro exclusivo de um Scania R450, incluído no portfólio para valorizar a força visual da linha pesada.</p>
+            <span className="photo-spotlight-note">IMAGEM FORNECIDA PELA AUTO TRUCK · DESTAQUE 01</span>
+          </div>
+          <figure className="scania-spotlight-card">
+            <img src={SCANIA_SPOTLIGHT_IMAGE} alt="Caminhão Scania R450 branco em registro fornecido para o portfólio" />
+            <div className="scania-spotlight-shade" />
+            <figcaption><span>01</span><b>Scania<br />R450</b></figcaption>
+          </figure>
         </div>
       </section>
 

@@ -483,6 +483,19 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-empty-state p { max-width: 450px; margin: 0 0 25px; color: #635e56; font-size: 13px; line-height: 1.75; }
 .portfolio-empty-state button { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 5px; border: 0; border-bottom: 1px solid var(--black); background: transparent; color: var(--black); font-size: 10px; font-weight: 800; transition: color .16s ease, border-color .16s ease; }
 .portfolio-empty-state button:hover { border-color: var(--orange); color: var(--orange); }
+.portfolio-photo-spotlight { position: relative; overflow: hidden; padding: 116px 0; background: #111113; color: #fff; }
+.portfolio-photo-spotlight::before { content: ""; position: absolute; top: 50%; left: -13%; width: 64%; height: 135px; border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.06); transform: rotate(-8deg); }
+.photo-spotlight-layout { position: relative; display: grid; grid-template-columns: .83fr 1.17fr; gap: clamp(50px, 10vw, 145px); align-items: center; }
+.photo-spotlight-copy h2 { margin: 14px 0 24px; color: #fff; }
+.photo-spotlight-copy h2 em { color: var(--orange); font-style: normal; }
+.photo-spotlight-copy > p { max-width: 365px; margin: 0; color: #aaa49d; font-size: 13px; line-height: 1.8; }
+.photo-spotlight-note { display: block; max-width: 340px; margin-top: 33px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.17); color: var(--orange-soft); font: 700 8px/1.55 "IBM Plex Mono", monospace; letter-spacing: .09em; }
+.scania-spotlight-card { position: relative; min-height: 630px; margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.22); clip-path: polygon(0 0, calc(100% - 42px) 0, 100% 42px, 100% 100%, 0 100%); background: #202023; box-shadow: 18px 20px 0 rgba(255,87,27,.18); }
+.scania-spotlight-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.scania-spotlight-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,9,.04), transparent 48%, rgba(8,8,9,.7)); }
+.scania-spotlight-card figcaption { position: absolute; right: 22px; bottom: 22px; left: 22px; display: flex; align-items: end; justify-content: space-between; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.44); }
+.scania-spotlight-card figcaption span { padding: 6px 7px; background: var(--orange); color: #fff; font: 700 9px "IBM Plex Mono", monospace; }
+.scania-spotlight-card figcaption b { color: #fff; font: 700 39px/.78 "Barlow Condensed", sans-serif; letter-spacing: -.02em; text-transform: uppercase; }
 .portfolio-contact { position: relative; overflow: hidden; padding: 105px 0; background: linear-gradient(112deg, #0a0a0b, #171719 59%, #09090a); }
 .portfolio-contact::before { content: ""; position: absolute; top: -58px; right: -85px; width: 420px; height: 180px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,255,255,.012); transform: rotate(-10deg); }
 .portfolio-contact-inner { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
@@ -520,6 +533,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .portfolio-search { max-width: 560px; }
   .portfolio-model-filter-wrap { align-items: flex-start; flex-direction: column; gap: 10px; }
   .portfolio-video-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-spotlight-layout { grid-template-columns: 1fr; gap: 48px; }
+  .scania-spotlight-card { max-width: 670px; min-height: 560px; }
   .desktop-links, .nav-action { display: none; }
   .mobile-trigger { display: grid; margin-left: auto; }
   .luxury-hero { min-height: 740px; }
@@ -599,6 +614,10 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .portfolio-video-grid { grid-template-columns: 1fr; }
   .portfolio-card { min-height: 255px; }
   .portfolio-empty-state { min-height: 300px; padding: 26px 22px; }
+  .portfolio-photo-spotlight { padding: 80px 0; }
+  .photo-spotlight-layout { gap: 39px; }
+  .scania-spotlight-card { min-height: 460px; box-shadow: 10px 11px 0 rgba(255,87,27,.16); }
+  .scania-spotlight-card figcaption { right: 18px; bottom: 18px; left: 18px; }
   .portfolio-contact { padding: 78px 0; }
   .portfolio-contact-inner { align-items: flex-start; flex-direction: column; gap: 31px; }
   .mobile-menu-content { padding: 105px 24px 26px; }

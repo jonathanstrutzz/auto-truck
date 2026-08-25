@@ -1,0 +1,17 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-6e70452c-d305-4c9e-8715-473ae77c294b)
+[8s] Status: Analyzing video content with AI...
+[25s] Status: Analysis completed
+[25s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_0464(1)_analysis_20260825_211145.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está a descrição técnica do vídeo para curadoria:
+
+*   **Caminhão ou Serviço:** Caminhão Volvo FH preto, modelo Globetrotter, com a inscrição "GUARESCHI" no para-brisa. O veículo traciona um conjunto bi-trem basculante preto da marca Librelato.
+*   **Ações de Equipe:** Não há equipe visível realizando serviços no vídeo. A cena foca exclusivamente no caminhão em movimento, saindo de uma área coberta para a estrada.
+*   **Acabamento:** O veículo e os implementos apresentam um acabamento impecável, com pintura preta de alto brilho, rodas cromadas limpas e lonas bem esticadas, demonstrando excelente estado de conservação.
+*   **Enquadramento:** O vídeo utiliza um enquadramento inclinado (ângulo holandês) e dinâmico, acompanhando a passagem do caminhão em um plano médio que destaca o comprimento e os detalhes do conjunto.
+*   **Melhor Uso:** **Portfólio de vídeo**. A estética imponente e o brilho do conjunto são ideais para demonstrar o padrão dos veículos associados ou atendidos pela marca, servindo como um excelente material de vitrine.

@@ -109,19 +109,31 @@ const portfolioVideos = [
     model: "daf",
     searchTerms: ["daf", "bastidores", "equipe", "lavagem", "mangueira", "oficina", "processo", "rotina"],
   },
+  {
+    id: "volvo-fh-guareschi",
+    number: "09",
+    label: "Volvo FH em movimento",
+    title: "Brilho que acompanha o conjunto.",
+    description: "Registro de um Volvo FH Guareschi com conjunto bi-trem, destacando pintura preta, rodas limpas e presença na estrada.",
+    source: "/manus-storage/auto-truck-volvo-fh-guareschi_c2cd16f3.mp4",
+    poster: "/manus-storage/auto-truck-volvo-fh-guareschi-poster_ecdb93b4.jpg",
+    category: "destaques",
+    model: "volvo-fh",
+    searchTerms: ["volvo", "fh", "globetrotter", "guareschi", "bi-trem", "librelato", "preto", "rodas", "brilho", "movimento", "destaque"],
+  },
 ];
 
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "08" },
+  { id: "todos", label: "Todos", count: "09" },
   { id: "lavagem", label: "Lavagem", count: "03" },
   { id: "polimento", label: "Polimento", count: "02" },
-  { id: "destaques", label: "Destaques", count: "03" },
+  { id: "destaques", label: "Destaques", count: "04" },
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
 
 const modelFilters = [
-  { id: "todos", label: "Todos os modelos", count: "08" },
-  { id: "volvo-fh", label: "Volvo FH", count: "01" },
+  { id: "todos", label: "Todos os modelos", count: "09" },
+  { id: "volvo-fh", label: "Volvo FH", count: "02" },
   { id: "volvo", label: "Volvo", count: "01" },
   { id: "scania", label: "Scania", count: "01" },
   { id: "daf", label: "DAF", count: "01" },

@@ -75,3 +75,9 @@
 - [x] Validar a apresentação do Instagram em desktop e mobile.
 - [x] Adicionar botão flutuante do Instagram próximo ao pré-orçamento.
 - [x] Validar os atalhos flutuantes em desktop e mobile.
+- [ ] Confirmar a fonte das postagens recentes do Instagram.
+- [ ] Criar a seção de galeria para publicações do Instagram.
+- [ ] Validar a seção do Instagram em desktop e mobile.
+- [x] Recuperar e preparar o vídeo IMG_0464.MOV.
+- [x] Classificar e integrar o novo vídeo ao portfólio audiovisual.
+- [x] Validar a nova publicação em desktop e mobile.

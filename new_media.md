@@ -11,3 +11,5 @@
 | `IMG_7541.MOV` | Fachada, dois DAFs e profissional em ação com mangueira e pano. | Portfólio em vídeo e bastidores. |
 
 Todos os registros acima foram enviados pelo usuário. Não devem ser classificados como comparações de antes e depois sem pares equivalentes do mesmo veículo e serviço.
+
+| `IMG_0464(1).MOV` | Volvo FH Globetrotter preto Guareschi, com conjunto bi-trem Librelato, em movimento e com acabamento brilhante. | Portfólio em vídeo — destaque Volvo FH. |

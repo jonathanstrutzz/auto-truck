@@ -49,6 +49,7 @@ const navItems = [
   { label: "Serviços", href: "#servicos" },
   { label: "Pré-orçamento", href: "#pre-orcamento" },
   { label: "Experiência", href: "#experiencia" },
+  { label: "Vídeos", href: "/portfolio" },
   { label: "Galeria", href: "#galeria" },
   { label: "História", href: "#historia" },
   { label: "Padrão Auto Truck", href: "#padrao" },
@@ -512,6 +513,7 @@ export default function Home() {
                 <span><small>Trilha original da Auto Truck</small>{soundEnabled ? "Pausar trilha sonora" : "Ativar trilha sonora"}</span>
                 <i>{soundEnabled ? "ON" : "OFF"}</i>
               </button>
+              <a className="video-portfolio-link" href="/portfolio">Abrir portfólio completo <ArrowUpRight size={17} /></a>
             </motion.div>
 
             <motion.div key={activeVideo.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.38, ease: "easeOut" }} className="video-frame">

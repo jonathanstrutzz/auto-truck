@@ -39,3 +39,7 @@
 - [x] Preparar os vídeos selecionados para carregamento de alta definição.
 - [x] Criar uma trilha sonora profissional e controles de áudio respeitosos ao usuário.
 - [x] Implementar e validar a seção audiovisual em desktop e mobile.
+- [x] Definir os blocos de destaque e categorias do portfólio em vídeo.
+- [x] Criar a nova página de portfólio e a rota de navegação.
+- [x] Integrar os vídeos em um player de destaque e uma grade de conteúdos.
+- [x] Validar a página de portfólio em desktop e mobile.

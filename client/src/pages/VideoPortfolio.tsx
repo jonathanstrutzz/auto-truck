@@ -3,13 +3,14 @@
  * Esta página organiza o conteúdo audiovisual da marca com foco em seleção, ritmo e controle explícito do visitante.
  */
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, MessageCircle, Play, Search, Volume2, VolumeX, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Instagram, MessageCircle, Play, Search, Volume2, VolumeX, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-vermelha_d1b7fe78.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20Auto%20Truck.";
+const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
 
 const portfolioVideos = [
   {
@@ -234,6 +235,7 @@ export default function VideoPortfolio() {
               <i>{soundEnabled ? "ON" : "OFF"}</i>
             </button>
             <a className="portfolio-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Falar com a Auto Truck <ArrowUpRight size={16} /></a>
+            <a className="portfolio-instagram" href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram size={17} /> Acompanhar no Instagram <ArrowUpRight size={15} /></a>
           </aside>
         </div>
       </section>

@@ -434,6 +434,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .button-primary.full { width: 100%; margin-bottom: 19px; }
 .phone-link { display: inline-flex; align-items: center; gap: 8px; color: #5c5750; font-size: 11px; font-weight: 800; }
 .phone-link:hover { color: var(--orange); }
+.instagram-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; color: #5c5750; font-size: 11px; font-weight: 800; }
+.instagram-link:hover { color: var(--orange); }
 .contact-route { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: #5c5750; font-size: 11px; font-weight: 800; }
 .contact-route:hover { color: var(--orange); }
 .location-info-grid { position: relative; display: grid; grid-template-columns: .76fr 1.24fr; gap: 28px; margin-top: 82px; }
@@ -507,6 +509,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-audio i { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; font-style: normal; }
 .portfolio-whatsapp { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.45); color: #fff; font-size: 11px; font-weight: 800; transition: color .16s ease, border-color .16s ease; }
 .portfolio-whatsapp:hover { border-color: var(--orange); color: var(--orange-soft); }
+.portfolio-instagram { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: rgba(255,255,255,.65); font-size: 10px; font-weight: 800; transition: color .16s ease; }
+.portfolio-instagram:hover { color: var(--orange-soft); }
 .portfolio-grid-section { position: relative; overflow: hidden; padding: 118px 0 132px; background: linear-gradient(118deg, #f0ece4 0%, #d8d1c7 52%, #efeae2 100%); color: var(--black); }
 .portfolio-grid-section::before { content: ""; position: absolute; right: -145px; bottom: 55px; width: 580px; height: 118px; border-top: 1px solid rgba(12,12,13,.13); border-bottom: 1px solid rgba(12,12,13,.09); transform: rotate(-8deg); }
 .portfolio-section-heading { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .7fr; gap: 55px; align-items: end; margin-bottom: 65px; }
@@ -580,6 +584,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .footer-logo img { width: 160px; max-height: 59px; }
 .premium-footer p { max-width: 275px; margin: 0; color: #99948c; font-size: 11px; line-height: 1.65; }
 .footer-details { display: flex; flex-direction: column; align-items: end; gap: 6px; color: #69655e; font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.footer-instagram { display: inline-flex; align-items: center; gap: 6px; color: #aaa49d; transition: color .16s ease; }
+.footer-instagram:hover { color: var(--orange-soft); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

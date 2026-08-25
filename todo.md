@@ -71,3 +71,5 @@
 - [x] Catalogar as novas fotos e vídeos reais enviados.
 - [x] Selecionar registros para galeria, bastidores e portfólio audiovisual.
 - [x] Integrar e validar os novos conteúdos em desktop e mobile.
+- [x] Adicionar o link oficial do Instagram aos pontos de contato.
+- [x] Validar a apresentação do Instagram em desktop e mobile.

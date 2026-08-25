@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   ClipboardPenLine,
   Clock3,
+  Instagram,
   MapPin,
   MapPinned,
   Menu,
@@ -54,6 +55,7 @@ const VIDEO_SCANIA_CHEGADA = "/manus-storage/auto-truck-scania-chegada_ae5bd587.
 const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
+const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
 const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
 const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
@@ -874,6 +876,7 @@ export default function Home() {
                 <MessageCircle size={19} /> Chamar no WhatsApp
               </a>
               <a className="phone-link" href={PHONE_URL}><Phone size={16} /> Prefere ligar? Fale agora</a>
+              <a className="instagram-link" href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram size={16} /> Ver trabalhos no Instagram <ArrowUpRight size={14} /></a>
               <a className="contact-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer"><MapPinned size={16} /> Traçar rota até a oficina</a>
             </motion.div>
           </div>
@@ -912,7 +915,7 @@ export default function Home() {
         <div className="page-width footer-grid">
           <BrandLogo footer />
           <p>Estética para caminhões com presença, cuidado técnico e acabamento premium.</p>
-          <div className="footer-details"><span>Anápolis, Goiás</span><span>© 2026 Auto Truck</span></div>
+          <div className="footer-details"><a className="footer-instagram" href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram size={14} /> Instagram · @autotruck.estetica_</a><span>Anápolis, Goiás</span><span>© 2026 Auto Truck</span></div>
         </div>
       </footer>
     </div>

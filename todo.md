@@ -90,3 +90,7 @@
 - [x] Implementar filtros da galeria por marca de caminhão.
 - [x] Implementar transições suaves entre categorias da galeria.
 - [x] Validar as melhorias da galeria em desktop e mobile.
+- [x] Catalogar e analisar o novo lote de vídeos reais.
+- [x] Selecionar e preparar os melhores vídeos para publicação.
+- [x] Integrar os registros selecionados ao portfólio audiovisual.
+- [x] Validar o portfólio ampliado em desktop e mobile.

@@ -495,7 +495,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-brand span { color: rgba(255,255,255,.43); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
 .portfolio-back { display: inline-flex; align-items: center; gap: 8px; color: #ddd8d0; font-size: 11px; font-weight: 800; transition: color .16s ease, transform .16s ease; }
 .portfolio-back:hover { color: var(--orange-soft); transform: translateX(-2px); }
-.portfolio-hero { position: relative; min-height: 490px; display: flex; align-items: end; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,.15); background: linear-gradient(115deg, #111113 0%, #0c0c0e 54%, #171719 100%); }
+.portfolio-hero { position: relative; min-height: 490px; display: flex; align-items: end; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,.15); background: radial-gradient(ellipse at 72% 13%, rgba(255,255,255,.055), transparent 29%), linear-gradient(115deg, #111113 0%, #0c0c0e 54%, #171719 100%); }
+.portfolio-hero::before { content: ""; position: absolute; right: -3%; bottom: -57px; width: 58%; height: 155px; border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.045); background: linear-gradient(103deg, transparent 34%, rgba(255,255,255,.055) 47%, transparent 58%); transform: rotate(-8deg); }
 .portfolio-hero::after { content: ""; position: absolute; top: 63px; right: -13%; width: 67%; height: 365px; border: 1px solid rgba(255,255,255,.08); border-radius: 50%; background: linear-gradient(105deg, transparent 45%, rgba(255,255,255,.045) 51%, transparent 56%); box-shadow: 0 0 0 35px rgba(255,255,255,.013), 0 0 0 74px rgba(255,255,255,.01); transform: rotate(-10deg); }
 .portfolio-hero-grid { position: absolute; inset: 0; opacity: .48; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 86px 86px; mask-image: linear-gradient(90deg, black, transparent 77%); }
 .portfolio-hero-line { position: absolute; top: 74px; right: -70px; width: 69%; height: 188px; border-top: 1px solid rgba(255,87,27,.75); border-bottom: 1px solid rgba(255,255,255,.12); transform: rotate(-9deg); box-shadow: 0 42px 0 rgba(255,255,255,.02); }
@@ -509,13 +510,14 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-hero-bottom > div { display: flex; align-items: end; gap: 9px; padding-left: 17px; border-left: 1px solid var(--orange); }
 .portfolio-hero-bottom b { color: #fff; font: 700 60px/.72 "Barlow Condensed", sans-serif; }
 .portfolio-hero-bottom span { color: #aaa49b; font: 700 8px/1.35 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
-.portfolio-hero-plate { position: absolute; top: 105px; right: 1px; display: flex; width: 230px; flex-direction: column; gap: 6px; padding: 12px 14px 11px; border-top: 1px solid rgba(255,255,255,.34); border-bottom: 1px solid rgba(255,255,255,.18); clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%); background: linear-gradient(112deg, rgba(8,8,9,.95), rgba(8,8,9,.42) 69%, rgba(255,87,27,.2)); box-shadow: 11px 12px 0 rgba(0,0,0,.2); }
+.portfolio-hero-plate { position: absolute; top: 88px; right: 1px; display: flex; width: 282px; flex-direction: column; gap: 7px; padding: 15px 17px 14px; border-top: 1px solid rgba(255,255,255,.44); border-bottom: 1px solid rgba(255,255,255,.2); border-left: 2px solid var(--orange); clip-path: polygon(0 0, calc(100% - 29px) 0, 100% 29px, 100% 100%, 0 100%); background: linear-gradient(112deg, rgba(8,8,9,.98), rgba(8,8,9,.64) 69%, rgba(255,87,27,.23)); box-shadow: 14px 15px 0 rgba(0,0,0,.25); }
 .portfolio-hero-plate::before { content: ""; position: absolute; top: -1px; right: 0; width: 37px; height: 2px; background: var(--orange); }
-.portfolio-hero-plate img { width: 168px; height: 48px; object-fit: contain; object-position: left center; }
+.portfolio-hero-plate img { width: 203px; height: 58px; object-fit: contain; object-position: left center; }
 .portfolio-hero-plate span { color: var(--orange-soft); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
 .portfolio-hero-plate b { color: rgba(255,255,255,.67); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
 .portfolio-feature { position: relative; overflow: hidden; padding: 112px 0; background: linear-gradient(115deg, #0d0d0f 0%, #171719 56%, #0c0c0d 100%); }
 .portfolio-feature::before { content: ""; position: absolute; top: -118px; left: -112px; width: 52%; height: 240px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; background: linear-gradient(122deg, transparent 38%, rgba(255,255,255,.035) 50%, transparent 61%); transform: rotate(-8deg); }
+.portfolio-feature::after { content: ""; position: absolute; right: -14%; bottom: 45px; width: 61%; height: 92px; border-top: 1px solid rgba(255,255,255,.11); border-bottom: 1px solid rgba(255,255,255,.04); background: linear-gradient(109deg, transparent 37%, rgba(255,255,255,.04) 50%, transparent 63%); transform: rotate(-8deg); }
 .feature-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(48px, 8vw, 118px); align-items: center; }
 .feature-player { position: relative; min-height: 580px; overflow: hidden; border: 1px solid rgba(255,255,255,.2); clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%); background: #171719; box-shadow: 18px 20px 0 rgba(255,87,27,.17); }
 .feature-player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -579,6 +581,10 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .portfolio-card-copy small { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
 .portfolio-card-copy strong { font-family: "Barlow Condensed", sans-serif; font-size: 28px; line-height: .84; text-transform: uppercase; }
 .portfolio-card::after { content: "REGISTRO REAL"; position: absolute; right: 14px; bottom: 14px; z-index: 1; color: rgba(255,255,255,.56); font: 700 6px "IBM Plex Mono", monospace; letter-spacing: .1em; writing-mode: vertical-rl; }
+@media (min-width: 1001px) {
+  .portfolio-card:nth-child(1), .portfolio-card:nth-child(6) { grid-column: span 2; min-height: 362px; }
+  .portfolio-card:nth-child(1) .portfolio-card-copy strong, .portfolio-card:nth-child(6) .portfolio-card-copy strong { font-size: 37px; }
+}
 .portfolio-empty-state { position: relative; z-index: 1; display: flex; min-height: 330px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 36px; border: 1px solid rgba(12,12,13,.19); border-top: 3px solid var(--orange); clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%); background: repeating-linear-gradient(0deg, rgba(255,255,255,.42) 0, rgba(255,255,255,.42) 31px, rgba(12,12,13,.035) 32px), #e4ded4; }
 .portfolio-empty-state h3 { margin: 13px 0 14px; font-size: clamp(42px, 5vw, 67px); line-height: .8; }
 .portfolio-empty-state p { max-width: 450px; margin: 0 0 25px; color: #635e56; font-size: 13px; line-height: 1.75; }

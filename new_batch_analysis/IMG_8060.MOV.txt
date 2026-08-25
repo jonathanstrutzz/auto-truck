@@ -1,0 +1,18 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-7bcf58ce-f1d9-40e0-a94f-e06b945c3e65)
+[8s] Status: Analyzing video content with AI...
+[20s] Status: Analysis completed
+[20s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_8060_analysis_20260825_213812.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este é um resumo descritivo do vídeo para curadoria de portfólio:
+
+*   **Marca/Modelo:** Caminhão Scania (série R, nova geração), na cor azul claro, com a identificação "OTTO" no defletor de ar e na lateral do implemento. A placa visível é RCF1B48.
+*   **Serviço ou Resultado Visível:** O vídeo destaca a estética do veículo e, principalmente, a performance sonora do motor/escapamento. É possível ouvir o som característico de modificações no sistema de turbo (conhecido popularmente como "pente na turbina"), que produz um assobio rítmico e forte enquanto o motor está em marcha lenta ou leve aceleração.
+*   **Equipe:** Não há membros da equipe visíveis no vídeo.
+*   **Ambiente:** O caminhão está estacionado em uma via marginal ou área industrial/logística, com solo de asfalto e terra. O dia está ensolarado com céu azul e poucas nuvens. Há presença de postes de energia e fiação aérea.
+*   **Enquadramento:** O vídeo possui orientação vertical (9:16), com enquadramento em plano médio-longo, capturando o caminhão de frente e em ângulo diagonal, destacando a cabine e parte da composição (bitrem/rodotrem). A câmera está estática.
+*   **Melhor Categoria:** Performance e Estética de Veículos Pesados / Customização Automotiva.

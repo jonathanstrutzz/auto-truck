@@ -1,0 +1,20 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-9488a0f9-106e-4aea-acc1-67e32b005e02)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[37s] Status: Analysis completed
+[37s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7535_analysis_20260825_213511.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está a descrição detalhada do vídeo para curadoria de portfólio:
+
+*   **Modelos/Marcas:** O vídeo destaca dois caminhões pesados. O primeiro é um **Volvo FH Globetrotter** branco (placa JRA-3C98) com a inscrição "MARL" na lateral e "Deus é Mais" no topo da cabine. O segundo é um **DAF XF** cinza (placa JSC-9E42) com a inscrição "DU GREGÓRIO" no para-sol.
+*   **Serviço ou Resultado:** O vídeo foca no resultado final de **estética automotiva (detalhamento)**. Ambos os caminhões apresentam pintura e superfícies extremamente limpas e com alto brilho, refletindo o ambiente ao redor.
+*   **Equipe:** Não há membros da equipe visíveis no vídeo.
+*   **Ambiente:** O cenário é o pátio externo da empresa **Auto Truck Estética para Caminhões**, em um dia ensolarado. É possível ver a fachada do estabelecimento com o logotipo e o número de contato (62) 99215-8095, além de uma palmeira ao fundo sob um céu azul.
+*   **Enquadramento:** O vídeo utiliza um movimento de **panorâmica horizontal (pan)** da esquerda para a direita, começando no Volvo e terminando no DAF, mantendo um enquadramento de plano médio que valoriza a altura e o brilho dos veículos.
+*   **Melhor Categoria:** Portfólio de Estética e Detalhamento de Veículos Pesados.
+*   **Duplicado/Genérico:** Não parece ser uma cena genérica ou duplicada. É um registro autêntico e específico do pátio da Auto Truck, focado em mostrar a qualidade do trabalho em veículos reais de clientes.

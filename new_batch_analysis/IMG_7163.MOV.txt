@@ -1,0 +1,22 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-300631b3-d41b-4199-8999-0195416c3553)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[47s] Status: Analysis completed
+[47s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7163_analysis_20260825_213519.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo apresenta um portfólio de estética automotiva pesada para a oficina **Auto Truck**. Abaixo, os detalhes para curadoria:
+
+*   **Modelo/Marca:** O destaque principal é um caminhão **Volvo 540** na cor verde limão (lime green), com acabamento de alto brilho. Ao fundo, dentro da oficina, há um caminhão baú branco.
+*   **Serviço ou Resultado:** O vídeo foca no resultado final de **estética e pintura**. O brilho intenso da lataria do Volvo sugere serviços de polimento, vitrificação ou pintura recente de alta qualidade.
+*   **Equipe:** Não há membros da equipe visíveis no vídeo.
+*   **Ambiente:** Fachada e pátio da oficina "Auto Truck - Estética para Caminhões" durante a noite. O ambiente é bem iluminado, destacando a sinalização da empresa ("Pinturas", "Uso obrigatório de EPI") e o interior do galpão com estrutura metálica.
+*   **Enquadramento:** O vídeo possui **formato vertical (9:16)**, ideal para redes sociais. A filmagem utiliza um movimento de **pan da direita para a esquerda**, começando na entrada da oficina e revelando gradualmente a lateral e a frente do caminhão Volvo.
+*   **Melhor Categoria:** Portfólio de Estética Automotiva / Pintura de Veículos Pesados.
+*   **Duplicidade:** O vídeo parece ser um conteúdo original e autêntico da oficina, não apresentando características de cena genérica ou banco de imagens.
+
+**Observação:** O letreiro exibe um número de contato (62 99215-8095), o que reforça o caráter promocional e de portfólio do estabelecimento.

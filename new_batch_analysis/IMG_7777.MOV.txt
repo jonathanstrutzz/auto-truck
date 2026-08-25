@@ -1,0 +1,20 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-5016be90-9279-4e53-b91f-d8717e5bbdc2)
+[8s] Status: Analyzing video content with AI...
+[25s] Status: Analysis completed
+[25s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7777_analysis_20260825_213818.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está uma descrição detalhada do vídeo para a curadoria do seu portfólio:
+
+**Descrição do Vídeo: Auto Truck - Estética para Caminhões**
+
+*   **Marca/Modelo:** Caminhão **DAF XF 530**. O modelo é identificado pelos emblemas na grade frontal ("DAF") e na lateral da cabine ("XF" e "530").
+*   **Serviço ou Resultado Visível:** O vídeo destaca o resultado de um serviço de **estética automotiva pesada**. O caminhão apresenta uma pintura (nas cores azul e preto) com brilho intenso e reflexivo, sugerindo a realização de polimento técnico ou vitrificação. A limpeza dos detalhes, como faróis e grade, está impecável.
+*   **Equipe:** Não há membros da equipe visíveis no vídeo. O foco é exclusivamente no veículo e na fachada.
+*   **Ambiente:** O veículo está estacionado no pátio externo, em frente à fachada da empresa **"AUTO TRUCK - Estética para Caminhões"**. O ambiente é iluminado por luz solar direta, o que ajuda a evidenciar o brilho da lataria. Há uma motocicleta estacionada ao fundo e placas de sinalização de segurança na parede da oficina.
+*   **Enquadramento:** O vídeo foi gravado em **formato vertical** (ideal para Reels/Shorts). A filmagem começa com um plano fechado na frente do caminhão e realiza um movimento de afastamento e deslocamento lateral (pan) para a esquerda, revelando a lateral da cabine e a identificação da loja.
+*   **Melhor Categoria:** Estética de Veículos Pesados / Detalhamento Automotivo (Detailing).

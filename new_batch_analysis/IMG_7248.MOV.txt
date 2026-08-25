@@ -1,0 +1,19 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-2c6e5e98-9c8f-48e0-8b67-2dd5225f67c7)
+[8s] Status: Analyzing video content with AI...
+[31s] Status: Analysis completed
+[31s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7248_analysis_20260825_213501.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está a descrição do vídeo para a curadoria do portfólio da Auto Truck:
+
+*   **Modelo/Marca:** Dois caminhões **Scania** (um azul e um preto) em destaque, com placas visíveis (RTH6C71 e RTH6C72). Ao fundo, um caminhão branco com a logomarca "LSL".
+*   **Serviço ou Resultado:** Lavagem e estética de veículos pesados. Os caminhões apresentam aspecto de limpeza e brilho sob a luz do sol.
+*   **Equipe:** Dois profissionais visíveis; um realizando a lavagem na lateral do caminhão azul e outro com colete refletivo laranja caminhando pelo pátio.
+*   **Ambiente:** Pátio de lavagem coberto por uma estrutura metálica, com solo de cascalho/brita, em um dia ensolarado.
+*   **Enquadramento:** Vídeo vertical (formato para redes sociais), com movimento de câmera lateral (pan) da esquerda para a direita, revelando a frota estacionada.
+*   **Melhor Categoria:** Lavagem Especializada / Estética de Pesados.
+*   **Duplicado/Genérico:** Não parece ser uma cena genérica ou banco de imagens. O registro é autêntico, mostrando uma operação real com veículos e placas específicas.

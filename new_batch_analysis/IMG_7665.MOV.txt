@@ -1,0 +1,18 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-a0b11b33-194f-47e6-9073-391b260ad043)
+[8s] Status: Analyzing video content with AI...
+[30s] Status: Analysis completed
+[30s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7665_analysis_20260825_213640.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo da Auto Truck apresenta o processo de limpeza de um veículo pesado, ideal para portfólios de estética automotiva. Abaixo estão os detalhes identificados:
+
+*   **Marca/Modelo:** Volvo FH Globetrotter (identificado pelo logotipo frontal e letreiro acima do para-brisa).
+*   **Serviço ou Resultado Visível:** Lavagem externa com aplicação de espuma densa (técnica de *snow foam*). O vídeo foca na ação do produto sobre a lataria e grade frontal.
+*   **Equipe:** Um profissional é visível ao fundo, à direita, utilizando uniforme de trabalho em tons de marrom/caqui.
+*   **Ambiente:** Lavador profissional coberto, com estrutura de teto metálico e chão de concreto molhado com acúmulo de espuma.
+*   **Enquadramento:** Plano frontal, vertical (formato 9:16), centralizado na face do caminhão.
+*   **Melhor Categoria:** Estética de Veículos Pesados / Lavagem Especializada.

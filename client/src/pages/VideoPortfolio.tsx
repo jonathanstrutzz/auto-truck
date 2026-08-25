@@ -121,28 +121,143 @@ const portfolioVideos = [
     model: "volvo-fh",
     searchTerms: ["volvo", "fh", "globetrotter", "guareschi", "bi-trem", "librelato", "preto", "rodas", "brilho", "movimento", "destaque"],
   },
+  {
+    id: "scania-dupla",
+    number: "10",
+    label: "Scania em conjunto",
+    title: "Duas presenças, um padrão visual.",
+    description: "Duas Scanias, azul e preta, em registro diurno com limpeza e apresentação em evidência.",
+    source: "/manus-storage/auto-truck-scania-dupla_dbe56cc3.mp4",
+    poster: "/manus-storage/auto-truck-scania-dupla-poster_e31a3afa.jpg",
+    category: "destaques",
+    model: "scania",
+    searchTerms: ["scania", "azul", "preta", "dupla", "limpeza", "brilho", "resultado", "destaque"],
+  },
+  {
+    id: "scania-laranja-brilho",
+    number: "11",
+    label: "Scania laranja",
+    title: "Cor, cromo e presença.",
+    description: "Scania laranja em registro de brilho de pintura e detalhes cromados.",
+    source: "/manus-storage/auto-truck-scania-laranja-brilho_8f71ae96.mp4",
+    poster: "/manus-storage/auto-truck-scania-laranja-brilho-poster_c1414a2a.jpg",
+    category: "destaques",
+    model: "scania",
+    searchTerms: ["scania", "laranja", "cromo", "pintura", "brilho", "acabamento", "destaque"],
+  },
+  {
+    id: "daf-fachada",
+    number: "12",
+    label: "DAF na fachada",
+    title: "Estrutura que recebe a operação.",
+    description: "DAF cinza diante da fachada Auto Truck, com outro caminhão no box ao fundo.",
+    source: "/manus-storage/auto-truck-daf-fachada_6524db39.mp4",
+    poster: "/manus-storage/auto-truck-daf-fachada-poster_302f589c.jpg",
+    category: "destaques",
+    model: "daf",
+    searchTerms: ["daf", "fachada", "oficina", "box", "estrutura", "cinza", "unidade"],
+  },
+  {
+    id: "volvo-lavagem-espuma",
+    number: "13",
+    label: "Lavagem com espuma",
+    title: "Espuma que revela o cuidado.",
+    description: "Volvo FH em lavagem externa com espuma densa aplicada sobre a cabine e a grade frontal.",
+    source: "/manus-storage/auto-truck-volvo-lavagem-espuma_c67a2a80.mp4",
+    poster: "/manus-storage/auto-truck-volvo-lavagem-espuma-poster_c7c914ac.jpg",
+    category: "lavagem",
+    model: "volvo-fh",
+    searchTerms: ["volvo", "fh", "lavagem", "espuma", "snow foam", "grade", "cabine", "processo"],
+  },
+  {
+    id: "unidade-noturna",
+    number: "14",
+    label: "Unidade à noite",
+    title: "A oficina também tem presença noturna.",
+    description: "Registro noturno da entrada da Auto Truck, com caminhões DAF e Volvo no box iluminado.",
+    source: "/manus-storage/auto-truck-unidade-noturna_669f2582.mp4",
+    poster: "/manus-storage/auto-truck-unidade-noturna-poster_2da60a0f.jpg",
+    category: "destaques",
+    model: "multimarca",
+    searchTerms: ["oficina", "noturno", "daf", "volvo", "unidade", "box", "estrutura", "bastidores"],
+  },
+  {
+    id: "volvo-polimento",
+    number: "15",
+    label: "Polimento técnico",
+    title: "Brilho construído no detalhe.",
+    description: "Volvo FH 540 azul em polimento de cabine com politriz rotativa e boina de acabamento.",
+    source: "/manus-storage/auto-truck-volvo-polimento_86e635a4.mp4",
+    poster: "/manus-storage/auto-truck-volvo-polimento-poster_aadcd7b5.jpg",
+    category: "polimento",
+    model: "volvo-fh",
+    searchTerms: ["volvo", "fh", "540", "azul", "polimento", "politriz", "boina", "cabine", "processo"],
+  },
+  {
+    id: "daf-xf530",
+    number: "16",
+    label: "DAF XF 530",
+    title: "Reflexo que ocupa o enquadramento.",
+    description: "DAF XF 530 azul e preto em registro de brilho de pintura, faróis e grade frontal.",
+    source: "/manus-storage/auto-truck-daf-xf530_40a937f6.mp4",
+    poster: "/manus-storage/auto-truck-daf-xf530-poster_ec7fd7f9.jpg",
+    category: "destaques",
+    model: "daf",
+    searchTerms: ["daf", "xf", "530", "azul", "preto", "brilho", "grade", "farol", "acabamento"],
+  },
+  {
+    id: "volvo-fh-rosa",
+    number: "17",
+    label: "Volvo FH rosa",
+    title: "Acabamento que assume identidade.",
+    description: "Volvo FH 540 rosa em registro de lataria brilhante e acabamento visual em evidência.",
+    source: "/manus-storage/auto-truck-volvo-fh-rosa_72b7d654.mp4",
+    poster: "/manus-storage/auto-truck-volvo-fh-rosa-poster_1f110230.jpg",
+    category: "destaques",
+    model: "volvo-fh",
+    searchTerms: ["volvo", "fh", "540", "rosa", "brilho", "lataria", "acabamento", "destaque"],
+  },
+  {
+    id: "scania-personalizada",
+    number: "18",
+    label: "Scania personalizada",
+    title: "Personalização que amplia a presença.",
+    description: "Scania com semirreboque Randon envelopado, destacando uma identidade visual de grande impacto.",
+    source: "/manus-storage/auto-truck-scania-personalizada_3a151743.mp4",
+    poster: "/manus-storage/auto-truck-scania-personalizada-poster_6093bf6b.jpg",
+    category: "destaques",
+    model: "scania",
+    searchTerms: ["scania", "randon", "envelopamento", "personalização", "baú", "identidade visual", "destaque"],
+  },
 ];
 
+const portfolioDisplayVideos = [...portfolioVideos].sort((first, second) => {
+  const processPriority = ["volvo-lavagem-espuma", "volvo-polimento", "lavagem", "acabamento"];
+  const firstRank = processPriority.indexOf(first.id);
+  const secondRank = processPriority.indexOf(second.id);
+  return (firstRank < 0 ? 99 : firstRank) - (secondRank < 0 ? 99 : secondRank);
+});
+
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "09" },
-  { id: "lavagem", label: "Lavagem", count: "03" },
-  { id: "polimento", label: "Polimento", count: "02" },
-  { id: "destaques", label: "Destaques", count: "04" },
+  { id: "todos", label: "Todos", count: "18" },
+  { id: "lavagem", label: "Lavagem", count: "04" },
+  { id: "polimento", label: "Polimento", count: "03" },
+  { id: "destaques", label: "Destaques", count: "11" },
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
 
 const modelFilters = [
-  { id: "todos", label: "Todos os modelos", count: "09" },
-  { id: "volvo-fh", label: "Volvo FH", count: "02" },
+  { id: "todos", label: "Todos os modelos", count: "18" },
+  { id: "volvo-fh", label: "Volvo FH", count: "05" },
   { id: "volvo", label: "Volvo", count: "01" },
-  { id: "scania", label: "Scania", count: "01" },
-  { id: "daf", label: "DAF", count: "01" },
-  { id: "multimarca", label: "Multimarca", count: "01" },
+  { id: "scania", label: "Scania", count: "04" },
+  { id: "daf", label: "DAF", count: "03" },
+  { id: "multimarca", label: "Multimarca", count: "02" },
   { id: "outros", label: "Outros caminhões", count: "03" },
 ] as const;
 
 export default function VideoPortfolio() {
-  const [activeId, setActiveId] = useState(portfolioVideos[0].id);
+  const [activeId, setActiveId] = useState(portfolioDisplayVideos[0].id);
   const [activeCategory, setActiveCategory] = useState<(typeof serviceFilters)[number]["id"]>("todos");
   const [activeModel, setActiveModel] = useState<(typeof modelFilters)[number]["id"]>("todos");
   const [searchQuery, setSearchQuery] = useState("");
@@ -150,14 +265,14 @@ export default function VideoPortfolio() {
   const soundtrackRef = useRef<HTMLAudioElement>(null);
   const featuredRef = useRef<HTMLElement>(null);
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase("pt-BR");
-  const filteredVideos = portfolioVideos.filter((video) => {
+  const filteredVideos = portfolioDisplayVideos.filter((video) => {
     const matchesService = activeCategory === "todos" || video.category === activeCategory;
     const matchesModel = activeModel === "todos" || video.model === activeModel;
     const searchableContent = [video.label, video.title, video.description, video.category, video.model, ...video.searchTerms].join(" ").toLocaleLowerCase("pt-BR");
     const matchesSearch = !normalizedQuery || searchableContent.includes(normalizedQuery);
     return matchesService && matchesModel && matchesSearch;
   });
-  const activeVideo = filteredVideos.find((video) => video.id === activeId) ?? filteredVideos[0] ?? portfolioVideos.find((video) => video.id === activeId) ?? portfolioVideos[0];
+  const activeVideo = filteredVideos.find((video) => video.id === activeId) ?? filteredVideos[0] ?? portfolioDisplayVideos.find((video) => video.id === activeId) ?? portfolioDisplayVideos[0];
 
   useEffect(() => () => soundtrackRef.current?.pause(), []);
 
@@ -168,13 +283,13 @@ export default function VideoPortfolio() {
 
   const selectCategory = (category: (typeof serviceFilters)[number]["id"]) => {
     setActiveCategory(category);
-    const firstVideo = portfolioVideos.find((video) => (category === "todos" || video.category === category) && (activeModel === "todos" || video.model === activeModel));
+    const firstVideo = portfolioDisplayVideos.find((video) => (category === "todos" || video.category === category) && (activeModel === "todos" || video.model === activeModel));
     if (firstVideo) setActiveId(firstVideo.id);
   };
 
   const selectModel = (model: (typeof modelFilters)[number]["id"]) => {
     setActiveModel(model);
-    const firstVideo = portfolioVideos.find((video) => (activeCategory === "todos" || video.category === activeCategory) && (model === "todos" || video.model === model));
+    const firstVideo = portfolioDisplayVideos.find((video) => (activeCategory === "todos" || video.category === activeCategory) && (model === "todos" || video.model === model));
     if (firstVideo) setActiveId(firstVideo.id);
   };
 
@@ -216,7 +331,7 @@ export default function VideoPortfolio() {
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.14 }} className="portfolio-hero-bottom">
             <p>Um arquivo de cenas da Auto Truck: resultado, cuidado, estrutura e caminhões preparados para voltar à estrada.</p>
-            <div><b>08</b><span>vídeos<br />selecionados</span></div>
+            <div><b>18</b><span>vídeos<br />selecionados</span></div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.18 }} className="portfolio-hero-plate">
             <img src={OFFICIAL_LOGO} alt="" />

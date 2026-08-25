@@ -1,0 +1,19 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-24d3dc4b-e34e-4232-be2b-844b4f6d1fb0)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[50s] Status: Analysis completed
+[50s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7666_analysis_20260825_213701.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo apresenta um serviço de lavagem profissional para veículos pesados. Abaixo estão os detalhes para a curadoria:
+
+*   **Marca/Modelo:** Caminhão Volvo FH Globetrotter, na cor branca.
+*   **Serviço ou Resultado Visível:** Lavagem externa detalhada. O vídeo destaca a etapa de enxágue da espuma densa aplicada sobre a cabine e a grade frontal, utilizando um jato de água de alta pressão para remover a sujeira.
+*   **Equipe:** Um profissional especializado, utilizando equipamentos de proteção e visibilidade (colete refletivo laranja e botas de borracha).
+*   **Ambiente:** Pátio de lavagem semi-coberto com estrutura metálica, em uma área aberta com solo de terra e brita, cercada por vegetação.
+*   **Enquadramento:** Vídeo gravado em formato vertical (9:16), com foco centralizado na parte frontal do caminhão e na movimentação do operador.
+*   **Melhor Categoria:** Estética de Veículos Pesados / Manutenção de Frotas.

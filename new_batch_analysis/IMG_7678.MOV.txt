@@ -1,0 +1,31 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-a3d42ce2-f645-471e-b328-5ccb85a7d3f6)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[38s] Status: Analysis completed
+[38s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7678_analysis_20260825_213650.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está uma descrição detalhada do vídeo para curadoria de portfólio:
+
+**Marca/Modelo:** 
+*   **Semirreboque:** Porta-contêiner da marca **RGLOG** (conforme adesivação lateral).
+*   **Caminhão (Cavalo Mecânico):** Volvo (modelo FM ou FH, cor branca).
+
+**Serviço ou Resultado Visível:** 
+O vídeo demonstra a manobra e funcionalidade de um semirreboque porta-contêiner. É possível observar a estrutura do chassi, os eixos com protetores de rodas e a movimentação do equipamento em um pátio. O foco está na robustez e na operacionalidade do transporte logístico.
+
+**Equipe:** 
+Um homem aparece coordenando a manobra. Ele veste camiseta cinza, calça preta, óculos escuros e utiliza sinais manuais para orientar o condutor do caminhão.
+
+**Ambiente:** 
+Pátio logístico ou área de estacionamento de transportadora ao ar livre. O solo é de terra e cascalho. Ao fundo, veem-se árvores, fiação elétrica, outros semirreboques e contêineres (incluindo um com a marca Coca-Cola). O clima parece ser de final de tarde, com luz solar lateral.
+
+**Enquadramento:** 
+Vídeo gravado em formato vertical (9:16), ideal para redes sociais (Reels/TikTok). A câmera realiza um movimento de acompanhamento lateral (panorâmica) enquanto o caminhão se desloca, mantendo o foco na extensão do semirreboque.
+
+**Melhor Categoria:** 
+Logística e Transporte Rodoviário de Cargas.

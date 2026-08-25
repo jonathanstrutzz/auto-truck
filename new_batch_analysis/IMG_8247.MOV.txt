@@ -1,0 +1,19 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-d02030b6-3a56-4fa0-a136-487a1f5a5614)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[37s] Status: Analysis completed
+[37s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_8247_analysis_20260825_213831.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo apresenta uma excelente demonstração de logística e personalização de frota de grande porte. Abaixo, os detalhes para curadoria:
+
+*   **Marca/Modelo:** Cavalo mecânico **Scania** (Série R) acoplado a um semirreboque (baú) da marca **Randon**.
+*   **Serviço ou Resultado Visível:** Transporte logístico especializado para o setor de entretenimento. O destaque é o **envelopamento total (personalização)** do baú com a identidade visual e fotos do cantor Eduardo Costa, apresentando um acabamento de alta qualidade e grande impacto visual.
+*   **Equipe:** Apenas o motorista é visível operando o veículo; não há equipe de apoio externa em destaque.
+*   **Ambiente:** Área externa, possivelmente um pátio logístico, garagem ou ponto de parada, com piso misto de asfalto e terra. Ao fundo, observa-se outro caminhão (marca DAF) sob uma cobertura e pilhas de pallets.
+*   **Enquadramento:** O vídeo utiliza um **plano de acompanhamento lateral (tracking shot)**. A câmera começa na diagonal frontal e percorre toda a lateral do veículo enquanto ele se movimenta, finalizando com um plano da parte traseira para mostrar a extensão total da carreta e a continuidade da arte gráfica.
+*   **Melhor Categoria:** Logística / Personalização de Veículos (Envelopamento) / Entretenimento.

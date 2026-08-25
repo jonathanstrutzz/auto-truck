@@ -94,3 +94,7 @@ No arquivo audiovisual, cada vídeo deve abrir com uma capa de processo ou resul
 O hero usa registro real de processo ou resultado como matéria-prima principal, com a placa oficial da Auto Truck assumindo função cerimonial de assinatura. Os campos escuros devem carregar reflexos suaves, linhas de carroceria e profundidade fumê para remeter a uma baia de acabamento, não a uma interface industrial genérica.
 
 Cada área escura deve conter ao menos um sinal de acabamento automotivo — reflexo acetinado, linha de carroceria, marca de inspeção, sobreposição fumê ou recorte de cabine. Os painéis claros usam reflexão metálica, linhas técnicas e o mesmo recorte diagonal do logotipo para manter a leitura de carroceria premium em toda a página.
+
+No portfólio audiovisual, capas de lavagem, polimento, cabine, proteção, pintura ou equipe em operação têm prioridade nas primeiras posições. Registros de estrada, pátio e transporte entram como contexto do resultado, nunca como substituto da evidência de estética.
+
+A placa oficial da Auto Truck assume papel cerimonial nos heróis e nas áreas de conversão: mais presença que um selo decorativo, integrada ao recorte diagonal e acompanhada por superfícies fumê, linhas de carroceria e reflexos de acabamento.

@@ -1,0 +1,18 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-c3e64796-eec6-455d-924b-f6992dccaa59)
+[8s] Status: Analyzing video content with AI...
+[26s] Status: Analysis completed
+[26s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_7714_analysis_20260825_213819.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está a descrição do vídeo para curadoria de portfólio:
+
+*   **Marca/Modelo:** Volvo FH Globetrotter (dois exemplares, um azul claro e outro rosa/lilás).
+*   **Serviço ou Resultado Visível:** Apresentação estética e visual de caminhões personalizados. O vídeo destaca o brilho da pintura, os detalhes cromados e o estado impecável de conservação dos veículos.
+*   **Equipe:** Nenhuma equipe ou pessoa é visível no vídeo.
+*   **Ambiente:** Pátio externo de terra batida, em um dia ensolarado com céu limpo. Ao fundo, nota-se a presença de outros veículos, incluindo um caminhão antigo da Coca-Cola.
+*   **Enquadramento:** Plano médio com ângulo levemente baixo (contra-plongée) para conferir imponência aos veículos. A câmera realiza um movimento de pan lateral da direita para a esquerda em formato vertical (9:16).
+*   **Melhor Categoria:** Estética de Veículos Pesados / Customização de Caminhões.

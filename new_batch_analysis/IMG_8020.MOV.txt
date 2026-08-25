@@ -1,0 +1,19 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-fa26fc22-f8a1-4931-a0b8-648171093835)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[50s] Status: Analysis completed
+[50s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_8020_analysis_20260825_213845.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Aqui está a descrição do vídeo para curadoria de portfólio:
+
+*   **Marca/Modelo:** Volvo FH 540 (na cor rosa).
+*   **Serviço ou Resultado Visível:** Estética automotiva, especificamente limpeza detalhada ou finalização de polimento. O resultado é uma lataria com brilho intenso e acabamento espelhado.
+*   **Equipe:** Um profissional utilizando colete refletivo laranja e camiseta preta, operando um pano de microfibra para o acabamento.
+*   **Ambiente:** Oficina ou pátio de estética automotiva (identificado pelo letreiro "AUTO ESTÉTICA" ao fundo).
+*   **Enquadramento:** Vídeo vertical (formato para redes sociais), com planos médios e detalhes que acompanham o movimento de limpeza na lateral da cabine.
+*   **Melhor Categoria:** Estética Automotiva / Truck Detailing.

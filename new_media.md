@@ -13,3 +13,12 @@
 Todos os registros acima foram enviados pelo usuário. Não devem ser classificados como comparações de antes e depois sem pares equivalentes do mesmo veículo e serviço.
 
 | `IMG_0464(1).MOV` | Volvo FH Globetrotter preto Guareschi, com conjunto bi-trem Librelato, em movimento e com acabamento brilhante. | Portfólio em vídeo — destaque Volvo FH. |
+
+## Registros de fachada e estrutura
+
+| Registro | Conteúdo confirmado | Uso no site |
+| --- | --- | --- |
+| `486E3EE5-3EB3-40CF-8367-C9C5D801AEAD.png` | Fachada Auto Truck, placas da marca e caminhões diante dos boxes. | Foto principal da categoria Unidade. |
+| `IMG_8813.jpeg` | Dois caminhões DAF brancos posicionados nos boxes da oficina. | Estrutura em atividade. |
+| `0B947893-3819-4013-BFF8-03E707071AAE.png` | Caminhões diante da Auto Truck ao entardecer. | Presença no pátio. |
+| `7F644E5A-9791-4425-A891-6773F4B1AE74.png` | Frota de caminhões em frente à fachada da oficina. | Foto horizontal complementar de frota. |

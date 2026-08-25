@@ -41,6 +41,10 @@ const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg";
+const WORKSHOP_FACADE_IMAGE = "/manus-storage/auto-truck-fachada-caminhoes-01_0298e7eb.png";
+const WORKSHOP_DAFS_IMAGE = "/manus-storage/auto-truck-dafs-box_2094b49d.jpeg";
+const WORKSHOP_DUSK_IMAGE = "/manus-storage/auto-truck-fachada-entardecer_27ae29d9.png";
+const WORKSHOP_FLEET_IMAGE = "/manus-storage/auto-truck-fachada-frota_a8568e14.png";
 const TEAM_WASH_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-01_0a8d6046.jpg";
 const TEAM_WASH_DETAIL_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-02_8b1f59c6.jpg";
 const TEAM_WORKSHOP_IMAGE = "/manus-storage/auto-truck-equipe-bastidores-03_443c7aea.jpg";
@@ -299,7 +303,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
-  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores" | "veiculos">("servicos");
+  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores" | "veiculos">("unidade");
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
   const [soundEnabled, setSoundEnabled] = useState(false);
@@ -722,7 +726,7 @@ export default function Home() {
               <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
               <p>Imagens que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
               <div className="gallery-heading-rule" />
-              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "REGISTRO REAL DA UNIDADE · FOTO 02" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
+              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "ARQUIVO REAL DA UNIDADE · FOTOS 02—05" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
               <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
                 <button type="button" role="tab" aria-selected={galleryCategory === "servicos"} className={galleryCategory === "servicos" ? "active" : ""} onClick={() => setGalleryCategory("servicos")}>Serviços <span>01</span></button>
                 <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>02</span></button>
@@ -745,15 +749,29 @@ export default function Home() {
                 </figcaption>
               </motion.figure>
             ) : galleryCategory === "unidade" ? (
-              <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card">
-                <img src={WORKSHOP_GALLERY_IMAGE} alt="Fachada da Auto Truck Estética com caminhões no pátio da oficina" />
-                <div className="gallery-photo-tint" />
-                <div className="gallery-photo-number">02</div>
-                <figcaption>
-                  <span className="micro-label">Unidade Auto Truck</span>
-                  <strong>Estética para caminhões<br />em Anápolis, Goiás.</strong>
-                </figcaption>
-              </motion.figure>
+              <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-photo-archive">
+                <figure className="workshop-gallery-card workshop-photo-main">
+                  <img src={WORKSHOP_FACADE_IMAGE} alt="Fachada da Auto Truck com dois caminhões estacionados diante dos boxes da oficina" />
+                  <div className="gallery-photo-tint" />
+                  <div className="gallery-photo-number">02</div>
+                  <figcaption><span className="micro-label">Fachada em operação</span><strong>É aqui que o<br />cuidado começa.</strong></figcaption>
+                </figure>
+                <figure className="workshop-gallery-card workshop-photo-dafs">
+                  <img src={WORKSHOP_DAFS_IMAGE} alt="Dois caminhões DAF brancos posicionados nos boxes da oficina Auto Truck" />
+                  <div className="gallery-photo-tint" />
+                  <figcaption><span className="micro-label">Box de serviço</span><strong>Estrutura<br />em atividade.</strong></figcaption>
+                </figure>
+                <figure className="workshop-gallery-card workshop-photo-dusk">
+                  <img src={WORKSHOP_DUSK_IMAGE} alt="Caminhões estacionados diante da fachada Auto Truck ao entardecer" />
+                  <div className="gallery-photo-tint" />
+                  <figcaption><span className="micro-label">Fim de expediente</span><strong>Presença no<br />pátio.</strong></figcaption>
+                </figure>
+                <figure className="workshop-gallery-card workshop-photo-fleet">
+                  <img src={WORKSHOP_FLEET_IMAGE} alt="Frota de caminhões estacionada em frente à Auto Truck" />
+                  <div className="gallery-photo-tint" />
+                  <figcaption><span className="micro-label">Frota atendida</span><strong>Mais espaço<br />para sua operação.</strong></figcaption>
+                </figure>
+              </motion.div>
             ) : galleryCategory === "veiculos" ? (
               <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="vehicle-gallery-archive">
                 <figure className="workshop-gallery-card vehicle-gallery-lead">

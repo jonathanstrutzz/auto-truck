@@ -81,3 +81,6 @@
 - [x] Recuperar e preparar o vídeo IMG_0464.MOV.
 - [x] Classificar e integrar o novo vídeo ao portfólio audiovisual.
 - [x] Validar a nova publicação em desktop e mobile.
+- [x] Preparar as novas fotos reais da oficina para publicação.
+- [x] Compor a galeria de fachada, estrutura e caminhões atendidos.
+- [x] Validar a nova galeria em desktop e mobile.

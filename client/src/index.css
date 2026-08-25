@@ -363,6 +363,19 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .workshop-gallery-card figcaption { position: absolute; right: 25px; bottom: 24px; left: 25px; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.46); color: #fff; }
 .workshop-gallery-card figcaption .micro-label { margin-bottom: 8px; color: var(--orange-soft); }
 .workshop-gallery-card figcaption strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 31px; font-weight: 700; line-height: .89; letter-spacing: -.015em; text-transform: uppercase; }
+.gallery-content-transition { width: 100%; }
+.gallery-brand-filter { margin-top: 25px; padding-top: 18px; border-top: 1px solid rgba(12,12,13,.16); }
+.gallery-brand-filter .micro-label { color: #736d63; }
+.gallery-brand-filter > div { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.gallery-brand-filter button { border: 1px solid rgba(12,12,13,.22); padding: 7px 9px; color: #5f5a52; background: rgba(255,255,255,.3); clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .04em; text-transform: uppercase; transition: background .16s ease, color .16s ease, border-color .16s ease; }
+.gallery-brand-filter button:hover, .gallery-brand-filter button.active { border-color: var(--black); background: var(--black); color: var(--orange-soft); }
+.gallery-brand-filter button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.service-process-archive { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12px; width: 100%; }
+.process-polish-card { min-height: 632px; }
+.process-cabin-card { min-height: 632px; clip-path: polygon(0 0, calc(100% - 27px) 0, 100% 27px, 100% 100%, 0 100%); }
+.process-cabin-card figcaption p, .brand-gallery-card figcaption p { max-width: 265px; margin: 12px 0 0; color: rgba(255,255,255,.75); font-size: 10px; font-weight: 500; line-height: 1.58; text-transform: none; }
+.brand-gallery-card { min-height: 632px; }
+.brand-gallery-card figcaption { max-width: 370px; }
 .workshop-photo-archive { display: grid; grid-template-columns: 1.05fr .95fr; grid-template-rows: 260px 260px 175px; gap: 12px; width: 100%; }
 .workshop-photo-archive .workshop-gallery-card { min-height: 0; margin: 0; max-width: none; }
 .workshop-photo-main { grid-row: 1 / span 2; }
@@ -669,6 +682,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .workshop-gallery-card { max-width: 660px; }
   .workshop-photo-archive { max-width: 660px; }
   .vehicle-gallery-archive { max-width: 660px; }
+  .service-process-archive { max-width: 660px; }
   .team-heading { grid-template-columns: 1fr; gap: 25px; }
   .team-heading > p { margin-left: 0; }
   .team-media-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 350px 275px; }
@@ -793,6 +807,9 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .vehicle-gallery-archive { grid-template-columns: 1fr; gap: 11px; }
   .vehicle-gallery-lead { min-height: 440px; }
   .vehicle-gallery-rail { grid-template-columns: 1fr 1fr; grid-template-rows: 210px; gap: 11px; }
+  .service-process-archive { grid-template-columns: 1fr; gap: 11px; }
+  .process-polish-card, .process-cabin-card, .brand-gallery-card { min-height: 410px; }
+  .gallery-brand-filter { margin-top: 19px; }
   .team-stage { padding: 84px 0; }
   .team-heading { margin-bottom: 42px; }
   .team-media-grid { grid-template-columns: 1fr; grid-template-rows: 470px 330px 330px auto; gap: 12px; }

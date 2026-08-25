@@ -84,3 +84,9 @@
 - [x] Preparar as novas fotos reais da oficina para publicação.
 - [x] Compor a galeria de fachada, estrutura e caminhões atendidos.
 - [x] Validar a nova galeria em desktop e mobile.
+- [x] Definir e documentar o fluxo reutilizável de atualização da galeria Auto Truck.
+- [x] Preparar registros reais de higienização de cabine e polimento.
+- [x] Preparar registros reais de higienização de cabine e polimento.
+- [x] Implementar filtros da galeria por marca de caminhão.
+- [x] Implementar transições suaves entre categorias da galeria.
+- [x] Validar as melhorias da galeria em desktop e mobile.

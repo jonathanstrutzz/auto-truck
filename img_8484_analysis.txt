@@ -1,0 +1,32 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-b601d1f0-964c-49f7-a11e-5a905aa1df5e)
+[8s] Status: Analyzing video content with AI...
+[33s] Still processing, please wait...
+[35s] Status: Analysis completed
+[35s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_IMG_8484_analysis_20260825_212452.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+Este vídeo de curta duração apresenta dois caminhões estacionados em frente à unidade da **Auto Truck Estética para Caminhões** durante o período noturno.
+
+Aqui está a análise detalhada para curadoria:
+
+### Verificação de Conteúdo Específico:
+*   **Higienização de cabine:** Não mostrada.
+*   **Polimento:** Não há cenas do processo, embora o brilho da pintura dos veículos sugira um acabamento de alta qualidade.
+*   **Lavagem:** Não mostrada.
+*   **Equipe em ação:** Não mostrada.
+*   **Interior de caminhão:** Não mostrado.
+*   **Superfícies em acabamento:** Apenas o resultado final externo é visível.
+
+### Descrição das Cenas:
+*   **00:00 - 00:07:** O vídeo inicia com um close no caminhão **Scania laranja (Margil)** com seus faróis e luzes auxiliares acesos. A câmera faz um movimento lateral para a esquerda, revelando um segundo caminhão, um **Volvo vermelho (Globetrotter)**, também estacionado e com as luzes ligadas. Ao fundo, é possível ver claramente o letreiro da loja "Auto Truck Estética para Caminhões". O áudio contém uma conversa informal sobre acessórios e pagamento.
+
+### Melhor Uso no Site:
+*   **Seção de Portfólio/Trabalhos Realizados:** O vídeo é ideal para demonstrar o porte dos veículos atendidos e o resultado estético final (brilho e apresentação).
+*   **Banner de "Antes e Depois" ou "Resultados":** Pode ser usado como um exemplo visual do impacto visual que os serviços da Auto Truck proporcionam aos caminhões de grande porte.
+*   **Redes Sociais (Reels/Stories):** Devido ao formato vertical e à exibição da iluminação dos veículos, funciona bem para engajamento rápido, mostrando a "presença" dos caminhões após os cuidados da loja.
+
+**Observação:** Como o vídeo não mostra a equipe trabalhando ou o interior, ele serve mais como uma vitrine estética do que como um vídeo explicativo de processos técnicos.

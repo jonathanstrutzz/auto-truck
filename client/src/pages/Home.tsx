@@ -2,7 +2,7 @@
  * Direção visual: Auto Truck Premium Detail — superfícies pretas acetinadas, laranja de alto contraste
  * e composição editorial inspirada em acabamento automotivo. Prioridade: sofisticação, clareza e conversão.
  */
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDownRight,
   ArrowUp,
@@ -40,7 +40,6 @@ const HERO_IMAGE = "/manus-storage/auto-truck-bastidores-daf-poster_90345d2f.jpg
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
-const SERVICE_GALLERY_IMAGE = "/manus-storage/auto-truck-service-gallery_a9b6edf3.jpg";
 const WORKSHOP_FACADE_IMAGE = "/manus-storage/auto-truck-fachada-caminhoes-01_0298e7eb.png";
 const WORKSHOP_DAFS_IMAGE = "/manus-storage/auto-truck-dafs-box_2094b49d.jpeg";
 const WORKSHOP_DUSK_IMAGE = "/manus-storage/auto-truck-fachada-entardecer_27ae29d9.png";
@@ -88,6 +87,24 @@ const teamRecords = [
     alt: "Registro do processo de lavagem detalhada realizado pela equipe Auto Truck",
   },
 ];
+
+type GalleryCategory = "servicos" | "unidade" | "bastidores" | "veiculos";
+type GalleryBrand = "todas" | "volvo" | "scania" | "daf" | "volkswagen";
+
+const galleryBrandOptions: { id: GalleryBrand; label: string }[] = [
+  { id: "todas", label: "Todas as marcas" },
+  { id: "volvo", label: "Volvo" },
+  { id: "scania", label: "Scania" },
+  { id: "daf", label: "DAF" },
+  { id: "volkswagen", label: "Volkswagen" },
+];
+
+const brandGallery = {
+  volvo: { source: FLEET_VOLVOS_IMAGE, alt: "Caminhões Volvo em frente à oficina Auto Truck, com veículo azul em primeiro plano", label: "Arquivo Volvo", title: "Volvo em\ndestaque.", description: "Registros visuais de caminhões Volvo no arquivo da Auto Truck." },
+  scania: { source: SCANIA_RED_IMAGE, alt: "Caminhão Scania vermelho registrado ao ar livre", label: "Arquivo Scania", title: "Scania com\npresença.", description: "Registros visuais de caminhões Scania no arquivo da Auto Truck." },
+  daf: { source: WORKSHOP_DAFS_IMAGE, alt: "Dois caminhões DAF brancos nos boxes da Auto Truck", label: "Arquivo DAF", title: "DAF na\nestrutura.", description: "Registros visuais de caminhões DAF na unidade Auto Truck." },
+  volkswagen: { source: WORKSHOP_FLEET_IMAGE, alt: "Frota em frente à Auto Truck com caminhão Volkswagen à esquerda", label: "Arquivo Volkswagen", title: "Volkswagen\nna frota.", description: "Registro visual de caminhão Volkswagen em frente à unidade Auto Truck." },
+};
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
@@ -303,7 +320,8 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
-  const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores" | "veiculos">("unidade");
+  const [galleryCategory, setGalleryCategory] = useState<GalleryCategory>("servicos");
+  const [galleryBrand, setGalleryBrand] = useState<GalleryBrand>("todas");
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
   const [soundEnabled, setSoundEnabled] = useState(false);
@@ -312,6 +330,14 @@ export default function Home() {
   const activeVideo = videoShowcase.find((video) => video.id === activeVideoId) ?? videoShowcase[0];
   const activeTeamRecord = activeTeamRecordIndex === null ? null : teamRecords[activeTeamRecordIndex];
   const activeTeamRecordNumber = activeTeamRecordIndex === null ? 0 : activeTeamRecordIndex + 1;
+  const prefersReducedMotion = useReducedMotion();
+  const activeBrandGallery = galleryBrand === "todas" ? null : brandGallery[galleryBrand];
+  const galleryTransition = prefersReducedMotion ? { duration: 0.01 } : { duration: 0.22, ease: [0.23, 1, 0.32, 1] as const };
+
+  const selectGalleryCategory = (category: GalleryCategory) => {
+    setGalleryCategory(category);
+    setGalleryBrand("todas");
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -726,28 +752,43 @@ export default function Home() {
               <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
               <p>Imagens que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
               <div className="gallery-heading-rule" />
-              <span className="gallery-microcopy">{galleryCategory === "servicos" ? "PROCESSO DE ESTÉTICA · FOTO 01" : galleryCategory === "unidade" ? "ARQUIVO REAL DA UNIDADE · FOTOS 02—05" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
+              <span className="gallery-microcopy">{activeBrandGallery ? `ARQUIVO POR MARCA · ${activeBrandGallery.label.toUpperCase()}` : galleryCategory === "servicos" ? "PROCESSOS DE ESTÉTICA · ARQUIVO 01" : galleryCategory === "unidade" ? "ARQUIVO REAL DA UNIDADE · FOTOS 02—05" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
               <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
-                <button type="button" role="tab" aria-selected={galleryCategory === "servicos"} className={galleryCategory === "servicos" ? "active" : ""} onClick={() => setGalleryCategory("servicos")}>Serviços <span>01</span></button>
-                <button type="button" role="tab" aria-selected={galleryCategory === "unidade"} className={galleryCategory === "unidade" ? "active" : ""} onClick={() => setGalleryCategory("unidade")}>Unidade <span>02</span></button>
-                <button type="button" role="tab" aria-selected={galleryCategory === "bastidores"} className={galleryCategory === "bastidores" ? "active" : ""} onClick={() => setGalleryCategory("bastidores")}>Equipe & bastidores <span>03</span></button>
-                <button type="button" role="tab" aria-selected={galleryCategory === "veiculos"} className={galleryCategory === "veiculos" ? "active" : ""} onClick={() => setGalleryCategory("veiculos")}>Veículos <span>04</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "servicos" && !activeBrandGallery} className={galleryCategory === "servicos" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("servicos")}>Serviços <span>01</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "unidade" && !activeBrandGallery} className={galleryCategory === "unidade" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("unidade")}>Unidade <span>02</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "bastidores" && !activeBrandGallery} className={galleryCategory === "bastidores" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("bastidores")}>Equipe & bastidores <span>03</span></button>
+                <button type="button" role="tab" aria-selected={galleryCategory === "veiculos" && !activeBrandGallery} className={galleryCategory === "veiculos" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("veiculos")}>Veículos <span>04</span></button>
+              </div>
+              <div className="gallery-brand-filter" aria-label="Buscar registros por marca de caminhão">
+                <span className="micro-label">Buscar no arquivo por marca</span>
+                <div>{galleryBrandOptions.map((brand) => <button type="button" key={brand.id} className={galleryBrand === brand.id ? "active" : ""} aria-pressed={galleryBrand === brand.id} onClick={() => setGalleryBrand(brand.id)}>{brand.label}</button>)}</div>
               </div>
               <a className="gallery-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer">
                 <MapPinned size={17} /> Traçar rota no Google Maps <ArrowUpRight size={16} />
               </a>
             </motion.div>
 
-            {galleryCategory === "servicos" ? (
-              <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-gallery-card service-gallery-card">
-                <img src={SERVICE_GALLERY_IMAGE} alt="Processo de polimento e acabamento em caminhão" />
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div key={activeBrandGallery ? `marca-${galleryBrand}` : galleryCategory} className="gallery-content-transition" initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -10 }} transition={galleryTransition}>
+            {activeBrandGallery ? (
+              <figure className="workshop-gallery-card brand-gallery-card">
+                <img src={activeBrandGallery.source} alt={activeBrandGallery.alt} />
                 <div className="gallery-photo-tint" />
-                <div className="gallery-photo-number">01</div>
-                <figcaption>
-                  <span className="micro-label">Serviços em ação</span>
-                  <strong>Precisão no processo.<br />Presença no resultado.</strong>
-                </figcaption>
-              </motion.figure>
+                <figcaption><span className="micro-label">{activeBrandGallery.label}</span><strong>{activeBrandGallery.title.split("\n").map((line, index) => <span key={line}>{index > 0 && <br />}{line}</span>)}</strong><p>{activeBrandGallery.description}</p></figcaption>
+              </figure>
+            ) : galleryCategory === "servicos" ? (
+              <div className="service-process-archive">
+                <figure className="workshop-gallery-card process-polish-card">
+                  <img src={DETAIL_IMAGE} alt="Mão enluvada trabalhando a lateral de uma cabine, com reflexo de luz no acabamento" />
+                  <div className="gallery-photo-tint" /><div className="gallery-photo-number">01</div>
+                  <figcaption><span className="micro-label">Acabamento manual</span><strong>Detalhe externo<br />em evidência.</strong></figcaption>
+                </figure>
+                <figure className="workshop-gallery-card process-cabin-card">
+                  <img src={CAB_IMAGE} alt="Cabine limpa e organizada vista pela porta aberta" />
+                  <div className="gallery-photo-tint" />
+                  <figcaption><span className="micro-label">Cuidado interno</span><strong>Cabine preparada<br />para a estrada.</strong><p>Registro de uma cabine limpa e organizada; o processo completo de higienização pode ser orçado com a equipe.</p></figcaption>
+                </figure>
+              </div>
             ) : galleryCategory === "unidade" ? (
               <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-photo-archive">
                 <figure className="workshop-gallery-card workshop-photo-main">
@@ -800,6 +841,8 @@ export default function Home() {
                 <a className="backstage-link" href="#bastidores">Explorar bastidores reais <ArrowDownRight size={16} /></a>
               </motion.article>
             )}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
 

@@ -270,7 +270,7 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .workshop-gallery-card figcaption .micro-label { margin-bottom: 8px; color: var(--orange-soft); }
 .workshop-gallery-card figcaption strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 31px; font-weight: 700; line-height: .89; letter-spacing: -.015em; text-transform: uppercase; }
 
-.contact-stage { position: relative; overflow: hidden; padding: 126px 0; background: var(--black); }
+.contact-stage { position: relative; overflow: hidden; padding: 126px 0 112px; background: var(--black); }
 .contact-shimmer { position: absolute; top: -178px; right: -100px; width: 630px; height: 630px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; }
 .contact-shimmer::before, .contact-shimmer::after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.08); border-radius: inherit; }
 .contact-shimmer::before { inset: 74px; }
@@ -288,6 +288,24 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .phone-link:hover { color: var(--orange); }
 .contact-route { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: #5c5750; font-size: 11px; font-weight: 800; }
 .contact-route:hover { color: var(--orange); }
+.location-info-grid { position: relative; display: grid; grid-template-columns: .76fr 1.24fr; gap: 28px; margin-top: 82px; }
+.hours-panel { padding: 28px 27px; border-top: 3px solid var(--orange); background: #19191b; color: #fff; }
+.hours-panel-heading { display: flex; align-items: flex-start; gap: 12px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.17); color: var(--orange-soft); }
+.hours-panel-heading .micro-label { margin-bottom: 5px; color: rgba(255,255,255,.48); }
+.hours-panel-heading b { display: block; color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 24px; font-weight: 700; line-height: .88; text-transform: uppercase; }
+.hours-list { margin-top: 12px; }
+.hours-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.11); color: #dad5cc; font-size: 10px; }
+.hours-row b { color: #fff; font: 700 10px "IBM Plex Mono", monospace; }
+.hours-row.is-closed { color: #7b766f; }
+.hours-row.is-closed b { color: #a19c93; }
+.location-share { display: flex; align-items: center; gap: 8px; margin-top: 23px; padding: 13px 0 0; border-top: 1px solid rgba(255,255,255,.18); color: var(--orange-soft); font-size: 10px; font-weight: 800; }
+.location-share:hover { color: #fff; }
+.contact-map-panel { overflow: hidden; border: 1px solid rgba(255,255,255,.18); background: #121214; }
+.map-panel-topline { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 14px 17px; color: #fff; }
+.map-panel-topline > span:last-child { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .09em; }
+.location-map { width: 100%; filter: grayscale(.78) contrast(1.12) brightness(.85); }
+.map-panel-address { display: flex; align-items: flex-start; gap: 9px; padding: 15px 17px; color: #cbc6bd; font-size: 10px; line-height: 1.55; }
+.map-panel-address svg { flex: 0 0 auto; color: var(--orange); }
 
 .premium-footer { padding: 38px 0; border-top: 1px solid rgba(255,255,255,.15); background: #090909; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 45px; align-items: center; }
@@ -336,6 +354,8 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .timeline-entry, .timeline-entry:nth-child(2), .timeline-entry:nth-child(3) { min-height: 0; margin-top: 0; border-left: 1px solid var(--line-light); }
   .timeline-year { margin-bottom: 28px; }
   .contact-grid { gap: 54px; }
+  .location-info-grid { grid-template-columns: 1fr; max-width: 700px; margin-top: 58px; }
+  .hours-panel { max-width: 500px; }
   .gallery-layout { grid-template-columns: 1fr; gap: 52px; }
   .workshop-gallery-card { max-width: 660px; }
   .contact-panel { max-width: 500px; }
@@ -400,6 +420,9 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
   .workshop-gallery-card figcaption strong { font-size: 28px; }
   .contact-stage { padding: 85px 0; }
   .contact-panel { padding: 28px 24px; box-shadow: 12px 12px 0 rgba(255,87,27,.27); }
+  .location-info-grid { gap: 24px; margin-top: 45px; }
+  .hours-panel { padding: 25px 21px; }
+  .location-map { min-height: 315px; }
   .phone-number { font-size: 50px; }
   .footer-grid { grid-template-columns: 1fr; gap: 22px; }
   .footer-details { grid-column: auto; align-items: start; }

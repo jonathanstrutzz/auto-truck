@@ -20,3 +20,8 @@
 - [x] Configurar a rota da unidade Auto Truck no Google Maps.
 - [x] Inserir os botões de rota na galeria e no contato.
 - [x] Validar a abertura da rota em desktop e mobile.
+- [x] Adicionar horários de funcionamento e dias de atendimento.
+- [x] Criar compartilhamento da localização pelo WhatsApp.
+- [x] Incorporar o mapa interativo do Google Maps na seção de contato.
+- [x] Criar e validar uma habilidade reutilizável para esse fluxo de localização e atendimento.
+- [x] Validar a nova experiência em desktop e mobile.

@@ -8,11 +8,13 @@ import {
   ArrowUpRight,
   Building2,
   ChevronRight,
+  Clock3,
   MapPin,
   MapPinned,
   Menu,
   MessageCircle,
   Phone,
+  Share2,
   ShieldCheck,
   Sparkles,
   SprayCan,
@@ -27,7 +29,10 @@ const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
+const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
+const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
+const WHATSAPP_LOCATION_SHARE_URL = `https://wa.me/?text=${encodeURIComponent(`📍 Auto Truck Estética Para Caminhões\n${OFFICIAL_ADDRESS}\n\nComo chegar: ${MAPS_ROUTE_URL}`)}`;
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
@@ -147,6 +152,16 @@ const serviceDetails = [
 
 const budgetLink = (service: string) =>
   `https://wa.me/5562992158095?text=${encodeURIComponent(`Olá, quero solicitar um orçamento para ${service} na Auto Truck Estética.`)}`;
+
+const businessHours = [
+  ["Domingo", "Fechada"],
+  ["Segunda-feira", "08:00 — 18:00"],
+  ["Terça-feira", "08:00 — 18:00"],
+  ["Quarta-feira", "08:00 — 18:00"],
+  ["Quinta-feira", "08:00 — 18:00"],
+  ["Sexta-feira", "08:00 — 18:00"],
+  ["Sábado", "Fechada"],
+];
 
 const reveal = {
   initial: { opacity: 0, y: 24 },
@@ -457,6 +472,26 @@ export default function Home() {
               </a>
               <a className="phone-link" href={PHONE_URL}><Phone size={16} /> Prefere ligar? Fale agora</a>
               <a className="contact-route" href={MAPS_ROUTE_URL} target="_blank" rel="noreferrer"><MapPinned size={16} /> Traçar rota até a oficina</a>
+            </motion.div>
+          </div>
+
+          <div className="page-width location-info-grid">
+            <motion.div {...reveal} className="hours-panel">
+              <div className="hours-panel-heading"><Clock3 size={21} /><div><span className="micro-label">Horário de atendimento</span><b>Quando você pode nos encontrar.</b></div></div>
+              <div className="hours-list">
+                {businessHours.map(([day, time]) => (
+                  <div className={`hours-row ${time === "Fechada" ? "is-closed" : ""}`} key={day}><span>{day}</span><b>{time}</b></div>
+                ))}
+              </div>
+              <a className="location-share" href={WHATSAPP_LOCATION_SHARE_URL} target="_blank" rel="noreferrer">
+                <Share2 size={17} /> Compartilhar localização no WhatsApp <ArrowUpRight size={15} />
+              </a>
+            </motion.div>
+
+            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.07 }} className="contact-map-panel">
+              <div className="map-panel-topline"><span className="micro-label">Encontre a Auto Truck</span><span>ANÁPOLIS · GO</span></div>
+              <iframe className="location-map" src={MAPS_EMBED_URL} title="Mapa da Auto Truck Estética em Anápolis" referrerPolicy="no-referrer-when-downgrade" />
+              <div className="map-panel-address"><MapPinned size={18} /><span>{OFFICIAL_ADDRESS}</span></div>
             </motion.div>
           </div>
         </section>

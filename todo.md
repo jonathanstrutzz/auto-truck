@@ -43,3 +43,6 @@
 - [x] Criar a nova página de portfólio e a rota de navegação.
 - [x] Integrar os vídeos em um player de destaque e uma grade de conteúdos.
 - [x] Validar a página de portfólio em desktop e mobile.
+- [x] Classificar os vídeos de portfólio por lavagem, polimento e higienização.
+- [x] Implementar filtros visuais por categoria de serviço.
+- [x] Validar a filtragem em desktop e mobile.

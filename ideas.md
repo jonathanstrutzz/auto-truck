@@ -74,3 +74,5 @@ O refinamento visual acrescenta acabamentos inspirados em pintura automotiva: re
 Os módulos claros devem funcionar como painéis de carroceria em areia metálica, com reflexos acetinados, recortes diagonais de cabine e linhas de inspeção. A estética de serviços deve ser comunicada por resultados operacionais — **brilho**, **proteção**, **cabine**, **acabamento** e **presença** — e não por uma aparência de catálogo mecânico.
 
 O recorte angular do logo passa a orientar etiquetas, placas de marca, cabeçalhos e divisores. Assim, mesmo sem o logotipo visível, a página mantém uma assinatura visual reconhecível da Auto Truck.
+
+Nas páginas audiovisuais, rótulos, metadados e CTAs usam linguagem operacional em português. O portfólio deve destacar a marca Auto Truck de imediato, recorrendo às placas angulares do logotipo, linhas de carroceria e superfícies escuras de aparência acetinada ou fumê — nunca a campos pretos neutros.

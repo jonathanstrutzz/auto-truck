@@ -78,6 +78,36 @@ const timelineEvents = [
   },
 ];
 
+const serviceDetails = [
+  {
+    number: "01",
+    title: "Lavagem detalhada externa",
+    description: "Um processo pensado para retirar a sujeira acumulada da operação e devolver leitura limpa à carroceria, rodas, caixas, pneus e acabamentos externos.",
+    includes: ["Pré-lavagem", "Descontaminação", "Rodas e pneus", "Acabamentos externos"],
+  },
+  {
+    number: "02",
+    title: "Polimento técnico e revitalização",
+    description: "Avaliação do estado da pintura e tratamento orientado ao nível de desgaste para recuperar profundidade, brilho e uniformidade visual.",
+    includes: ["Avaliação da pintura", "Refino de brilho", "Revitalização visual", "Finalização técnica"],
+  },
+  {
+    number: "03",
+    title: "Higienização de cabine",
+    description: "Cuidado interno para renovar o ambiente de trabalho do motorista, com atenção a superfícies, bancos, painéis, vidros e pontos de uso frequente.",
+    includes: ["Painéis e comandos", "Bancos e revestimentos", "Vidros internos", "Acabamentos da cabine"],
+  },
+  {
+    number: "04",
+    title: "Proteção e acabamento",
+    description: "Etapas de finalização que ajudam a preservar o visual tratado e reforçam a presença de cada detalhe no uso diário do caminhão.",
+    includes: ["Plásticos e borrachas", "Pneus e rodas", "Vidros externos", "Acabamento visual"],
+  },
+];
+
+const budgetLink = (service: string) =>
+  `https://wa.me/5562992158095?text=${encodeURIComponent(`Olá, quero solicitar um orçamento para ${service} na Auto Truck Estética.`)}`;
+
 const reveal = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -172,6 +202,10 @@ export default function Home() {
             <span className="note-dot" />
             <div><span className="micro-label">Padrão Auto Truck</span><b>Brilho, proteção<br />e personalidade.</b></div>
           </div>
+          <div className="hero-brand-plate" aria-label="Marca Auto Truck Estética Para Caminhões">
+            <img src={OFFICIAL_LOGO} alt="Auto Truck Estética Para Caminhões" />
+            <span>ANÁPOLIS · GO<br />DESDE 2015</span>
+          </div>
           <div className="hero-side-caption">AUTO TRUCK / ESTÉTICA PARA CAMINHÕES / GOIÂNIA</div>
         </section>
 
@@ -208,6 +242,37 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="servicos-detalhados" className="service-detail-stage">
+          <div className="page-width">
+            <motion.div {...reveal} className="service-detail-heading">
+              <div>
+                <p className="eyebrow orange"><span /> Serviços detalhados</p>
+                <h2>O cuidado certo para<br /><em>cada parte</em> do seu caminhão.</h2>
+              </div>
+              <p>O orçamento é definido após entender o estado do veículo e o resultado que você espera. Escolha uma especialidade para falar diretamente com a nossa equipe.</p>
+            </motion.div>
+
+            <div className="service-detail-list">
+              {serviceDetails.map((service, index) => (
+                <motion.article {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }} className="service-detail-row" key={service.number}>
+                  <div className="detail-number">{service.number}</div>
+                  <div className="detail-main">
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                  <div className="detail-includes">
+                    <span className="micro-label">Pode incluir</span>
+                    <div>{service.includes.map((item) => <span key={item}>{item}</span>)}</div>
+                  </div>
+                  <a className="detail-budget" href={budgetLink(service.title)} target="_blank" rel="noreferrer">
+                    Orçar este serviço <ArrowUpRight size={18} />
+                  </a>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="experiencia" className="detail-experience">
           <div className="page-width experience-grid">
             <motion.div {...reveal} className="experience-shot">
@@ -238,7 +303,7 @@ export default function Home() {
               <p className="eyebrow orange"><span /> 03 — A empresa</p>
               <h2>Feita para quem<br />vive <em>na estrada.</em></h2>
               <p className="body-copy">
-                A Auto Truck Estética é uma empresa de Anápolis, Goiás, formalizada em 2015 para atuar com lavagem, lubrificação e polimento de veículos automotores. Hoje, sua identidade é dedicada a entregar estética, cuidado e presença para caminhões que fazem a operação acontecer.
+                Desde 2015, a Auto Truck Estética atende em Anápolis, Goiás, com serviços de lavagem, lubrificação e polimento automotivo. O foco é direto: entregar cuidado visual para caminhões que sustentam a operação todos os dias.
               </p>
               <div className="story-origin">
                 <span className="origin-year">DESDE<br /><b>2015</b></span>
@@ -252,7 +317,7 @@ export default function Home() {
               <div className="fact-row"><Building2 size={19} /><span><b>Auto Truck Estética LTDA</b><small>CNPJ 21.956.358/0001-62 · ME</small></span></div>
               <div className="fact-row"><MapPin size={19} /><span><b>Anápolis · Goiás</b><small>Jardim Flor de Liz · CEP 75103-170</small></span></div>
               <div className="fact-rule" />
-              <p>Sociedade empresária limitada, com atividade principal de serviços de lavagem, lubrificação e polimento de veículos automotores.</p>
+              <p>Serviços de lavagem, lubrificação e polimento para veículos automotores, com atendimento voltado à linha pesada.</p>
               <span className="fact-source">DADOS DO COMPROVANTE CNPJ · 03.02.2025</span>
             </motion.aside>
           </div>
@@ -330,6 +395,11 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <a className="budget-float" href={budgetLink("estética para caminhões")} target="_blank" rel="noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
+        <MessageCircle size={22} />
+        <span><small>Atendimento rápido</small>Solicitar orçamento</span>
+      </a>
 
       <footer className="premium-footer">
         <div className="page-width footer-grid">

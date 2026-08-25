@@ -8,3 +8,6 @@
 - [x] Extrair do documento oficial os marcos institucionais que podem ser publicados.
 - [x] Escrever a apresentação institucional e a linha do tempo da Auto Truck Estética.
 - [x] Integrar as novas seções e validar a página atualizada em desktop e mobile.
+- [x] Estruturar os serviços detalhados de estética para caminhões.
+- [x] Criar o botão flutuante de orçamento com mensagem pré-preenchida no WhatsApp.
+- [x] Validar a nova seção e a experiência de contato em desktop e mobile.

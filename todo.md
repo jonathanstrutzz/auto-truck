@@ -73,3 +73,5 @@
 - [x] Integrar e validar os novos conteúdos em desktop e mobile.
 - [x] Adicionar o link oficial do Instagram aos pontos de contato.
 - [x] Validar a apresentação do Instagram em desktop e mobile.
+- [x] Adicionar botão flutuante do Instagram próximo ao pré-orçamento.
+- [x] Validar os atalhos flutuantes em desktop e mobile.

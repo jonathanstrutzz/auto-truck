@@ -90,3 +90,5 @@ O logo oficial funciona como uma **placa assinada** em cabeçalho, hero, convers
 As superfícies claras devem parecer painéis de carroceria: reflexos acetinados, linhas de inspeção finas e diagonais controladas. Rótulos, molduras de imagem, CTAs, controles de modal e placas de FAQ compartilham o mesmo recorte angular, reforçando a origem visual no logotipo Auto Truck.
 
 No arquivo audiovisual, cada vídeo deve abrir com uma capa de processo ou resultado real, acompanhada por corte angular, número técnico e marcador de registro. A imagem principal de cada página privilegia brilho, lavagem, cabine, proteção, pintura ou equipe em operação; caminhões sem relação explícita com o serviço não ocupam a posição de destaque.
+
+O hero usa registro real de processo ou resultado como matéria-prima principal, com a placa oficial da Auto Truck assumindo função cerimonial de assinatura. Os campos escuros devem carregar reflexos suaves, linhas de carroceria e profundidade fumê para remeter a uma baia de acabamento, não a uma interface industrial genérica.

@@ -36,7 +36,7 @@ import { type FormEvent, useEffect, useRef, useState } from "react";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
-const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
+const HERO_IMAGE = "/manus-storage/auto-truck-bastidores-daf-poster_90345d2f.jpg";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
@@ -903,10 +903,16 @@ export default function Home() {
         </section>
       </main>
 
-      <a className="budget-float" href="#pre-orcamento" aria-label="Abrir formulário de pré-orçamento">
-        <MessageCircle size={22} />
-        <span><small>Atendimento rápido</small>Fazer pré-orçamento</span>
-      </a>
+      <div className="floating-contact-actions" aria-label="Atalhos de atendimento">
+        <a className="instagram-float" href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Abrir Instagram oficial da Auto Truck" title="Instagram da Auto Truck">
+          <Instagram size={22} />
+          <span className="sr-only">Instagram da Auto Truck</span>
+        </a>
+        <a className="budget-float" href="#pre-orcamento" aria-label="Abrir formulário de pré-orçamento">
+          <MessageCircle size={22} />
+          <span><small>Atendimento rápido</small>Fazer pré-orçamento</span>
+        </a>
+      </div>
       <button type="button" className={`back-to-top ${scrolled ? "is-visible" : ""}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Voltar ao início">
         <ArrowUp size={18} />
       </button>

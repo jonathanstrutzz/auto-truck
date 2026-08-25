@@ -1,293 +1,275 @@
 /**
- * Direção visual: Forja Urbana — faixas operacionais assimétricas, contraste carvão/laranja
- * e tipografia editorial que transforma serviços pesados em uma experiência clara e objetiva.
+ * Direção visual: Auto Truck Premium Detail — superfícies pretas acetinadas, laranja de alto contraste
+ * e composição editorial inspirada em acabamento automotivo. Prioridade: sofisticação, clareza e conversão.
  */
 import { motion } from "framer-motion";
 import {
   ArrowDownRight,
   ArrowUpRight,
   ChevronRight,
-  CircleGauge,
-  Clock3,
   Menu,
+  MessageCircle,
+  Phone,
   ShieldCheck,
-  Truck,
-  Wrench,
+  Sparkles,
+  SprayCan,
   X,
-  Zap,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const HERO_IMAGE = "/manus-storage/auto-truck-hero_35a2e086.jpg";
-const WORKSHOP_IMAGE = "/manus-storage/auto-truck-workshop_57d204d2.jpg";
-const FLEET_IMAGE = "/manus-storage/auto-truck-fleet_189662a4.jpg";
-const BRAND_MARK = "/manus-storage/auto-truck-mark_1c174bb6.png";
-
-const serviceItems = [
-  {
-    id: "01",
-    icon: Wrench,
-    title: "Mecânica pesada",
-    text: "Revisões, correções e manutenção de componentes que sustentam a operação diária da sua frota.",
-  },
-  {
-    id: "02",
-    icon: Zap,
-    title: "Elétrica & diagnóstico",
-    text: "Leitura técnica, análise de falhas e intervenções para devolver previsibilidade ao seu veículo.",
-  },
-  {
-    id: "03",
-    icon: CircleGauge,
-    title: "Freios & suspensão",
-    text: "Inspeção e manutenção de sistemas críticos para rodar com segurança e estabilidade.",
-  },
-  {
-    id: "04",
-    icon: Clock3,
-    title: "Preventiva de frota",
-    text: "Rotinas planejadas para antecipar paradas e proteger o ritmo da sua operação.",
-  },
-];
+const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
+const HERO_IMAGE = "/manus-storage/auto-truck-detail-hero_17aee8f4.jpg";
+const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
+const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
+const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
+const PHONE_URL = "tel:+5562992158095";
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
-  { label: "Método", href: "#metodo" },
-  { label: "Oficina", href: "#oficina" },
+  { label: "Experiência", href: "#experiencia" },
+  { label: "Padrão Auto Truck", href: "#padrao" },
+];
+
+const services = [
+  {
+    number: "01",
+    title: "Lavagem detalhada",
+    text: "Cuidado completo por fora, com atenção às áreas que fazem seu caminhão se destacar na estrada.",
+    icon: Sparkles,
+  },
+  {
+    number: "02",
+    title: "Polimento técnico",
+    text: "Refinamento de pintura para recuperar profundidade, brilho e leitura perfeita das linhas da carroceria.",
+    icon: SprayCan,
+  },
+  {
+    number: "03",
+    title: "Higienização interna",
+    text: "Cabine renovada para quem passa horas transformando cada rota em resultado.",
+    icon: ShieldCheck,
+  },
+];
+
+const steps = [
+  ["01", "Avaliação visual", "Entendemos o estado do veículo e o padrão de resultado que você procura."],
+  ["02", "Tratamento correto", "Definimos processos e produtos compatíveis com cada superfície e acabamento."],
+  ["03", "Entrega que impõe presença", "Seu caminhão volta para a rua com aspecto cuidado em cada detalhe."],
 ];
 
 const reveal = {
-  initial: { opacity: 0, y: 22 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
+  viewport: { once: true, amount: 0.18 },
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
+
+function BrandLogo({ footer = false }: { footer?: boolean }) {
+  return (
+    <a className={`brand-logo ${footer ? "footer-logo" : ""}`} href="#inicio" aria-label="Auto Truck — início">
+      <img src={OFFICIAL_LOGO} alt="Auto Truck — Estética Para Caminhões" />
+    </a>
+  );
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 18);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div className="site-shell">
-      <header className={`top-nav ${scrolled ? "is-scrolled" : ""}`}>
-        <a className="brand-lockup" href="#inicio" aria-label="Auto Truck — início">
-          <img className="brand-mark" src={BRAND_MARK} alt="" />
-          <span className="brand-name">AUTO<br />TRUCK</span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href}>{item.label}</a>
-          ))}
+    <div className="luxury-site">
+      <header className={`premium-nav ${scrolled ? "is-scrolled" : ""}`}>
+        <BrandLogo />
+        <nav className="desktop-links" aria-label="Navegação principal">
+          {navItems.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
-
-        <a className="nav-cta" href="#contato">
-          Solicitar atendimento <ArrowUpRight size={16} strokeWidth={2.4} />
+        <a className="nav-action" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+          <MessageCircle size={17} /> Falar no WhatsApp
         </a>
-
         <button
-          className="menu-toggle"
           type="button"
-          onClick={() => setMenuOpen((open) => !open)}
+          className="mobile-trigger"
+          onClick={() => setMenuOpen((current) => !current)}
           aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
+          aria-controls="mobile-menu"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
         >
-          {menuOpen ? <X size={23} /> : <Menu size={24} />}
+          {menuOpen ? <X size={24} /> : <Menu size={25} />}
         </button>
       </header>
 
-      <div id="mobile-navigation" className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <div className="mobile-menu-inner">
-          <span className="utility-label">Navegação</span>
+      <aside id="mobile-menu" className={`mobile-menu ${menuOpen ? "is-open" : ""}`}>
+        <div className="mobile-menu-content">
+          <span className="micro-label">Navegação</span>
           {navItems.map((item) => (
             <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-              {item.label}<ChevronRight size={20} />
+              {item.label}<ChevronRight size={23} />
             </a>
           ))}
-          <a className="mobile-contact" href="#contato" onClick={() => setMenuOpen(false)}>
-            Solicitar atendimento <ArrowUpRight size={18} />
+          <a className="mobile-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+            <MessageCircle size={19} /> Atendimento via WhatsApp
           </a>
         </div>
-      </div>
+      </aside>
 
       <main>
-        <section id="inicio" className="hero-section">
-          <img className="hero-image" src={HERO_IMAGE} alt="Caminhão em frente a uma oficina especializada" />
-          <div className="hero-overlay" />
-          <div className="hero-grid" />
-          <div className="hero-rail" aria-hidden="true" />
-
-          <div className="hero-content">
-            <motion.p {...reveal} className="eyebrow light-eyebrow">
-              <span /> Oficina para veículos pesados
-            </motion.p>
+        <section id="inicio" className="luxury-hero">
+          <img className="hero-photo" src={HERO_IMAGE} alt="Caminhão branco com acabamento impecável em estúdio de estética automotiva" />
+          <div className="hero-tint" />
+          <div className="hero-fine-grid" />
+          <div className="hero-orange-line" aria-hidden="true" />
+          <div className="hero-content page-width">
+            <motion.p {...reveal} className="eyebrow orange"><span /> Estética para caminhões</motion.p>
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.08, ease: "easeOut" }}
+              transition={{ duration: 0.68, delay: 0.06, ease: "easeOut" }}
             >
-              Seu caminhão<br />
-              <em>não pode</em> esperar.
+              Presença que<br />
+              <em>se nota</em> de longe.
             </motion.h1>
-            <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.16 }} className="hero-description">
-              Diagnóstico, manutenção e cuidado técnico para manter sua operação em movimento — sem ruído, sem improviso.
+            <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.14 }} className="hero-copy">
+              Estética premium para caminhões que carregam sua marca, sua rotina e o orgulho pelo que você construiu.
             </motion.p>
-            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.24 }} className="hero-actions">
-              <a className="primary-cta" href="#contato">
-                Falar com a oficina <ArrowUpRight size={19} strokeWidth={2.3} />
+            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.2 }} className="hero-buttons">
+              <a className="button-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                Agendar atendimento <ArrowUpRight size={19} />
               </a>
-              <a className="text-cta" href="#servicos">
-                Conheça os serviços <ArrowDownRight size={18} />
+              <a className="button-quiet" href="#servicos">
+                Ver especialidades <ArrowDownRight size={18} />
               </a>
             </motion.div>
           </div>
-
-          <div className="hero-status" aria-label="Informação de atendimento">
-            <span className="status-pulse" />
-            <div>
-              <span className="utility-label">Operação em movimento</span>
-              <strong>Atendimento técnico<br />para sua jornada pesada.</strong>
-            </div>
+          <div className="hero-floating-note">
+            <span className="note-dot" />
+            <div><span className="micro-label">Padrão Auto Truck</span><b>Brilho, proteção<br />e personalidade.</b></div>
           </div>
-
-          <div className="hero-corner-label">AUTO TRUCK / OFICINA ESPECIALIZADA</div>
+          <div className="hero-side-caption">AUTO TRUCK / ESTÉTICA PARA CAMINHÕES / GOIÂNIA</div>
         </section>
 
-        <section className="service-marquee" aria-label="Especialidades Auto Truck">
-          <div className="marquee-track">
-            <span>DIAGNÓSTICO TÉCNICO</span><i>✦</i><span>MANUTENÇÃO PREVENTIVA</span><i>✦</i><span>LINHA PESADA</span><i>✦</i><span>OPERAÇÃO DE FROTAS</span><i>✦</i>
-            <span aria-hidden="true">DIAGNÓSTICO TÉCNICO</span><i aria-hidden="true">✦</i><span aria-hidden="true">MANUTENÇÃO PREVENTIVA</span><i aria-hidden="true">✦</i>
+        <section className="signature-band" aria-label="Assinatura Auto Truck">
+          <div className="signature-track">
+            <span>ESTÉTICA DE LINHA PESADA</span><i>✦</i><span>ACABAMENTO QUE IMPÕE PRESENÇA</span><i>✦</i><span>DETALHE QUE VALORIZA SUA MÁQUINA</span><i>✦</i>
+            <span aria-hidden="true">ESTÉTICA DE LINHA PESADA</span><i aria-hidden="true">✦</i><span aria-hidden="true">ACABAMENTO QUE IMPÕE PRESENÇA</span>
           </div>
         </section>
 
-        <section id="servicos" className="services-section">
-          <div className="section-shell services-intro">
+        <section id="servicos" className="services-stage">
+          <div className="page-width services-head">
             <motion.div {...reveal}>
-              <p className="eyebrow dark-eyebrow"><span /> 01 — Especialidades</p>
-              <h2>Oficina que entende<br /><em>o peso da sua rota.</em></h2>
+              <p className="eyebrow graphite"><span /> 01 — Especialidades</p>
+              <h2>Seu caminhão<br />merece <em>ser visto.</em></h2>
             </motion.div>
-            <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="section-lead">
-              A Auto Truck reúne diagnóstico e execução para que cada intervenção tenha um único objetivo: colocar seu caminhão de volta na operação com segurança.
+            <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="intro-copy">
+              Processos feitos para recuperar presença, proteger acabamentos e devolver ao veículo a imagem que sua operação merece.
             </motion.p>
           </div>
 
-          <div className="service-list section-shell">
-            {serviceItems.map((service, index) => {
+          <div className="page-width service-cards">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <motion.article
-                  {...reveal}
-                  transition={{ ...reveal.transition, delay: index * 0.06 }}
-                  className="service-row"
-                  key={service.id}
-                >
-                  <span className="service-number">{service.id}</span>
-                  <span className="service-icon"><Icon size={23} strokeWidth={1.8} /></span>
-                  <div className="service-copy">
-                    <h3>{service.title}</h3>
-                    <p>{service.text}</p>
-                  </div>
-                  <span className="service-arrow"><ArrowUpRight size={23} /></span>
+                <motion.article {...reveal} transition={{ ...reveal.transition, delay: index * 0.07 }} className="service-card" key={service.number}>
+                  <div className="card-top"><span>{service.number}</span><Icon size={23} strokeWidth={1.7} /></div>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                  <span className="card-arrow"><ArrowUpRight size={19} /></span>
                 </motion.article>
               );
             })}
           </div>
         </section>
 
-        <section id="metodo" className="method-section">
-          <div className="section-shell method-layout">
-            <motion.div {...reveal} className="method-visual">
-              <img src={WORKSHOP_IMAGE} alt="Inspeção técnica no conjunto de roda de um caminhão" />
-              <div className="image-index"><span>Precisão</span><b>01</b></div>
-              <div className="image-caption">ANÁLISE DE COMPONENTES<br />E INTERVENÇÃO TÉCNICA</div>
+        <section id="experiencia" className="detail-experience">
+          <div className="page-width experience-grid">
+            <motion.div {...reveal} className="experience-shot">
+              <img src={DETAIL_IMAGE} alt="Aplicação cuidadosa de acabamento na pintura de um caminhão" />
+              <div className="shot-glow" />
+              <div className="shot-index"><span>Detalhe</span><b>01</b></div>
+              <p>REFLEXO CONTROLADO<br />ACABAMENTO PRECISO</p>
             </motion.div>
-
-            <div className="method-copy">
-              <motion.p {...reveal} className="eyebrow light-eyebrow"><span /> 02 — Método Auto Truck</motion.p>
-              <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.07 }}>
-                Problema na estrada<br />pede resposta <em>de oficina.</em>
+            <div className="experience-copy">
+              <motion.p {...reveal} className="eyebrow orange"><span /> 02 — A experiência</motion.p>
+              <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
+                Cuidado técnico.<br /><em>Visual impecável.</em>
               </motion.h2>
-              <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.12 }} className="method-description">
-                Nosso fluxo une escuta, diagnóstico e execução. Você entende o que está sendo feito e por quê, enquanto a equipe cuida do que realmente importa: sua continuidade operacional.
+              <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.11 }} className="body-copy">
+                Da pintura à cabine, cada superfície recebe o processo adequado para entregar reflexo, conservação e leitura impecável da carroceria.
               </motion.p>
-
-              <div className="method-steps">
-                {[
-                  ["01", "Entender", "Ouvimos o histórico e avaliamos o impacto da falha."],
-                  ["02", "Diagnosticar", "Investigamos o sistema antes de definir a intervenção."],
-                  ["03", "Resolver", "Executamos com foco em segurança e retorno à operação."],
-                ].map(([number, title, description], index) => (
-                  <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.16 + index * 0.06 }} className="method-step" key={number}>
-                    <span>{number}</span>
-                    <div><h3>{title}</h3><p>{description}</p></div>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.a {...reveal} transition={{ ...reveal.transition, delay: 0.16 }} className="inline-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                Conversar sobre seu caminhão <ArrowUpRight size={18} />
+              </motion.a>
             </div>
           </div>
         </section>
 
-        <section id="oficina" className="proof-section">
-          <div className="section-shell proof-layout">
-            <motion.div {...reveal} className="proof-copy">
-              <p className="eyebrow dark-eyebrow"><span /> 03 — O compromisso</p>
-              <h2>Quando seu caminhão para,<br />sua operação <em>perde ritmo.</em></h2>
-              <p>
-                É por isso que a Auto Truck trabalha com uma comunicação direta e um processo técnico. A cada visita, nosso foco é reduzir incertezas e devolver confiabilidade à sua rotina.
-              </p>
-              <a href="#contato" className="text-cta dark-text-cta">Conhecer a Auto Truck <ArrowUpRight size={18} /></a>
-            </motion.div>
-
-            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="proof-panel">
-              <div className="panel-orbit" aria-hidden="true" />
-              <Truck className="panel-truck" size={62} strokeWidth={1.25} aria-hidden="true" />
-              <div className="panel-rule" />
-              <div className="proof-item"><ShieldCheck size={24} /><span>Execução com<br /><b>foco em segurança</b></span></div>
-              <div className="proof-item"><CircleGauge size={24} /><span>Diagnóstico<br /><b>antes da intervenção</b></span></div>
-              <div className="proof-item"><Clock3 size={24} /><span>Planejamento para<br /><b>reduzir paradas</b></span></div>
-              <div className="panel-footer"><span>PROCEDIMENTO</span><b>AT / 01</b></div>
-            </motion.div>
+        <section id="padrao" className="process-section">
+          <div className="page-width process-grid">
+            <div className="process-copy">
+              <motion.p {...reveal} className="eyebrow graphite"><span /> 03 — Padrão Auto Truck</motion.p>
+              <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.05 }}>
+                Não é só brilho.<br />É <em>presença.</em></motion.h2>
+              <motion.p {...reveal} transition={{ ...reveal.transition, delay: 0.1 }} className="body-copy dark-copy">
+                Seu caminhão representa sua empresa antes mesmo de entrar em operação. O nosso padrão é simples: acabamento correto, proteção e resultado visível.
+              </motion.p>
+            </div>
+            <div className="process-list">
+              {steps.map(([number, title, text], index) => (
+                <motion.article {...reveal} transition={{ ...reveal.transition, delay: 0.1 + index * 0.07 }} className="process-row" key={number}>
+                  <span className="process-number">{number}</span>
+                  <div><h3>{title}</h3><p>{text}</p></div>
+                  <ChevronRight size={20} />
+                </motion.article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section id="contato" className="contact-section">
-          <img className="contact-image" src={FLEET_IMAGE} alt="Caminhão seguindo por uma rodovia ao amanhecer" />
-          <div className="contact-image-overlay" />
-          <div className="contact-grid" />
-          <div className="section-shell contact-layout">
+        <section className="cabin-section">
+          <div className="cabin-photo-wrap">
+            <img src={CAB_IMAGE} alt="Interior de cabine de caminhão limpo e cuidadosamente detalhado" />
+            <div className="cabin-overlay" />
+          </div>
+          <div className="cabin-card">
+            <span className="micro-label">Cabine renovada</span>
+            <h2>O conforto também<br /><em>faz parte da jornada.</em></h2>
+              <p>Higienização interna e cuidado para devolver conforto ao espaço onde o motorista vive a estrada.</p>
+          </div>
+        </section>
+
+        <section id="contato" className="contact-stage">
+          <div className="contact-shimmer" aria-hidden="true" />
+          <div className="page-width contact-grid">
             <motion.div {...reveal}>
-              <p className="eyebrow light-eyebrow"><span /> 04 — Atendimento</p>
-              <h2>Vamos colocar<br />sua frota em <em>movimento.</em></h2>
-              <p>Entre em contato para agendar uma avaliação ou conversar sobre a necessidade da sua operação.</p>
+              <p className="eyebrow orange"><span /> 04 — Atendimento</p>
+              <h2>Seu próximo<br /><em>melhor ângulo</em><br />começa aqui.</h2>
+              <p className="contact-copy">Entre em contato, conte o que seu caminhão precisa e agende seu atendimento com a Auto Truck.</p>
             </motion.div>
-            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="contact-card">
-              <span className="utility-label">Canal de atendimento</span>
-              <h3>Fale com uma<br />equipe que entende<br /><em>de linha pesada.</em></h3>
-              <a href="mailto:?subject=Solicita%C3%A7%C3%A3o%20de%20atendimento%20-%20Auto%20Truck" className="primary-cta contact-primary">
-                Solicitar atendimento <ArrowUpRight size={19} />
+            <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="contact-panel">
+              <span className="micro-label">Auto Truck Estética Para Caminhões</span>
+              <a className="phone-number" href={PHONE_URL}>(62) 99215-8095</a>
+              <p>Atendimento direto para você cuidar do visual do seu caminhão com quem entende de linha pesada.</p>
+              <a className="button-primary full" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                <MessageCircle size={19} /> Chamar no WhatsApp
               </a>
-              <p className="contact-note">WhatsApp, telefone e localização podem ser personalizados com os dados da sua unidade.</p>
+              <a className="phone-link" href={PHONE_URL}><Phone size={16} /> Prefere ligar? Fale agora</a>
             </motion.div>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="section-shell footer-layout">
-          <a className="brand-lockup footer-brand" href="#inicio">
-            <img className="brand-mark" src={BRAND_MARK} alt="" />
-            <span className="brand-name">AUTO<br />TRUCK</span>
-          </a>
-          <p>Manutenção técnica para veículos pesados.<br />Feita para a sua operação seguir.</p>
-          <div className="footer-meta"><span>© 2026 Auto Truck</span><span>Oficina especializada</span></div>
+      <footer className="premium-footer">
+        <div className="page-width footer-grid">
+          <BrandLogo footer />
+          <p>Estética para caminhões com presença, cuidado técnico e acabamento premium.</p>
+          <div className="footer-details"><span>Goiânia, Goiás</span><span>© 2026 Auto Truck</span></div>
         </div>
       </footer>
     </div>

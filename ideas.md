@@ -62,3 +62,11 @@ O símbolo é uma forma geométrica inspirada em uma cabine de caminhão e uma s
 ### Cor de assinatura
 
 **Laranja Carga — #F15A24.** Uma cor de ação e sinalização que identifica a Auto Truck de forma imediata.
+
+## Style Decisions
+
+O logo oficial da **Auto Truck Estética Para Caminhões** passa a ser a referência prioritária de marca. A interface deve valorizar seu lettering branco e laranja sobre superfícies pretas, reservar espaço visual generoso para a assinatura gráfica e abandonar qualquer associação exclusiva com manutenção mecânica.
+
+O conteúdo passa a apresentar serviços de estética de linha pesada, tais como detalhamento externo, polimento técnico, higienização interna e proteção de pintura. O telefone oficial **(62) 99215-8095** será o principal ponto de conversão, com ligação e WhatsApp configurados diretamente nos CTAs.
+
+O refinamento visual acrescenta acabamentos inspirados em pintura automotiva: reflexos controlados, linhas de carroceria, superfícies escuras acetinadas e cartões em vidro fumê. O laranja do logo deve ser usado com parcimônia como sinal de ação, preservando a sofisticação da composição.

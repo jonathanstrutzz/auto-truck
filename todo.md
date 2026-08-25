@@ -55,3 +55,7 @@
 - [x] Preparar a foto fornecida do caminhão Scania para uso persistente.
 - [x] Inserir exclusivamente a foto do caminhão no portfólio.
 - [x] Validar a nova apresentação em desktop e mobile.
+- [x] Refinar a navegação e os atalhos de orientação no site.
+- [x] Adicionar recursos premium de conversão e confiança com dados reais disponíveis.
+- [x] Reforçar a qualidade de interação, acessibilidade e acabamento visual.
+- [x] Validar a experiência premium em desktop e mobile.

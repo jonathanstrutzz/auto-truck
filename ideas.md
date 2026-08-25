@@ -76,3 +76,7 @@ Os módulos claros devem funcionar como painéis de carroceria em areia metálic
 O recorte angular do logo passa a orientar etiquetas, placas de marca, cabeçalhos e divisores. Assim, mesmo sem o logotipo visível, a página mantém uma assinatura visual reconhecível da Auto Truck.
 
 Nas páginas audiovisuais, rótulos, metadados e CTAs usam linguagem operacional em português. O portfólio deve destacar a marca Auto Truck de imediato, recorrendo às placas angulares do logotipo, linhas de carroceria e superfícies escuras de aparência acetinada ou fumê — nunca a campos pretos neutros.
+
+As zonas principais — cabeçalho, hero, conversão e rodapé — usam o logo oficial como uma **placa de marca premium**, com respiro, borda de sinalização e recorte diagonal. O recorte de cabine é a geometria padrão para superfícies de ação, placas informativas, módulos de FAQ e molduras de imagem.
+
+O Laranja Carga permanece reservado a CTAs, palavras de prioridade, marcadores técnicos e números. Os ambientes devem ser sustentados por preto acetinado, areia metálica, branco-gelo e sobreposições fumê, com reflexos e linhas de inspeção para evocar acabamento automotivo.

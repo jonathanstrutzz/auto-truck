@@ -5,10 +5,12 @@
 import { motion } from "framer-motion";
 import {
   ArrowDownRight,
+  ArrowUp,
   ArrowUpRight,
   Building2,
   Camera,
   ChevronRight,
+  ChevronDown,
   CheckCircle2,
   ClipboardPenLine,
   Clock3,
@@ -16,7 +18,9 @@ import {
   MapPinned,
   Menu,
   MessageCircle,
+  Minus,
   Phone,
+  Plus,
   Share2,
   ShieldCheck,
   Sparkles,
@@ -80,6 +84,25 @@ const steps = [
   ["01", "Avaliação visual", "Entendemos o estado do veículo e o padrão de resultado que você procura."],
   ["02", "Tratamento correto", "Definimos processos e produtos compatíveis com cada superfície e acabamento."],
   ["03", "Entrega que impõe presença", "Seu caminhão volta para a rua com aspecto cuidado em cada detalhe."],
+];
+
+const faqs = [
+  {
+    question: "Como solicitar um orçamento?",
+    answer: "Use o pré-orçamento, informe o modelo e a placa do caminhão e escolha o serviço. A solicitação segue pronta para o WhatsApp da Auto Truck.",
+  },
+  {
+    question: "Quais serviços estão disponíveis?",
+    answer: "A Auto Truck oferece lavagem externa, do motor, de chassi e do cavalo, higienização de cabine, polimentos de cabine, tanque e roda, além de enceramento de cabine.",
+  },
+  {
+    question: "Onde fica a Auto Truck?",
+    answer: "A unidade fica na Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, em Anápolis, Goiás. A página possui rota direta pelo Google Maps.",
+  },
+  {
+    question: "Em quais dias a oficina atende?",
+    answer: "O atendimento é de segunda a sexta-feira, das 08:00 às 18:00. Aos sábados e domingos, a unidade permanece fechada.",
+  },
 ];
 
 const timelineEvents = [
@@ -229,6 +252,8 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [openFaq, setOpenFaq] = useState(0);
   const [galleryCategory, setGalleryCategory] = useState<"servicos" | "unidade" | "bastidores">("servicos");
   const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
@@ -237,7 +262,11 @@ export default function Home() {
   const activeVideo = videoShowcase.find((video) => video.id === activeVideoId) ?? videoShowcase[0];
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 18);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 18);
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollableHeight > 0 ? Math.min((window.scrollY / scrollableHeight) * 100, 100) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -274,6 +303,8 @@ export default function Home() {
 
   return (
     <div className="luxury-site">
+      <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
+      <div className="reading-progress" aria-hidden="true"><span style={{ width: `${scrollProgress}%` }} /></div>
       <header className={`premium-nav ${scrolled ? "is-scrolled" : ""}`}>
         <BrandLogo />
         <nav className="desktop-links" aria-label="Navegação principal">
@@ -308,7 +339,7 @@ export default function Home() {
         </div>
       </aside>
 
-      <main>
+      <main id="conteudo" tabIndex={-1}>
         <section id="inicio" className="luxury-hero">
           <img className="hero-photo" src={HERO_IMAGE} alt="Caminhão branco com acabamento impecável em estúdio de estética automotiva" />
           <div className="hero-tint" />
@@ -351,6 +382,15 @@ export default function Home() {
           <div className="signature-track">
             <span>ESTÉTICA DE LINHA PESADA</span><i>✦</i><span>ACABAMENTO QUE IMPÕE PRESENÇA</span><i>✦</i><span>DETALHE QUE VALORIZA SUA MÁQUINA</span><i>✦</i>
             <span aria-hidden="true">ESTÉTICA DE LINHA PESADA</span><i aria-hidden="true">✦</i><span aria-hidden="true">ACABAMENTO QUE IMPÕE PRESENÇA</span>
+          </div>
+        </section>
+
+        <section className="trust-strip" aria-label="Informações rápidas da Auto Truck">
+          <div className="page-width trust-strip-grid">
+            <div><span>01</span><p><b>Anápolis · GO</b><small>Unidade com rota no Google Maps</small></p></div>
+            <div><span>02</span><p><b>Desde 2015</b><small>História formal da Auto Truck Estética</small></p></div>
+            <div><span>03</span><p><b>10 serviços</b><small>Estética voltada à linha pesada</small></p></div>
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Atendimento direto <ArrowUpRight size={16} /></a>
           </div>
         </section>
 
@@ -655,6 +695,30 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="duvidas" className="faq-stage">
+          <div className="page-width faq-layout">
+            <motion.div {...reveal} className="faq-intro">
+              <p className="eyebrow orange"><span /> Atendimento sem ruído</p>
+              <h2>Perguntas<br /><em>diretas.</em></h2>
+              <p>As informações principais para você planejar o cuidado do seu caminhão sem perder tempo na estrada.</p>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="faq-whatsapp"><MessageCircle size={17} /> Ainda tem dúvida? Fale no WhatsApp <ArrowUpRight size={16} /></a>
+            </motion.div>
+            <div className="faq-list">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <motion.article {...reveal} transition={{ ...reveal.transition, delay: index * 0.05 }} className={`faq-item ${isOpen ? "is-open" : ""}`} key={faq.question}>
+                    <button type="button" aria-expanded={isOpen} aria-controls={`faq-answer-${index}`} onClick={() => setOpenFaq(isOpen ? -1 : index)}>
+                      <span className="faq-number">0{index + 1}</span><b>{faq.question}</b>{isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                    </button>
+                    {isOpen && <motion.div id={`faq-answer-${index}`} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} transition={{ duration: 0.24, ease: "easeOut" }}><p>{faq.answer}</p></motion.div>}
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <section id="contato" className="contact-stage">
           <div className="contact-shimmer" aria-hidden="true" />
           <div className="page-width contact-grid">
@@ -664,6 +728,7 @@ export default function Home() {
               <p className="contact-copy">Entre em contato, conte o que seu caminhão precisa e agende seu atendimento com a Auto Truck.</p>
             </motion.div>
             <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="contact-panel">
+              <div className="contact-brand-plate"><img src={OFFICIAL_LOGO} alt="Auto Truck Estética Para Caminhões" /><span>Atendimento direto</span></div>
               <span className="micro-label">Auto Truck Estética Para Caminhões</span>
               <a className="phone-number" href={PHONE_URL}>(62) 99215-8095</a>
               <p>Atendimento direto para você cuidar do visual do seu caminhão com quem entende de linha pesada.</p>
@@ -701,6 +766,9 @@ export default function Home() {
         <MessageCircle size={22} />
         <span><small>Atendimento rápido</small>Fazer pré-orçamento</span>
       </a>
+      <button type="button" className={`back-to-top ${scrolled ? "is-visible" : ""}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Voltar ao início">
+        <ArrowUp size={18} />
+      </button>
 
       <footer className="premium-footer">
         <div className="page-width footer-grid">

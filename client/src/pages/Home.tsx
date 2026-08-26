@@ -16,6 +16,7 @@ import {
   ClipboardPenLine,
   Clock3,
   Instagram,
+  ImagePlus,
   MapPin,
   MapPinned,
   Menu,
@@ -35,6 +36,7 @@ import {
 } from "lucide-react";
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { trpc } from "@/lib/trpc";
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
@@ -350,6 +352,15 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
   );
 }
 
+function fileToDataUrl(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error("Não foi possível ler a imagem selecionada."));
+    reader.onload = () => resolve(String(reader.result));
+    reader.readAsDataURL(file);
+  });
+}
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -357,7 +368,10 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState(0);
   const [galleryCategory, setGalleryCategory] = useState<GalleryCategory>("servicos");
   const [galleryBrand, setGalleryBrand] = useState<GalleryBrand>("todas");
-  const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string } | null>(null);
+  const [preQuoteConfirmation, setPreQuoteConfirmation] = useState<{ customerName: string; whatsappUrl: string; imageIncluded: boolean } | null>(null);
+  const [vehicleImage, setVehicleImage] = useState<File | null>(null);
+  const [vehicleImagePreview, setVehicleImagePreview] = useState<string | null>(null);
+  const [vehicleImageError, setVehicleImageError] = useState<string | null>(null);
   const [activeVideoId, setActiveVideoId] = useState(videoShowcase[0].id);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [activeTeamRecordIndex, setActiveTeamRecordIndex] = useState<number | null>(null);
@@ -368,6 +382,7 @@ export default function Home() {
   const prefersReducedMotion = useReducedMotion();
   const activeBrandGallery = galleryBrand === "todas" ? null : brandGallery[galleryBrand];
   const galleryTransition = prefersReducedMotion ? { duration: 0.01 } : { duration: 0.22, ease: [0.23, 1, 0.32, 1] as const };
+  const vehiclePhotoUpload = trpc.vehiclePhoto.upload.useMutation();
 
   const selectGalleryCategory = (category: GalleryCategory) => {
     setGalleryCategory(category);
@@ -386,6 +401,16 @@ export default function Home() {
   }, []);
 
   useEffect(() => () => soundtrackRef.current?.pause(), []);
+
+  useEffect(() => {
+    if (!vehicleImage) {
+      setVehicleImagePreview(null);
+      return;
+    }
+    const previewUrl = URL.createObjectURL(vehicleImage);
+    setVehicleImagePreview(previewUrl);
+    return () => URL.revokeObjectURL(previewUrl);
+  }, [vehicleImage]);
 
   useEffect(() => {
     if (activeTeamRecordIndex === null) return;
@@ -407,17 +432,55 @@ export default function Home() {
     setActiveTeamRecordIndex((current) => current === null ? null : (current + direction + teamRecords.length) % teamRecords.length);
   };
 
-  const handlePreQuote = (event: FormEvent<HTMLFormElement>) => {
+  const selectVehicleImage = (file: File | undefined) => {
+    if (!file) return;
+    if (!new Set(["image/jpeg", "image/png", "image/webp"]).has(file.type)) {
+      setVehicleImageError("Use uma foto em JPG, PNG ou WebP.");
+      return;
+    }
+    if (file.size > 6 * 1024 * 1024) {
+      setVehicleImageError("A imagem deve ter no máximo 6 MB.");
+      return;
+    }
+    setVehicleImageError(null);
+    setVehicleImage(file);
+  };
+
+  const resetPreQuote = () => {
+    setPreQuoteConfirmation(null);
+    setVehicleImage(null);
+    setVehicleImageError(null);
+  };
+
+  const handlePreQuote = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const whatsappWindow = window.open("", "_blank");
+    if (whatsappWindow) whatsappWindow.opener = null;
     const data = new FormData(event.currentTarget);
     const customerName = String(data.get("customerName") || "Não informado");
     const plate = String(data.get("plate") || "Não informada");
     const model = String(data.get("truckModel") || "Não informado");
     const service = String(data.get("service") || "Não informado");
-    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}`;
+    let vehicleImageUrl: string | null = null;
+    if (vehicleImage) {
+      try {
+        const dataUrl = await fileToDataUrl(vehicleImage);
+        const uploadedImage = await vehiclePhotoUpload.mutateAsync({ dataUrl });
+        vehicleImageUrl = `${window.location.origin}${uploadedImage.url}`;
+      } catch (error) {
+        whatsappWindow?.close();
+        setVehicleImageError(error instanceof Error ? error.message : "Não foi possível enviar a imagem. Tente novamente.");
+        return;
+      }
+    }
+    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}${vehicleImageUrl ? `\nImagem do veículo: ${vehicleImageUrl}` : ""}`;
     const whatsappUrl = `https://wa.me/5562992158095?text=${encodeURIComponent(message)}`;
-    setPreQuoteConfirmation({ customerName, whatsappUrl });
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    setPreQuoteConfirmation({ customerName, whatsappUrl, imageIncluded: Boolean(vehicleImageUrl) });
+    if (whatsappWindow) {
+      whatsappWindow.location.href = whatsappUrl;
+      return;
+    }
+    window.location.assign(whatsappUrl);
   };
 
   const toggleSoundtrack = () => {
@@ -596,9 +659,9 @@ export default function Home() {
                 <div className="success-icon"><CheckCircle2 size={30} strokeWidth={1.75} /></div>
                 <span className="micro-label">Solicitação preparada</span>
                 <h3>Obrigado,<br /><em>{preQuoteConfirmation.customerName}.</em></h3>
-                <p>Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto para você concluir o atendimento.</p>
+                <p>Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto para você concluir o atendimento.{preQuoteConfirmation.imageIncluded ? " A imagem do veículo foi incluída na mensagem." : ""}</p>
                 <a className="success-whatsapp" href={preQuoteConfirmation.whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Abrir WhatsApp novamente <ArrowUpRight size={16} /></a>
-                <button type="button" className="success-reset" onClick={() => setPreQuoteConfirmation(null)}>Fazer outro pré-orçamento</button>
+                <button type="button" className="success-reset" onClick={resetPreQuote}>Fazer outro pré-orçamento</button>
               </motion.div>
             ) : (
               <motion.form {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="prequote-form" onSubmit={handlePreQuote}>
@@ -622,8 +685,24 @@ export default function Home() {
                     {serviceDetails.map((service) => <option key={service.number} value={service.title}>{service.title}</option>)}
                   </select>
                 </label>
-                <button type="submit" className="prequote-submit"><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></button>
-                <p className="form-privacy">Ao enviar, você será direcionado ao WhatsApp com a sua seleção preenchida.</p>
+                <div className="vehicle-photo-field">
+                  <div className="vehicle-photo-heading"><span>Imagem do veículo <small>opcional</small></span><p>Envie uma foto da área que precisa de cuidado ou fotografe agora pelo celular.</p></div>
+                  {vehicleImagePreview ? (
+                    <div className="vehicle-photo-preview">
+                      <img src={vehicleImagePreview} alt="Prévia da imagem do veículo selecionada para o pré-orçamento" />
+                      <div><b>{vehicleImage?.name}</b><span>{vehicleImage ? `${Math.ceil(vehicleImage.size / 1024)} KB` : ""}</span></div>
+                      <button type="button" onClick={() => { setVehicleImage(null); setVehicleImageError(null); }} aria-label="Remover imagem selecionada"><X size={17} /></button>
+                    </div>
+                  ) : (
+                    <div className="vehicle-photo-actions">
+                      <label className="vehicle-photo-action"><ImagePlus size={18} /><span>Selecionar imagem</span><input type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
+                      <label className="vehicle-photo-action camera-action"><Camera size={18} /><span>Usar câmera</span><input type="file" accept="image/jpeg,image/png,image/webp" capture="environment" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
+                    </div>
+                  )}
+                  {vehicleImageError && <p className="vehicle-photo-error" role="alert">{vehicleImageError}</p>}
+                </div>
+                <button type="submit" className="prequote-submit" disabled={vehiclePhotoUpload.isPending}>{vehiclePhotoUpload.isPending ? <><span className="submit-spinner" /> Enviando imagem...</> : <><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></>}</button>
+                <p className="form-privacy">A imagem é armazenada com segurança e o link segue junto ao seu pedido no WhatsApp.</p>
               </motion.form>
             )}
           </div>

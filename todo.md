@@ -128,3 +128,12 @@
 - [x] Preparar versões web e capas próprias dos quatro vídeos.
 - [x] Inserir os quatro vídeos na galeria de serviços com classificação objetiva.
 - [x] Validar a galeria de serviços atualizada em desktop e mobile.
+- [x] Preparar armazenamento seguro para imagens do veículo no pré-orçamento.
+- [x] Adicionar envio de imagens e captura por câmera no formulário.
+- [x] Incluir o link da imagem no atendimento via WhatsApp.
+- [x] Validar o envio de imagem em desktop e mobile.
+- [x] Testar no navegador o fluxo completo de pré-orçamento com imagem em desktop.
+- [x] Testar em mobile a captura por câmera, preview e envio do pré-orçamento.
+- [x] Testar no navegador o fluxo completo de pré-orçamento com imagem em desktop.
+- [x] Testar em mobile a captura por câmera, preview e envio do pré-orçamento.
+- [x] Testar o envio completo iniciado pelo seletor Usar câmera e confirmar o link no WhatsApp.

@@ -1299,3 +1299,31 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .service-video-card figcaption { right: 13px; bottom: 13px; left: 13px; }
   .service-video-card figcaption strong { font-size: 22px; }
 }
+
+/* Pré-orçamento com evidência visual: foto do veículo via galeria ou câmera, tratada como dado de atendimento. */
+.vehicle-photo-field { margin: 4px 0 18px; padding: 16px; border: 1px solid rgba(255,255,255,.2); border-left: 3px solid var(--orange); background: rgba(255,255,255,.035); }
+.vehicle-photo-heading { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 13px; }
+.vehicle-photo-heading > span { color: #fff; font-size: 10px; font-weight: 800; }
+.vehicle-photo-heading small { color: var(--orange-soft); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
+.vehicle-photo-heading p { max-width: 245px; margin: 0; color: #aaa49b; font-size: 9px; line-height: 1.45; text-align: right; }
+.vehicle-photo-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.vehicle-photo-action { display: flex; min-height: 46px; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(255,255,255,.23); color: #e9e4dc; background: rgba(7,7,8,.32); font-size: 10px; font-weight: 800; cursor: pointer; transition: border-color .16s ease, background .16s ease, color .16s ease, transform .16s ease; }
+.vehicle-photo-action:hover { border-color: var(--orange); color: #fff; transform: translateY(-1px); }
+.vehicle-photo-action.camera-action { border-color: rgba(241,90,36,.66); color: var(--orange-soft); }
+.vehicle-photo-action input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.vehicle-photo-preview { display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 11px; }
+.vehicle-photo-preview img { width: 58px; height: 58px; object-fit: cover; border: 1px solid rgba(255,255,255,.3); }
+.vehicle-photo-preview div { display: flex; min-width: 0; flex-direction: column; gap: 4px; }
+.vehicle-photo-preview b { overflow: hidden; color: #fff; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.vehicle-photo-preview span { color: #a8a29b; font: 700 8px "IBM Plex Mono", monospace; }
+.vehicle-photo-preview button { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; transition: border-color .16s ease, color .16s ease; }
+.vehicle-photo-preview button:hover { border-color: var(--orange); color: var(--orange-soft); }
+.vehicle-photo-error { margin: 10px 0 0; color: #ff9a78; font-size: 9px; line-height: 1.4; }
+.prequote-submit:disabled { cursor: wait; opacity: .72; transform: none; }
+.submit-spinner { width: 15px; height: 15px; border: 2px solid rgba(255,255,255,.38); border-top-color: #fff; border-radius: 50%; animation: vehicle-upload-spin .75s linear infinite; }
+@keyframes vehicle-upload-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  .vehicle-photo-heading { flex-direction: column; gap: 6px; }
+  .vehicle-photo-heading p { max-width: none; text-align: left; }
+  .vehicle-photo-actions { grid-template-columns: 1fr; }
+}

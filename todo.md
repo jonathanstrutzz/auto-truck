@@ -171,4 +171,7 @@
 - [x] Publicar o refinamento do cabeçalho.
 - [x] Analisar e preparar o vídeo real de pintura de rodas para uso web.
 - [x] Integrar o vídeo de pintura de rodas ao portfólio com categoria e filtros coerentes.
-- [ ] Registrar o checkpoint de publicação do novo item audiovisual após a validação em desktop e mobile.
+- [x] Registrar o checkpoint de publicação do novo item audiovisual após a validação em desktop e mobile.
+- [x] Verificar a configuração necessária para uma exportação estática compatível com GitHub Pages.
+- [x] Documentar o fluxo de publicação no GitHub e as limitações dos recursos que dependem do servidor.
+- [x] Entregar ao usuário o roteiro recomendado para colocar o site no ar pelo GitHub.

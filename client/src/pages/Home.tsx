@@ -23,6 +23,7 @@ import {
   Maximize2,
   Minus,
   Phone,
+  Play,
   Plus,
   Share2,
   ShieldCheck,
@@ -296,6 +297,41 @@ const videoShowcase = [
     title: "Presença que entra em cena.",
     text: "Scania laranja em movimento diante da estrutura real da Auto Truck.",
     source: VIDEO_SCANIA_CHEGADA,
+  },
+];
+
+const serviceGalleryVideos = [
+  {
+    number: "03",
+    label: "Lavagem manual",
+    title: "Detalhe feito à mão.",
+    source: "/manus-storage/auto-truck-plataforma-lavagem-manual_2a494f21.mp4",
+    poster: "/manus-storage/auto-truck-plataforma-lavagem-manual-poster_a05912c4.jpg",
+    alt: "Profissional da Auto Truck realizando limpeza manual da plataforma traseira de um caminhão baú",
+  },
+  {
+    number: "04",
+    label: "Chegada à unidade",
+    title: "Operação que entra em cena.",
+    source: "/manus-storage/auto-truck-volkswagen-chegada-unidade_570805b8.mp4",
+    poster: "/manus-storage/auto-truck-volkswagen-chegada-unidade-poster_f257de97.jpg",
+    alt: "Caminhão Volkswagen manobrando na entrada da unidade Auto Truck",
+  },
+  {
+    number: "05",
+    label: "Registro de unidade",
+    title: "Estrutura pronta para receber.",
+    source: "/manus-storage/auto-truck-delivery-finalizacao_17150c4c.mp4",
+    poster: "/manus-storage/auto-truck-delivery-finalizacao-poster_80d8ca20.jpg",
+    alt: "Caminhão Volkswagen Delivery com plataforma em registro dentro da oficina",
+  },
+  {
+    number: "06",
+    label: "Polimento de roda",
+    title: "Cromo tratado no detalhe.",
+    source: "/manus-storage/auto-truck-scania-roda-polimento_5bb1c137.mp4",
+    poster: "/manus-storage/auto-truck-scania-roda-polimento-poster_75f93dea.jpg",
+    alt: "Profissional polindo roda e capas de porca cromadas de um caminhão Scania",
   },
 ];
 
@@ -747,9 +783,9 @@ export default function Home() {
             <motion.div {...reveal} className="gallery-heading">
               <p className="eyebrow graphite"><span /> Galeria Auto Truck</p>
               <h2>Onde o cuidado<br />ganha <em>estrutura.</em></h2>
-              <p>Imagens que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
+              <p>Fotos e vídeos reais que aproximam você do padrão de cuidado, da estrutura e da rotina da Auto Truck Estética.</p>
               <div className="gallery-heading-rule" />
-              <span className="gallery-microcopy">{activeBrandGallery ? `ARQUIVO POR MARCA · ${activeBrandGallery.label.toUpperCase()}` : galleryCategory === "servicos" ? "PROCESSOS DE ESTÉTICA · ARQUIVO 01" : galleryCategory === "unidade" ? "ARQUIVO REAL DA UNIDADE · FOTOS 02—05" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
+              <span className="gallery-microcopy">{activeBrandGallery ? `ARQUIVO POR MARCA · ${activeBrandGallery.label.toUpperCase()}` : galleryCategory === "servicos" ? "PROCESSOS DE ESTÉTICA · FOTOS E VÍDEOS" : galleryCategory === "unidade" ? "ARQUIVO REAL DA UNIDADE · FOTOS 02—05" : galleryCategory === "bastidores" ? "ARQUIVO DE BASTIDORES · CATEGORIA 03" : "VEÍCULOS ATENDIDOS · ARQUIVO 04"}</span>
               <div className="gallery-categories" role="tablist" aria-label="Categorias da galeria">
                 <button type="button" role="tab" aria-selected={galleryCategory === "servicos" && !activeBrandGallery} className={galleryCategory === "servicos" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("servicos")}>Serviços <span>01</span></button>
                 <button type="button" role="tab" aria-selected={galleryCategory === "unidade" && !activeBrandGallery} className={galleryCategory === "unidade" && !activeBrandGallery ? "active" : ""} onClick={() => selectGalleryCategory("unidade")}>Unidade <span>02</span></button>
@@ -785,6 +821,19 @@ export default function Home() {
                   <div className="gallery-photo-tint" />
                   <figcaption><span className="micro-label">Cuidado interno</span><strong>Cabine preparada<br />para a estrada.</strong><p>Registro de uma cabine limpa e organizada; o processo completo de higienização pode ser orçado com a equipe.</p></figcaption>
                 </figure>
+                <div className="service-video-strip" aria-label="Vídeos reais de serviços da Auto Truck">
+                  {serviceGalleryVideos.map((video) => (
+                    <figure className="service-video-card" key={video.number}>
+                      <video autoPlay muted loop playsInline preload="metadata" poster={video.poster} aria-label={video.alt}>
+                        <source src={video.source} type="video/mp4" />
+                      </video>
+                      <div className="service-video-shade" />
+                      <span className="service-video-number">{video.number}</span>
+                      <span className="service-video-play" aria-hidden="true"><Play size={13} fill="currentColor" /></span>
+                      <figcaption><small>{video.label}</small><strong>{video.title}</strong></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </div>
             ) : galleryCategory === "unidade" ? (
               <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="workshop-photo-archive">

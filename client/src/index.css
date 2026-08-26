@@ -1281,3 +1281,21 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .premium-nav .brand-logo img { width: 129px; max-height: 43px; }
   .mobile-trigger { width: 38px; height: 38px; }
 }
+
+/* Galeria de serviços: processos reais em vídeo, metal em movimento e sinalização Laranja Carga. */
+.service-video-strip { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 4px; }
+.service-video-card { position: relative; min-height: 246px; margin: 0; overflow: hidden; border: 1px solid rgba(12,12,13,.19); border-left: 2px solid var(--orange); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%); background: #0a0a0c; box-shadow: 9px 10px 0 rgba(12,12,13,.11); }
+.service-video-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.06) saturate(.98) brightness(.85); transition: transform .35s cubic-bezier(.23,1,.32,1), filter .35s ease; }
+.service-video-card:hover video { filter: contrast(1.08) saturate(1.02) brightness(.96); transform: scale(1.04); }
+.service-video-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,8,.02) 28%, rgba(7,7,8,.82) 100%); pointer-events: none; }
+.service-video-number { position: absolute; top: 14px; left: 14px; display: grid; width: 30px; height: 30px; place-items: center; background: var(--orange); color: #fff; font: 700 10px "IBM Plex Mono", monospace; }
+.service-video-play { position: absolute; top: 14px; right: 14px; display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid rgba(255,255,255,.48); color: #fff; background: rgba(7,7,8,.42); }
+.service-video-card figcaption { position: absolute; right: 15px; bottom: 15px; left: 15px; color: #fff; }
+.service-video-card figcaption small { display: block; margin-bottom: 7px; color: var(--orange-soft); font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.service-video-card figcaption strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 25px; font-weight: 700; line-height: .85; letter-spacing: -.015em; text-transform: uppercase; }
+@media (max-width: 600px) {
+  .service-video-strip { grid-template-columns: 1fr 1fr; gap: 11px; }
+  .service-video-card { min-height: 226px; }
+  .service-video-card figcaption { right: 13px; bottom: 13px; left: 13px; }
+  .service-video-card figcaption strong { font-size: 22px; }
+}

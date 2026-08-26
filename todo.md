@@ -114,3 +114,7 @@
 - [x] Validar a composição atualizada da primeira tela.
 - [x] Alinhar os três quadros de serviços em uma linha consistente.
 - [x] Validar o alinhamento dos quadros em desktop e mobile.
+- [x] Analisar os dois novos vídeos recebidos.
+- [x] Preparar capas e ativos web dos novos vídeos.
+- [x] Integrar os dois vídeos ao portfólio audiovisual e aos filtros.
+- [x] Validar os novos vídeos em desktop e mobile.

@@ -1237,3 +1237,18 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .service-cards { align-items: stretch; }
   .service-card, .service-card:nth-child(2), .service-card:nth-child(3) { min-height: 326px; margin-top: 0; }
 }
+
+/* Arquivo audiovisual: processo real em primeiro plano, aço acetinado e linhas de inspeção sobre os campos escuros. */
+.portfolio-hero { isolation: isolate; min-height: 510px; background: #09090b; }
+.portfolio-hero-process { position: absolute; inset: 0 0 0 42%; z-index: 0; width: 58%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.1) saturate(1.03) brightness(.76); }
+.portfolio-hero-process-tint { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(7,7,8,.98) 0%, rgba(7,7,8,.9) 35%, rgba(7,7,8,.56) 55%, rgba(7,7,8,.14) 78%, rgba(7,7,8,.38) 100%), linear-gradient(0deg, rgba(7,7,8,.62), transparent 48%); }
+.portfolio-hero::before, .portfolio-hero::after, .portfolio-hero-grid, .portfolio-hero-line { z-index: 1; }
+.portfolio-hero-content { z-index: 2; }
+.portfolio-hero-plate { border-left-width: 4px; background: linear-gradient(112deg, rgba(7,7,8,.98) 0%, rgba(22,22,24,.92) 76%, var(--orange) 76%); box-shadow: 18px 20px 0 rgba(0,0,0,.34); }
+.portfolio-feature, .portfolio-photo-spotlight, .portfolio-contact { background-image: radial-gradient(ellipse at 86% 10%, rgba(255,255,255,.055), transparent 27%), linear-gradient(108deg, transparent 0 39%, rgba(255,255,255,.055) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(255,255,255,.026) 106px 107px); }
+.feature-player, .portfolio-card { border-left: 2px solid var(--orange); }
+@media (max-width: 600px) {
+  .portfolio-hero { min-height: 470px; }
+  .portfolio-hero-process { inset: 0; width: 100%; object-position: 66% center; }
+  .portfolio-hero-process-tint { background: linear-gradient(90deg, rgba(7,7,8,.96) 0%, rgba(7,7,8,.78) 59%, rgba(7,7,8,.22) 100%), linear-gradient(0deg, rgba(7,7,8,.72), transparent 47%); }
+}

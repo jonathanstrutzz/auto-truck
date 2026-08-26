@@ -17,5 +17,7 @@
 | `IMG_8020.MOV` | Volvo FH 540 rosa com acabamento brilhante. | Incluir como resultado visual Volvo. |
 | `IMG_8060.MOV` | Scania azul, com destaque no som do motor. | Não priorizar na galeria de estética; manter fora da seleção inicial. |
 | `IMG_8247.MOV` | Scania com baú Randon envelopado. | Incluir como personalização visual de frota. |
+| `532cf53473804046bd33d663ea0f6a12.MOV` | Aplicação de tinta vermelha e montagem em projeto especial de veículo pesado; vídeo vertical 1080×1920. | Incluir como destaque de pintura e processo especial, sem associar marcas não confirmadas à Auto Truck. |
+| `v1c044g50000da0g8kvog65ieuoi5900.MP4` | DAF XF branco em polimento de cabine, com mascaramento e politriz rotativa; vídeo vertical 576×1024. | Incluir como processo de polimento DAF, preservando a resolução fornecida sem ampliação artificial. |
 
-Os vídeos de `IMG_7163.MOV` e `IMG_7535.MOV` já integram o portfólio. Os registros `IMG_7678.MOV` e `IMG_8060.MOV` ficaram fora da publicação inicial para preservar a relevância estética do arquivo audiovisual.
+Os vídeos de `IMG_7163.MOV` e `IMG_7535.MOV` já integram o portfólio. Os registros `IMG_7678.MOV` e `IMG_8060.MOV` ficaram fora da publicação inicial para preservar a relevância estética do arquivo audiovisual. Os dois novos registros foram convertidos para MP4 compatível com web e receberam capas extraídas dos próprios vídeos.

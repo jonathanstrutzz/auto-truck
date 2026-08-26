@@ -229,31 +229,55 @@ const portfolioVideos = [
     model: "scania",
     searchTerms: ["scania", "randon", "envelopamento", "personalização", "baú", "identidade visual", "destaque"],
   },
+  {
+    id: "pintura-projeto-especial",
+    number: "19",
+    label: "Pintura de projeto especial",
+    title: "Cor construída em camadas.",
+    description: "Aplicação de tinta vermelha e etapas de montagem em um projeto especial de veículo pesado.",
+    source: "/manus-storage/auto-truck-restauracao-pintura-especial_9079133a.mp4",
+    poster: "/manus-storage/auto-truck-restauracao-pintura-especial-poster_3d5224ca.jpg",
+    category: "destaques",
+    model: "outros",
+    searchTerms: ["pintura", "vermelho", "projeto especial", "restauração", "montagem", "guindaste", "veículo pesado"],
+  },
+  {
+    id: "daf-xf-polimento",
+    number: "20",
+    label: "DAF XF em polimento",
+    title: "Polimento guiado pelo reflexo.",
+    description: "DAF XF branco em polimento de cabine, com mascaramento de áreas e trabalho com politriz rotativa.",
+    source: "/manus-storage/auto-truck-daf-xf-polimento_88ca8fdd.mp4",
+    poster: "/manus-storage/auto-truck-daf-xf-polimento-poster_3f283f33.jpg",
+    category: "polimento",
+    model: "daf",
+    searchTerms: ["daf", "xf", "polimento", "politriz", "mascaramento", "fita", "cabine", "brilho", "processo"],
+  },
 ];
 
 const portfolioDisplayVideos = [...portfolioVideos].sort((first, second) => {
-  const processPriority = ["volvo-lavagem-espuma", "volvo-polimento", "lavagem", "acabamento"];
+  const processPriority = ["daf-xf-polimento", "volvo-lavagem-espuma", "pintura-projeto-especial", "volvo-polimento", "lavagem", "acabamento"];
   const firstRank = processPriority.indexOf(first.id);
   const secondRank = processPriority.indexOf(second.id);
   return (firstRank < 0 ? 99 : firstRank) - (secondRank < 0 ? 99 : secondRank);
 });
 
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "18" },
+  { id: "todos", label: "Todos", count: "20" },
   { id: "lavagem", label: "Lavagem", count: "04" },
-  { id: "polimento", label: "Polimento", count: "03" },
-  { id: "destaques", label: "Destaques", count: "11" },
+  { id: "polimento", label: "Polimento", count: "04" },
+  { id: "destaques", label: "Destaques", count: "12" },
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
 
 const modelFilters = [
-  { id: "todos", label: "Todos os modelos", count: "18" },
+  { id: "todos", label: "Todos os modelos", count: "20" },
   { id: "volvo-fh", label: "Volvo FH", count: "05" },
   { id: "volvo", label: "Volvo", count: "01" },
   { id: "scania", label: "Scania", count: "04" },
-  { id: "daf", label: "DAF", count: "03" },
+  { id: "daf", label: "DAF", count: "04" },
   { id: "multimarca", label: "Multimarca", count: "02" },
-  { id: "outros", label: "Outros caminhões", count: "03" },
+  { id: "outros", label: "Outros caminhões", count: "04" },
 ] as const;
 
 export default function VideoPortfolio() {
@@ -322,6 +346,10 @@ export default function VideoPortfolio() {
       </header>
 
       <section className="portfolio-hero">
+        <video className="portfolio-hero-process" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+          <source src="/manus-storage/auto-truck-daf-xf-polimento_88ca8fdd.mp4" type="video/mp4" />
+        </video>
+        <div className="portfolio-hero-process-tint" aria-hidden="true" />
         <div className="portfolio-hero-grid" aria-hidden="true" />
         <div className="portfolio-hero-line" aria-hidden="true" />
         <div className="portfolio-width portfolio-hero-content">
@@ -331,7 +359,7 @@ export default function VideoPortfolio() {
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.14 }} className="portfolio-hero-bottom">
             <p>Um arquivo de cenas da Auto Truck: resultado, cuidado, estrutura e caminhões preparados para voltar à estrada.</p>
-            <div><b>18</b><span>vídeos<br />selecionados</span></div>
+            <div><b>20</b><span>vídeos<br />selecionados</span></div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.18 }} className="portfolio-hero-plate">
             <img src={OFFICIAL_LOGO} alt="" />

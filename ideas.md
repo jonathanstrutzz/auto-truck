@@ -98,3 +98,5 @@ Cada área escura deve conter ao menos um sinal de acabamento automotivo — ref
 No portfólio audiovisual, capas de lavagem, polimento, cabine, proteção, pintura ou equipe em operação têm prioridade nas primeiras posições. Registros de estrada, pátio e transporte entram como contexto do resultado, nunca como substituto da evidência de estética.
 
 A placa oficial da Auto Truck assume papel cerimonial nos heróis e nas áreas de conversão: mais presença que um selo decorativo, integrada ao recorte diagonal e acompanhada por superfícies fumê, linhas de carroceria e reflexos de acabamento.
+
+A base cromática atual usa **branco de carroceria** como superfície predominante, preto como estrutura fumê e Laranja Carga exclusivamente como sinal. As zonas claras precisam conter linhas de inspeção, sombras de pintura e recortes angulares para não parecerem uma tela branca genérica; os poucos blocos pretos funcionam como placas, baías de acabamento ou painéis de decisão, nunca como fundo dominante contínuo.

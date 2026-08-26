@@ -94,3 +94,9 @@
 - [x] Selecionar e preparar os melhores vídeos para publicação.
 - [x] Integrar os registros selecionados ao portfólio audiovisual.
 - [x] Validar o portfólio ampliado em desktop e mobile.
+- [x] Definir e documentar o fluxo de curadoria audiovisual em lote.
+- [x] Criar a habilidade reutilizável de curadoria de vídeos Auto Truck.
+- [x] Validar e entregar a habilidade audiovisual.
+- [x] Definir a aplicação da nova paleta branca, preta e laranja.
+- [x] Aplicar a identidade clara nas páginas principais.
+- [x] Validar contraste e responsividade da nova identidade.

@@ -1252,3 +1252,32 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .portfolio-hero-process { inset: 0; width: 100%; object-position: 66% center; }
   .portfolio-hero-process-tint { background: linear-gradient(90deg, rgba(7,7,8,.96) 0%, rgba(7,7,8,.78) 59%, rgba(7,7,8,.22) 100%), linear-gradient(0deg, rgba(7,7,8,.72), transparent 47%); }
 }
+
+/* Cabeçalho Auto Truck: uma barra de comando limpa, com marca discreta, navegação central e CTA como sinal de decisão. */
+.premium-nav { display: grid; grid-template-columns: minmax(174px, 210px) minmax(0, 1fr) auto; gap: clamp(18px, 2vw, 34px); height: 86px; padding: 0 clamp(30px, 4.2vw, 68px); border-bottom-color: rgba(255,255,255,.12); background: rgba(7,7,8,.94); box-shadow: inset 0 2px 0 var(--orange), 0 12px 30px rgba(0,0,0,.2); backdrop-filter: blur(18px); }
+.premium-nav.is-scrolled { height: 72px; background: rgba(7,7,8,.98); box-shadow: inset 0 2px 0 var(--orange), 0 12px 30px rgba(0,0,0,.34); }
+.premium-nav::after { right: clamp(30px, 4.2vw, 68px); width: 148px; height: 2px; }
+.premium-nav .brand-logo { width: 184px; height: 58px; padding: 0 0 0 13px; border-left-width: 2px; outline: 0; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%); background: linear-gradient(100deg, rgba(7,7,8,.98), rgba(20,20,22,.82)); box-shadow: none; }
+.premium-nav .brand-logo::after { content: none; }
+.premium-nav .brand-logo img { width: 158px; max-height: 52px; }
+.desktop-links { justify-content: center; gap: clamp(14px, 1.45vw, 27px); margin: 0; padding: 0 4px; }
+.desktop-links a { padding: 8px 0; color: rgba(255,255,255,.7); font-size: 10px; letter-spacing: .025em; }
+.desktop-links a::after { bottom: -7px; height: 1px; }
+.desktop-links a:hover { color: #fff; }
+.nav-action { min-width: 174px; height: 44px; padding: 0 18px; clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 0 100%); box-shadow: 7px 8px 0 rgba(241,90,36,.18); }
+.nav-action:hover { box-shadow: 9px 10px 0 rgba(241,90,36,.28); }
+@media (max-width: 900px) {
+  .premium-nav { grid-template-columns: 1fr auto; gap: 16px; height: 76px; padding: 0 28px; }
+  .premium-nav.is-scrolled { height: 68px; }
+  .premium-nav .brand-logo { width: 170px; height: 56px; }
+  .premium-nav .brand-logo img { width: 145px; max-height: 48px; }
+  .mobile-trigger { width: 42px; height: 42px; margin-left: 0; border-left: 1px solid rgba(255,255,255,.19); }
+}
+@media (max-width: 600px) {
+  .premium-nav { height: 70px; padding: 0 20px; }
+  .premium-nav.is-scrolled { height: 64px; }
+  .premium-nav::after { right: 20px; width: 70px; }
+  .premium-nav .brand-logo { width: 150px; height: 50px; padding-left: 9px; }
+  .premium-nav .brand-logo img { width: 129px; max-height: 43px; }
+  .mobile-trigger { width: 38px; height: 38px; }
+}

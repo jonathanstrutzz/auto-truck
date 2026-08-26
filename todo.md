@@ -120,3 +120,5 @@
 - [x] Validar os novos vídeos em desktop e mobile.
 - [x] Remover a placa de logo do hero da página de vídeos.
 - [x] Validar o hero audiovisual atualizado em desktop e mobile.
+- [x] Refinar a composição visual do cabeçalho principal.
+- [x] Validar o cabeçalho atualizado em desktop e mobile.

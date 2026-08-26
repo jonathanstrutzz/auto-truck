@@ -106,3 +106,7 @@
 - [x] Definir a aplicação de preto, cinza, branco e laranja.
 - [x] Modernizar o layout com superfícies cinza e contrastes refinados.
 - [x] Validar o novo visual em desktop e mobile.
+- [x] Selecionar o vídeo real de detalhes para a primeira tela.
+- [x] Implementar hero em vídeo de alta definição em tela cheia.
+- [x] Restaurar a identidade original preta e laranja nas páginas principais.
+- [x] Validar hero e paleta original em desktop e mobile.

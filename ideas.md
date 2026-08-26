@@ -105,4 +105,8 @@ Os heróis usam um registro real de processo — espuma, polimento, lavagem, cab
 
 A evolução cromática adiciona **cinza aço** e **grafite** entre o preto, o branco e o Laranja Carga. O branco-gelo sustenta legibilidade, o cinza cria painéis de carroceria e profundidade, o grafite forma baías e placas premium e o laranja permanece como ponto de decisão. O layout deve alternar essas quatro camadas em vez de depender de grandes extensões de branco puro.
 
+A direção atual retorna à identidade original da Auto Truck: **preto acetinado**, **branco de alto contraste** e **Laranja Carga**. A primeira tela é um vídeo real em tela cheia de acabamento do caminhão; tipografia, CTAs e placa oficial trabalham sobre uma sobreposição fumê para que o processo visual seja a principal evidência da marca.
+
+A primeira dobra prioriza uma cena real de lavagem ou acabamento em andamento, com espuma, brilho, pintura ou mãos em operação claramente legíveis. Campos pretos usam reflexos, linhas de carroceria e cortes angulares para parecerem painéis de acabamento, nunca fundos neutros; a placa da marca no hero recebe borda de sinalização, margem generosa e peso visual de letreiro oficial.
+
 A base cromática atual usa **branco de carroceria** como superfície predominante, preto como estrutura fumê e Laranja Carga exclusivamente como sinal. As zonas claras precisam conter linhas de inspeção, sombras de pintura e recortes angulares para não parecerem uma tela branca genérica; os poucos blocos pretos funcionam como placas, baías de acabamento ou painéis de decisão, nunca como fundo dominante contínuo.

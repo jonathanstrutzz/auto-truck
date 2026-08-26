@@ -1,6 +1,6 @@
 /**
- * Direção visual: Auto Truck Premium Detail — superfícies pretas acetinadas, laranja de alto contraste
- * e composição editorial inspirada em acabamento automotivo. Prioridade: sofisticação, clareza e conversão.
+ * Direção visual: Auto Truck Premium Detail — hero em vídeo, preto acetinado e Laranja Carga como sinal de ação.
+ * Prioridade: impacto visual real, legibilidade e conversão.
  */
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
@@ -37,7 +37,6 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } fr
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
-const HERO_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-02_8b1f59c6.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const WORKSHOP_FACADE_IMAGE = "/manus-storage/auto-truck-fachada-caminhoes-01_0298e7eb.png";
@@ -439,7 +438,9 @@ export default function Home() {
 
       <main id="conteudo" tabIndex={-1}>
         <section id="inicio" className="luxury-hero">
-          <img className="hero-photo" src={HERO_IMAGE} alt="Profissional da Auto Truck em ação durante a lavagem detalhada de um caminhão" />
+          <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster={DETAIL_IMAGE} aria-label="Detalhes de acabamento de um caminhão atendido pela Auto Truck">
+            <source src={VIDEO_LAVAGEM} type="video/mp4" />
+          </video>
           <div className="hero-tint" />
           <div className="hero-fine-grid" />
           <div className="hero-orange-line" aria-hidden="true" />

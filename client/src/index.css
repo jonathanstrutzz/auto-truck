@@ -1155,3 +1155,79 @@ html, body, .luxury-site { background: var(--ice); }
 .portfolio-controls, .gallery-brand-filter { border-color: rgba(23,25,28,.2); }
 .portfolio-audio, .soundtrack-control { background: rgba(255,255,255,.78); border-color: rgba(23,25,28,.2); }
 .premium-footer { border-top-color: var(--orange); }
+
+/* Retorno à assinatura original: vídeo real em tela cheia, preto acetinado, branco de contraste e Laranja Carga. */
+:root { --black: #070708; --orange: #f15a24; --orange-soft: #ff6a36; --cream: #f4efe7; --muted-cream: #e8e1d6; --smoke: #a8a29b; --line-light: rgba(255,255,255,.16); --line-dark: rgba(255,255,255,.16); --background: #070708; --foreground: #f7f4ef; }
+html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
+.premium-nav { border-bottom-color: rgba(255,255,255,.16); background: rgba(7,7,8,.9); box-shadow: inset 0 2px 0 var(--orange), 0 10px 30px rgba(0,0,0,.22); }
+.premium-nav.is-scrolled { background: rgba(7,7,8,.97); box-shadow: inset 0 2px 0 var(--orange), 0 12px 30px rgba(0,0,0,.35); }
+.desktop-links a, .mobile-trigger { color: rgba(255,255,255,.78); }
+.desktop-links a:hover { color: #fff; }
+.mobile-menu { background: rgba(7,7,8,.99); color: #fff; }
+.mobile-menu-content > a:not(.mobile-whatsapp) { border-top-color: rgba(255,255,255,.14); }
+.luxury-hero { min-height: max(760px, 100svh); background: #070708; }
+.luxury-hero::before { z-index: -1; border-color: rgba(255,255,255,.16); background: linear-gradient(103deg, transparent 0 33%, rgba(255,255,255,.075) 44%, transparent 56%), repeating-linear-gradient(90deg, transparent 0 71px, rgba(255,255,255,.055) 72px 73px); }
+.luxury-hero::after { display: none; }
+.hero-video { position: absolute; inset: 0; z-index: -4; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.08) saturate(.98) brightness(.72); }
+.hero-tint { background: radial-gradient(ellipse at 79% 53%, rgba(255,255,255,.16), transparent 31%), linear-gradient(90deg, rgba(7,7,8,.98) 0%, rgba(7,7,8,.88) 37%, rgba(7,7,8,.31) 72%, rgba(7,7,8,.48) 100%), linear-gradient(0deg, rgba(7,7,8,.8), transparent 49%); }
+.hero-fine-grid { opacity: .42; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); }
+.hero-orange-line { background: rgba(255,255,255,.21); }
+.luxury-hero .eyebrow { color: var(--orange-soft); }
+.luxury-hero h1 { color: #fff; }
+.hero-copy { color: rgba(255,255,255,.78); }
+.button-quiet { border-bottom-color: rgba(255,255,255,.6); color: #fff; }
+.hero-floating-note { border-color: rgba(255,255,255,.19); border-left-color: var(--orange); background: rgba(7,7,8,.78); box-shadow: 12px 14px 0 rgba(0,0,0,.26); }
+.hero-floating-note .micro-label, .hero-floating-note b { color: #fff; }
+.hero-brand-plate, .brand-logo, .portfolio-hero-plate { background: linear-gradient(112deg, #0a0a0b 0%, #19191b 80%, var(--orange) 80%); }
+.signature-band, .premium-footer { background: #070708; }
+
+.services-stage, .timeline-stage, .prequote-stage, .gallery-stage, .portfolio-grid-section { background-color: var(--cream); background-image: radial-gradient(ellipse at 82% 8%, rgba(255,255,255,.82), transparent 28%), linear-gradient(115deg, transparent 0 46%, rgba(12,12,13,.055) 48%, transparent 50%), repeating-linear-gradient(90deg, transparent 0 101px, rgba(12,12,13,.025) 102px 103px); }
+.service-detail-stage, .detail-experience, .video-stage, .company-story, .faq-stage, .contact-stage { color: #fff; background-color: #0b0b0d; background-image: linear-gradient(108deg, transparent 0 39%, rgba(255,255,255,.045) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(255,255,255,.022) 106px 107px); }
+.service-detail-stage::before, .detail-experience::before, .company-story::before, .contact-stage::before { border-color: rgba(255,255,255,.15); }
+.service-detail-heading h2, .experience-copy h2, .video-intro h2, .story-main h2, .faq-intro h2, .contact-grid h2, .detail-main h3, .detail-main p, .faq-item button b, .faq-item > div p { color: #fff; }
+.service-detail-heading > p, .body-copy, .video-intro > p:not(.eyebrow), .story-origin p, .contact-copy, .faq-intro > p { color: rgba(255,255,255,.7); }
+.service-detail-list, .service-detail-row, .faq-item { border-color: rgba(255,255,255,.17); }
+.service-detail-row, .faq-item { background: transparent; }
+.service-detail-row:hover, .faq-item:hover { background: linear-gradient(90deg, rgba(241,90,36,.13), rgba(255,255,255,.025)); }
+.detail-includes > div span { border-color: rgba(255,255,255,.18); color: rgba(255,255,255,.75); }
+.detail-budget, .inline-link, .video-portfolio-link { color: #fff; border-bottom-color: rgba(255,255,255,.5); }
+.video-selector { border-top-color: rgba(255,255,255,.17); }
+.video-selector button { border-bottom-color: rgba(255,255,255,.17); color: rgba(255,255,255,.62); }
+.video-selector button.active, .video-selector button:hover { color: #fff; }
+.soundtrack-control { border-color: rgba(255,255,255,.22); background: rgba(7,7,8,.72); color: #fff; }
+.hours-panel, .contact-map-panel { border-color: rgba(255,255,255,.22); background: rgba(21,21,23,.9); color: #fff; box-shadow: 10px 12px 0 rgba(0,0,0,.28); }
+.hours-panel-heading, .hours-row { border-color: rgba(255,255,255,.15); }
+.hours-panel-heading .micro-label, .hours-panel-heading b, .hours-row, .hours-row b, .map-panel-topline { color: #fff; }
+.map-panel-address { color: rgba(255,255,255,.68); }
+.team-stage { background: #0a0a0c; }
+.portfolio-page { background: #0a0a0c; color: #fff; }
+.portfolio-nav { border-bottom-color: rgba(255,255,255,.15); background: rgba(7,7,8,.97); }
+.portfolio-brand span, .portfolio-back { color: rgba(255,255,255,.68); }
+.portfolio-hero, .portfolio-feature, .portfolio-photo-spotlight, .portfolio-contact { color: #fff; background-color: #0a0a0c; background-image: linear-gradient(108deg, transparent 0 39%, rgba(255,255,255,.045) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(255,255,255,.02) 106px 107px); }
+.portfolio-hero { border-bottom-color: rgba(255,255,255,.15); }
+.portfolio-hero-bottom p, .portfolio-hero-bottom span, .portfolio-controls > p, .photo-spotlight-copy > p { color: rgba(255,255,255,.7); }
+.portfolio-hero-bottom b, .portfolio-hero h1, .portfolio-photo-spotlight h2, .portfolio-contact h2 { color: #fff; }
+.portfolio-controls { border-bottom-color: rgba(255,255,255,.17); }
+.portfolio-audio { border-color: rgba(255,255,255,.22); background: rgba(7,7,8,.72); color: #fff; }
+.portfolio-whatsapp { color: #fff; border-bottom-color: rgba(255,255,255,.52); }
+.portfolio-instagram { color: rgba(255,255,255,.72); }
+@media (max-width: 600px) {
+  .luxury-hero { min-height: 100svh; }
+  .hero-video { object-position: 61% center; }
+  .hero-tint { background: linear-gradient(90deg, rgba(7,7,8,.97), rgba(7,7,8,.74) 62%, rgba(7,7,8,.29)), linear-gradient(0deg, rgba(7,7,8,.7), transparent 46%); }
+  .hero-brand-plate { display: none; }
+}
+
+/* Evidência de processo: a primeira dobra privilegia lavagem real, reflexo e placa oficial em preto acetinado. */
+.hero-video { filter: contrast(1.13) saturate(1.08) brightness(.92); }
+.hero-tint { background: radial-gradient(ellipse at 75% 52%, rgba(255,255,255,.11), transparent 31%), linear-gradient(90deg, rgba(7,7,8,.97) 0%, rgba(7,7,8,.82) 32%, rgba(7,7,8,.2) 68%, rgba(7,7,8,.45) 100%), linear-gradient(0deg, rgba(7,7,8,.72), transparent 50%); }
+.hero-brand-plate { width: 334px; padding: 18px 23px 17px; border-left-width: 5px; border-top-color: rgba(255,255,255,.22); border-bottom-color: rgba(255,255,255,.13); box-shadow: 18px 20px 0 rgba(0,0,0,.32); }
+.hero-brand-plate img { width: 224px; }
+.service-detail-stage, .detail-experience, .video-stage, .company-story, .faq-stage, .contact-stage { background-image: radial-gradient(ellipse at 88% 10%, rgba(255,255,255,.055), transparent 27%), linear-gradient(108deg, transparent 0 39%, rgba(255,255,255,.055) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(255,255,255,.026) 106px 107px); }
+.service-detail-stage::after, .faq-stage::after, .video-stage::after { content: ""; position: absolute; z-index: 0; right: -9%; bottom: 10%; width: 45%; height: 122px; border-top: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.06); background: linear-gradient(112deg, transparent 0 43%, rgba(255,255,255,.045) 43.2% 45%, transparent 45.2%); transform: rotate(-6deg); pointer-events: none; }
+.service-detail-stage > *, .faq-stage > *, .video-stage > * { position: relative; z-index: 1; }
+@media (max-width: 600px) {
+  .hero-tint { background: linear-gradient(90deg, rgba(7,7,8,.97), rgba(7,7,8,.7) 58%, rgba(7,7,8,.2)), linear-gradient(0deg, rgba(7,7,8,.68), transparent 46%); }
+  .hero-brand-plate { width: 184px; padding: 9px 11px; }
+  .hero-brand-plate img { width: 135px; }
+}

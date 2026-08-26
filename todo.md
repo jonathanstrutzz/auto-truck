@@ -110,3 +110,5 @@
 - [x] Implementar hero em vídeo de alta definição em tela cheia.
 - [x] Restaurar a identidade original preta e laranja nas páginas principais.
 - [x] Validar hero e paleta original em desktop e mobile.
+- [x] Remover a placa de marca destacada do hero em vídeo.
+- [x] Validar a composição atualizada da primeira tela.

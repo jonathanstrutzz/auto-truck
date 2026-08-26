@@ -470,10 +470,6 @@ export default function Home() {
             <span className="note-dot" />
             <div><span className="micro-label">Padrão Auto Truck</span><b>Brilho, proteção<br />e personalidade.</b></div>
           </div>
-          <div className="hero-brand-plate" aria-label="Marca Auto Truck Estética Para Caminhões">
-            <img src={OFFICIAL_LOGO} alt="Auto Truck Estética Para Caminhões" />
-            <span>ANÁPOLIS · GO<br />DESDE 2015</span>
-          </div>
           <div className="hero-side-caption">AUTO TRUCK / ESTÉTICA PARA CAMINHÕES / GOIÂNIA</div>
         </section>
 

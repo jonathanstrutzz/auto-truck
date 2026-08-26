@@ -1231,3 +1231,9 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .hero-brand-plate { width: 184px; padding: 9px 11px; }
   .hero-brand-plate img { width: 135px; }
 }
+
+/* Especialidades Auto Truck: quadros técnicos com bordas alinhadas para uma leitura contínua. */
+@media (min-width: 761px) {
+  .service-cards { align-items: stretch; }
+  .service-card, .service-card:nth-child(2), .service-card:nth-child(3) { min-height: 326px; margin-top: 0; }
+}

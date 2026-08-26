@@ -112,3 +112,5 @@
 - [x] Validar hero e paleta original em desktop e mobile.
 - [x] Remover a placa de marca destacada do hero em vídeo.
 - [x] Validar a composição atualizada da primeira tela.
+- [x] Alinhar os três quadros de serviços em uma linha consistente.
+- [x] Validar o alinhamento dos quadros em desktop e mobile.

@@ -99,4 +99,8 @@ No portfólio audiovisual, capas de lavagem, polimento, cabine, proteção, pint
 
 A placa oficial da Auto Truck assume papel cerimonial nos heróis e nas áreas de conversão: mais presença que um selo decorativo, integrada ao recorte diagonal e acompanhada por superfícies fumê, linhas de carroceria e reflexos de acabamento.
 
+A consolidação premium parte da paleta oficial: **Laranja Carga `#F15A24`** para ações e sinais técnicos, **preto fumê `#0C0C0D`** para placas, CTAs de estrutura e terminais visuais, e **branco de carroceria** para superfícies predominantes. A navegação, as placas de hero, a conversão e o rodapé devem repetir essa relação de forma consistente, com laranja limitado a bordas de sinalização, números e prioridades.
+
+Os heróis usam um registro real de processo — espuma, polimento, lavagem, cabine ou acabamento — como matéria visual dominante, preservando a placa oficial como assinatura cerimonial. Em zonas claras de grande escala, uma linha de inspeção, costura de painel, reflexão acetinada ou recorte de cabine deve estar sempre visível; os painéis fumê entram apenas como momentos pesados de prova, conversão e decisão.
+
 A base cromática atual usa **branco de carroceria** como superfície predominante, preto como estrutura fumê e Laranja Carga exclusivamente como sinal. As zonas claras precisam conter linhas de inspeção, sombras de pintura e recortes angulares para não parecerem uma tela branca genérica; os poucos blocos pretos funcionam como placas, baías de acabamento ou painéis de decisão, nunca como fundo dominante contínuo.

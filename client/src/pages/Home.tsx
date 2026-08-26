@@ -37,7 +37,7 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } fr
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
-const HERO_IMAGE = DETAIL_IMAGE;
+const HERO_IMAGE = "/manus-storage/auto-truck-equipe-lavagem-02_8b1f59c6.jpg";
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const WORKSHOP_FACADE_IMAGE = "/manus-storage/auto-truck-fachada-caminhoes-01_0298e7eb.png";
@@ -439,7 +439,7 @@ export default function Home() {
 
       <main id="conteudo" tabIndex={-1}>
         <section id="inicio" className="luxury-hero">
-          <img className="hero-photo" src={HERO_IMAGE} alt="Caminhão branco com acabamento impecável em estúdio de estética automotiva" />
+          <img className="hero-photo" src={HERO_IMAGE} alt="Profissional da Auto Truck em ação durante a lavagem detalhada de um caminhão" />
           <div className="hero-tint" />
           <div className="hero-fine-grid" />
           <div className="hero-orange-line" aria-hidden="true" />

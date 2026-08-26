@@ -1080,3 +1080,44 @@ html, body, .luxury-site { background: #fff; color: var(--black); }
   .portfolio-hero-plate { width: 184px; padding: 9px 11px; }
   .portfolio-hero-plate img { width: 135px; max-height: 44px; }
 }
+
+/* Consolidação Auto Truck: branco de carroceria, preto fumê e Laranja Carga como sistema proprietário. */
+:root { --orange: #f15a24; --orange-soft: #ff7140; }
+.premium-nav { box-shadow: inset 0 2px 0 var(--orange); }
+.premium-nav::after { content: ""; position: absolute; right: 0; bottom: -1px; width: 17%; height: 2px; background: var(--orange); }
+.brand-logo { border-left-width: 3px; background: linear-gradient(108deg, #0c0c0d 0%, #171719 82%, var(--orange) 82%); box-shadow: 10px 11px 0 rgba(12,12,13,.13); }
+.brand-logo::after { color: rgba(255,255,255,.62); }
+.desktop-links a { font-size: 11px; letter-spacing: .01em; }
+.nav-action { box-shadow: 5px 6px 0 rgba(12,12,13,.16); }
+.signature-band { border-top-color: var(--orange); border-bottom-color: var(--orange); }
+.services-stage, .timeline-stage, .prequote-stage, .gallery-stage { border-top: 1px solid rgba(12,12,13,.12); border-bottom: 1px solid rgba(12,12,13,.12); }
+.services-head h2 em, .timeline-heading h2 em, .gallery-heading h2 em, .prequote-copy h2 em { color: var(--orange); text-shadow: none; }
+.service-card, .timeline-entry { border-color: rgba(12,12,13,.18); }
+.service-card:hover { box-shadow: 12px 13px 0 rgba(241,90,36,.23); }
+.detail-number, .process-number, .timeline-year i { color: var(--orange); }
+.hero-brand-plate, .portfolio-hero-plate, .contact-brand-plate, .footer-logo { border-left-color: var(--orange); }
+.hero-brand-plate::before, .portfolio-hero-plate::before { background: var(--orange); }
+.hero-floating-note { border-top: 1px solid rgba(12,12,13,.16); border-right: 1px solid rgba(12,12,13,.16); }
+.premium-footer { border-top: 2px solid var(--orange); }
+.footer-details { color: #aaa59d; }
+
+/* Profundidade de acabamento: processos reais em primeiro plano, carroceria técnica no branco e placas fumê nas provas. */
+.hero-photo { object-position: 72% center; filter: contrast(1.12) saturate(.96) brightness(.88); }
+.hero-tint { background: linear-gradient(90deg, rgba(255,255,255,.985) 0%, rgba(255,255,255,.94) 39%, rgba(255,255,255,.62) 57%, rgba(12,12,13,.28) 100%), linear-gradient(0deg, rgba(255,255,255,.88), transparent 47%); }
+.luxury-hero::before { border-top-width: 2px; }
+.services-head, .timeline-heading, .gallery-layout, .portfolio-section-heading { position: relative; }
+.services-head::before, .timeline-heading::before, .gallery-layout::before, .portfolio-section-heading::before { content: ""; position: absolute; right: 0; bottom: -24px; left: 38%; height: 38px; border-top: 1px solid rgba(12,12,13,.15); border-bottom: 1px solid rgba(12,12,13,.07); background: repeating-linear-gradient(90deg, transparent 0 74px, rgba(12,12,13,.055) 75px 76px); transform: rotate(-4deg); pointer-events: none; }
+.services-head > *, .timeline-heading > *, .gallery-layout > *, .portfolio-section-heading > * { position: relative; z-index: 1; }
+.story-facts { border-top-width: 3px; border-color: rgba(255,255,255,.22); background: linear-gradient(135deg, #0c0c0d, #19191b); color: #fff; box-shadow: 15px 17px 0 rgba(12,12,13,.16); }
+.story-facts > p, .fact-row b { color: #fff; }
+.fact-row { border-top-color: rgba(255,255,255,.16); }
+.fact-row small, .fact-source { color: #b6b0a7; }
+.story-facts > .micro-label { color: var(--orange-soft); }
+.contact-panel { border: 1px solid rgba(12,12,13,.18); border-top: 3px solid var(--orange); }
+.team-manifesto, .prequote-form { box-shadow: 13px 15px 0 rgba(12,12,13,.16); }
+.portfolio-card::after { color: rgba(255,255,255,.67); }
+@media (max-width: 600px) {
+  .hero-photo { object-position: 68% center; }
+  .hero-tint { background: linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.78) 62%, rgba(12,12,13,.22)), linear-gradient(0deg, rgba(255,255,255,.82), transparent 44%); }
+  .services-head::before, .timeline-heading::before, .gallery-layout::before, .portfolio-section-heading::before { left: 20%; bottom: -17px; }
+}

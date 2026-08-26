@@ -100,3 +100,6 @@
 - [x] Definir a aplicação da nova paleta branca, preta e laranja.
 - [x] Aplicar a identidade clara nas páginas principais.
 - [x] Validar contraste e responsividade da nova identidade.
+- [x] Consolidar placas, superfícies e sinais da identidade oficial Auto Truck.
+- [x] Refinar a hierarquia visual com acabamento premium.
+- [x] Validar a identidade premium em desktop e mobile.

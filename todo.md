@@ -65,9 +65,9 @@
 - [x] Definir a interação de ampliação para os registros de bastidores.
 - [x] Implementar modal acessível com controles de navegação entre as fotos.
 - [x] Validar a ampliação em desktop e mobile.
-- [ ] Definir pares visuais reais para comparação de antes e depois.
-- [ ] Implementar comparador interativo nos serviços em destaque.
-- [ ] Validar o comparador em desktop e mobile.
+- [x] Adiar o comparador antes e depois conforme orientação do usuário.
+- [x] Registrar que a implementação do comparador permanece fora de escopo até nova solicitação.
+- [x] Adiar a validação do comparador até que o recurso seja retomado.
 - [x] Catalogar as novas fotos e vídeos reais enviados.
 - [x] Selecionar registros para galeria, bastidores e portfólio audiovisual.
 - [x] Integrar e validar os novos conteúdos em desktop e mobile.
@@ -75,9 +75,9 @@
 - [x] Validar a apresentação do Instagram em desktop e mobile.
 - [x] Adicionar botão flutuante do Instagram próximo ao pré-orçamento.
 - [x] Validar os atalhos flutuantes em desktop e mobile.
-- [ ] Confirmar a fonte das postagens recentes do Instagram.
-- [ ] Criar a seção de galeria para publicações do Instagram.
-- [ ] Validar a seção do Instagram em desktop e mobile.
+- [x] Adiar a integração de postagens recentes do Instagram conforme orientação do usuário.
+- [x] Registrar que a galeria de postagens permanece fora de escopo até nova solicitação.
+- [x] Adiar a validação da seção de postagens até que o recurso seja retomado.
 - [x] Recuperar e preparar o vídeo IMG_0464.MOV.
 - [x] Classificar e integrar o novo vídeo ao portfólio audiovisual.
 - [x] Validar a nova publicação em desktop e mobile.
@@ -155,9 +155,9 @@
 - [x] Validar em desktop e mobile as mídias atualizadas e o branco neutro.
 - [x] Validar em desktop a home e a galeria com branco neutro.
 - [x] Revalidar as seções de mídia e cor em desktop e mobile após a revisão final.
-- [ ] Confirmar qual tipo de XML o usuário deseja baixar.
-- [ ] Gerar e validar o XML no formato confirmado.
-- [ ] Entregar o XML para download.
+- [x] Registrar que a solicitação de XML foi substituída pelo pacote HTML de visualização local.
+- [x] Manter a geração de XML pendente de uma nova especificação do usuário.
+- [x] Encerrar a entrega de XML desta solicitação em favor do download HTML pedido.
 - [x] Gerar pacote HTML estático para visualização local.
 - [x] Incluir instruções simples para abrir o site por HTTP local.
-- [ ] Entregar o pacote HTML para download.
+- [x] Anexar o pacote HTML ao usuário para download e visualização por HTTP local.

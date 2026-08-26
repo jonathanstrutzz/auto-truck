@@ -266,19 +266,32 @@ const portfolioVideos = [
     model: "daf",
     searchTerms: ["daf", "xf", "polimento", "politriz", "mascaramento", "fita", "cabine", "brilho", "processo"],
   },
+  {
+    id: "pintura-rodas-daf",
+    number: "21",
+    label: "Pintura de rodas DAF",
+    title: "Rodas renovadas, presença ampliada.",
+    description: "Aros em prata metálica e cubos em preto recebem pintura para recuperar o acabamento visual em um caminhão DAF.",
+    source: "/manus-storage/auto-truck-pintura-rodas-daf_011d7338.mp4",
+    poster: "/manus-storage/auto-truck-pintura-rodas-daf-poster_7b9889bf.jpg",
+    category: "pintura",
+    model: "daf",
+    searchTerms: ["daf", "pintura", "rodas", "aros", "cubos", "prata metálica", "preto", "renovação", "acabamento", "processo"],
+  },
 ];
 
 const portfolioDisplayVideos = [...portfolioVideos].sort((first, second) => {
-  const processPriority = ["daf-xf-polimento", "volvo-lavagem-espuma", "pintura-projeto-especial", "volvo-polimento", "lavagem", "acabamento"];
+  const processPriority = ["pintura-rodas-daf", "daf-xf-polimento", "volvo-lavagem-espuma", "pintura-projeto-especial", "volvo-polimento", "lavagem", "acabamento"];
   const firstRank = processPriority.indexOf(first.id);
   const secondRank = processPriority.indexOf(second.id);
   return (firstRank < 0 ? 99 : firstRank) - (secondRank < 0 ? 99 : secondRank);
 });
 
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "20" },
+  { id: "todos", label: "Todos", count: "21" },
   { id: "lavagem", label: "Lavagem", count: "04" },
   { id: "polimento", label: "Polimento", count: "04" },
+  { id: "pintura", label: "Pintura", count: "01" },
   { id: "destaques", label: "Destaques", count: "12" },
   { id: "higienizacao", label: "Higienização", count: "EM BREVE" },
 ] as const;
@@ -288,7 +301,7 @@ const modelFilters = [
   { id: "volvo-fh", label: "Volvo FH", count: "05" },
   { id: "volvo", label: "Volvo", count: "01" },
   { id: "scania", label: "Scania", count: "04" },
-  { id: "daf", label: "DAF", count: "04" },
+  { id: "daf", label: "DAF", count: "05" },
   { id: "multimarca", label: "Multimarca", count: "02" },
   { id: "outros", label: "Outros caminhões", count: "04" },
 ] as const;
@@ -372,7 +385,7 @@ export default function VideoPortfolio() {
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.14 }} className="portfolio-hero-bottom">
             <p>Um arquivo de cenas da Auto Truck: resultado, cuidado, estrutura e caminhões preparados para voltar à estrada.</p>
-            <div><b>20</b><span>vídeos<br />selecionados</span></div>
+            <div><b>{portfolioVideos.length}</b><span>vídeos<br />selecionados</span></div>
           </motion.div>
         </div>
       </section>

@@ -168,4 +168,7 @@
 - [ ] Publicar a versão corrigida e comunicar o resultado ao usuário.
 - [x] Aumentar levemente o tamanho e o espaçamento dos links de navegação do cabeçalho.
 - [x] Validar a legibilidade e o encaixe da navegação em desktop e mobile.
-- [ ] Publicar o refinamento do cabeçalho.
+- [x] Publicar o refinamento do cabeçalho.
+- [x] Analisar e preparar o vídeo real de pintura de rodas para uso web.
+- [x] Integrar o vídeo de pintura de rodas ao portfólio com categoria e filtros coerentes.
+- [ ] Registrar o checkpoint de publicação do novo item audiovisual após a validação em desktop e mobile.

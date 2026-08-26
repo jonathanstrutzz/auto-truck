@@ -25,3 +25,12 @@
 - A navegação principal foi revisada no preview após o aumento de fonte e espaçamento. Os oito links permanecem alinhados entre a marca e o CTA de WhatsApp, sem sobreposição observada em desktop.
 - Em telas com até 900px, a regra responsiva mantém os links de desktop ocultos e exibe o gatilho do menu móvel; como o ajuste foi limitado a `.desktop-links`, ele não altera a tipografia do menu compacto.
 - A captura do cabeçalho nos viewports móveis voltou a falhar por limitação do mecanismo de screenshot, sem erro de aplicação. A validação técnica e a regra responsiva foram preservadas.
+
+### Novo registro audiovisual — pintura de rodas
+
+- O vídeo enviado registra a renovação estética das rodas de um caminhão DAF, com preparação visual, aplicação de tinta e finalização de aros e cubos.
+- A fonte possui 24,8 segundos, orientação vertical Full HD (1080 × 1920), vídeo H.264 e áudio AAC; foi preparada em MP4 com início otimizado para reprodução web.
+- A capa selecionada usa um quadro real de rodas finalizadas, preservando a leitura direta do processo sem criar imagem artificial.
+- O preview confirmou o novo item como vídeo 21, o filtro `Pintura 01` e a contagem `DAF 05`.
+- O player carregou o MP4 de pintura de rodas com duração de 24,8 segundos, estado pronto para reprodução e sem erro de mídia; a reprodução automática silenciosa também foi confirmada no destaque.
+- No viewport móvel de 375px, o portfólio preserva a hierarquia do hero, a contagem de 21 vídeos e a entrada do card de pintura de rodas sem sobreposição no início da grade.

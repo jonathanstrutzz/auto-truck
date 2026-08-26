@@ -1361,3 +1361,13 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .timeline-station { grid-column: 1; grid-row: 2; width: 25px; height: 25px; margin: 5px 0 0 24px; }
   .timeline-detail { grid-column: 2; grid-row: 2; }
 }
+
+/* Branco de carroceria: superfícies claras neutras, sem pigmento amarelado. */
+:root { --cream: #ffffff; --muted-cream: #f4f6f8; --silver: #eef1f4; --ice: #ffffff; --smoke: #66717c; --background: #ffffff; --card: #ffffff; --secondary: #f4f6f8; --muted: #f4f6f8; --accent: #f4f6f8; }
+html, body, .luxury-site { background: #ffffff; }
+.services-stage, .timeline-stage, .prequote-stage, .gallery-stage, .portfolio-grid-section { background-color: #ffffff; background-image: radial-gradient(ellipse at 82% 8%, rgba(236,241,245,.76), transparent 28%), linear-gradient(115deg, transparent 0 46%, rgba(12,12,13,.045) 48%, transparent 50%), repeating-linear-gradient(90deg, transparent 0 101px, rgba(12,12,13,.025) 102px 103px); }
+.process-section { background-color: #ffffff; background-image: linear-gradient(115deg, transparent 0 46%, rgba(12,12,13,.045) 48%, transparent 50%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(12,12,13,.024) 106px 107px); }
+.service-card, .timeline-entry, .timeline-detail { background-color: rgba(255,255,255,.88); }
+.timeline-detail { background-image: linear-gradient(120deg, rgba(255,255,255,.92), rgba(244,247,249,.45)); }
+.timeline-detail .micro-label { color: #45515c; }
+.timeline-detail p { color: #4f5963; }

@@ -146,3 +146,12 @@
 - [x] Revalidar em desktop e mobile a referência após confirmar a URL de destino.
 - [x] Atualizar a referência para o site oficial confirmado da JF Express.
 - [x] Validar a abertura do site oficial da JF Express pelo CTA institucional.
+- [x] Remover os tons amarelados das superfícies claras e manter branco limpo.
+- [x] Auditar resolução e origem das fotos e vídeos publicados.
+- [x] Priorizar fontes em alta definição e 4K quando os originais permitirem.
+- [x] Validar branco, nitidez e responsividade em desktop e mobile.
+- [x] Atualizar os vídeos do portfólio para fontes 4K reais quando disponíveis.
+- [x] Documentar os registros que permanecem abaixo de 4K por limitação da fonte original.
+- [x] Validar em desktop e mobile as mídias atualizadas e o branco neutro.
+- [x] Validar em desktop a home e a galeria com branco neutro.
+- [x] Revalidar as seções de mídia e cor em desktop e mobile após a revisão final.

@@ -1260,8 +1260,8 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
 .premium-nav .brand-logo { width: 184px; height: 58px; padding: 0 0 0 13px; border-left-width: 2px; outline: 0; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%); background: linear-gradient(100deg, rgba(7,7,8,.98), rgba(20,20,22,.82)); box-shadow: none; }
 .premium-nav .brand-logo::after { content: none; }
 .premium-nav .brand-logo img { width: 158px; max-height: 52px; }
-.desktop-links { justify-content: center; gap: clamp(14px, 1.45vw, 27px); margin: 0; padding: 0 4px; }
-.desktop-links a { padding: 8px 0; color: rgba(255,255,255,.7); font-size: 10px; letter-spacing: .025em; }
+.desktop-links { justify-content: center; gap: clamp(18px, 1.8vw, 32px); margin: 0; padding: 0 4px; }
+.desktop-links a { padding: 8px 0; color: rgba(255,255,255,.82); font-size: 12px; letter-spacing: .04em; }
 .desktop-links a::after { bottom: -7px; height: 1px; }
 .desktop-links a:hover { color: #fff; }
 .nav-action { min-width: 174px; height: 44px; padding: 0 18px; clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 0 100%); box-shadow: 7px 8px 0 rgba(241,90,36,.18); }

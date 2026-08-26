@@ -161,3 +161,11 @@
 - [x] Gerar pacote HTML estático para visualização local.
 - [x] Incluir instruções simples para abrir o site por HTTP local.
 - [x] Anexar o pacote HTML ao usuário para download e visualização por HTTP local.
+- [ ] Reauditar a página inicial, o portfólio e os links na versão pública em desktop e mobile após a reativação do domínio.
+- [ ] Aplicar correções adicionais somente se a reauditoria reproduzir falhas de interface, navegação ou carregamento no domínio público.
+- [ ] Executar validações de tipos, build, testes e revisão visual final antes da publicação.
+- [ ] Confirmar o reestabelecimento da publicação após a regularização de cobrança da conta.
+- [ ] Publicar a versão corrigida e comunicar o resultado ao usuário.
+- [x] Aumentar levemente o tamanho e o espaçamento dos links de navegação do cabeçalho.
+- [x] Validar a legibilidade e o encaixe da navegação em desktop e mobile.
+- [ ] Publicar o refinamento do cabeçalho.

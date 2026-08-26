@@ -137,3 +137,12 @@
 - [x] Testar no navegador o fluxo completo de pré-orçamento com imagem em desktop.
 - [x] Testar em mobile a captura por câmera, preview e envio do pré-orçamento.
 - [x] Testar o envio completo iniciado pelo seletor Usar câmera e confirmar o link no WhatsApp.
+- [x] Gerar pacote ZIP do código-fonte do site para publicação no GitHub.
+- [x] Entregar o arquivo de exportação ao usuário.
+- [x] Disponibilizar o ZIP do código-fonte para download no chat.
+- [x] Confirmar a URL do site oficial da JF Express com o usuário.
+- [x] Inserir uma menção transparente à JF Express com link para o Instagram público identificado.
+- [x] Substituir o link do Instagram pela URL oficial da JF Express quando confirmada.
+- [x] Revalidar em desktop e mobile a referência após confirmar a URL de destino.
+- [x] Atualizar a referência para o site oficial confirmado da JF Express.
+- [x] Validar a abertura do site oficial da JF Express pelo CTA institucional.

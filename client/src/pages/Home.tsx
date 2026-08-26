@@ -61,6 +61,7 @@ const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Auto%20Truck.";
 const PHONE_URL = "tel:+5562992158095";
 const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
+const JF_EXPRESS_URL = "https://jfexpress-3wipvnwe.manus.space/";
 const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
 const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
@@ -792,6 +793,9 @@ export default function Home() {
                 <span className="origin-rule" />
                 <p>Um padrão de cuidado pensado para a máquina que carrega a força do seu trabalho.</p>
               </div>
+              <a className="story-partner-link" href={JF_EXPRESS_URL} target="_blank" rel="noreferrer" aria-label="Abrir o site da JF Express">
+                <span>Conheça também o site da</span><b>JF Express</b><ArrowUpRight size={17} />
+              </a>
             </motion.div>
 
             <motion.aside {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="story-facts" aria-label="Dados institucionais da Auto Truck Estética">

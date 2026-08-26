@@ -1345,6 +1345,11 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
 .timeline-detail { padding: 17px 18px 18px; border-left: 2px solid var(--orange); background: linear-gradient(120deg, rgba(255,255,255,.74), rgba(255,255,255,.18)); box-shadow: 8px 9px 0 rgba(12,12,13,.08); }
 .timeline-detail .micro-label { color: #544e46; }
 .timeline-detail p { max-width: none; color: #544f48; }
+.story-partner-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 27px; padding: 11px 0 10px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.12); color: #fff; font: 700 11px "Manrope", sans-serif; letter-spacing: .015em; text-decoration: none; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 160ms var(--ease-out); }
+.story-partner-link span { color: rgba(255,255,255,.58); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.story-partner-link b { color: var(--orange-soft); font-size: 14px; text-transform: uppercase; }
+.story-partner-link:hover { border-top-color: var(--orange); color: var(--orange-soft); transform: translateX(3px); }
+.story-partner-link:active { transform: translateX(3px) scale(.98); }
 @media (max-width: 900px) {
   .company-timeline { grid-template-columns: 1fr; gap: 0; padding: 0 0 0 4px; }
   .timeline-route { top: 24px; bottom: 24px; left: 36px; width: 2px; height: auto; background: linear-gradient(180deg, transparent, rgba(12,12,13,.42) 7%, rgba(12,12,13,.42) 93%, transparent); }

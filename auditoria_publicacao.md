@@ -34,3 +34,10 @@
 - O preview confirmou o novo item como vídeo 21, o filtro `Pintura 01` e a contagem `DAF 05`.
 - O player carregou o MP4 de pintura de rodas com duração de 24,8 segundos, estado pronto para reprodução e sem erro de mídia; a reprodução automática silenciosa também foi confirmada no destaque.
 - No viewport móvel de 375px, o portfólio preserva a hierarquia do hero, a contagem de 21 vídeos e a entrada do card de pintura de rodas sem sobreposição no início da grade.
+
+### Validação GitHub Pages
+
+- A primeira abertura do pacote estático em servidor HTTP mostrou uma página em branco no caminho de subpasta. A correção do comportamento de rota e de carregamento será concluída antes da entrega da configuração gratuita.
+- O HTML e os bundles de CSS e JavaScript responderam com sucesso, mas o elemento raiz permaneceu vazio. A investigação aponta para a inicialização do cliente, não para a disponibilidade dos arquivos estáticos.
+- Ao iniciar a prévia com o mesmo caminho base de GitHub Pages, a página inicial estática renderizou com navegação, formulário, atalhos e seções institucionais. As imagens apontaram para a origem pública configurável de mídia, como esperado.
+- A rota `#/portfolio` carregou corretamente no servidor HTTP sem reescrita de backend. O pré-orçamento da versão estática apresentou a orientação de anexar fotos diretamente no WhatsApp.

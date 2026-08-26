@@ -11,6 +11,7 @@ const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-vermelha_d1b7fe78.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20Auto%20Truck.";
 const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
+const HOME_HREF = import.meta.env.VITE_STATIC_EXPORT === "true" ? "#/" : "/";
 
 const portfolioVideos = [
   {
@@ -364,11 +365,11 @@ export default function VideoPortfolio() {
       </audio>
 
       <header className="portfolio-nav">
-        <a href="/" className="portfolio-brand" aria-label="Voltar para a Auto Truck">
+        <a href={HOME_HREF} className="portfolio-brand" aria-label="Voltar para a Auto Truck">
           <img src={OFFICIAL_LOGO} alt="Auto Truck Estética Para Caminhões" />
           <span>Arquivo de vídeos</span>
         </a>
-        <a href="/" className="portfolio-back"><ArrowLeft size={17} /> Voltar ao site</a>
+        <a href={HOME_HREF} className="portfolio-back"><ArrowLeft size={17} /> Voltar ao site</a>
       </header>
 
       <section className="portfolio-hero">

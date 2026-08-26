@@ -175,3 +175,7 @@
 - [x] Verificar a configuração necessária para uma exportação estática compatível com GitHub Pages.
 - [x] Documentar o fluxo de publicação no GitHub e as limitações dos recursos que dependem do servidor.
 - [x] Entregar ao usuário o roteiro recomendado para colocar o site no ar pelo GitHub.
+- [x] Configurar o build estático para GitHub Pages com caminho base parametrizável.
+- [x] Adaptar o pré-orçamento para enviar os dados diretamente ao WhatsApp sem upload de foto.
+- [x] Criar o workflow de GitHub Actions para publicar a pasta estática gerada.
+- [x] Validar a versão estática e preparar a entrega para publicação gratuita.

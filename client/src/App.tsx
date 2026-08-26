@@ -5,12 +5,13 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import VideoPortfolio from "./pages/VideoPortfolio";
-function Router() {
+function SiteRouter() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
@@ -23,12 +24,16 @@ function Router() {
 }
 
 function App() {
+  const isStaticExport = import.meta.env.VITE_STATIC_EXPORT === "true";
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <WouterRouter hook={isStaticExport ? useHashLocation : undefined}>
+            <SiteRouter />
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

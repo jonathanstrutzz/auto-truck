@@ -224,6 +224,9 @@ h2 { font-size: clamp(50px, 5.8vw, 84px); line-height: .82; }
 .prequote-submit:hover { background: var(--orange-soft); transform: translateY(-2px); }
 .prequote-submit:active { transform: scale(.98); }
 .form-privacy { margin: 14px 0 0; color: #938d83; font-size: 9px; line-height: 1.55; }
+.prequote-static-note { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 18px; padding: 14px; border: 1px solid rgba(255,255,255,.2); border-left: 3px solid var(--orange); background: rgba(255,255,255,.035); color: var(--orange-soft); }
+.prequote-static-note p { margin: 0; color: #b8b1a7; font-size: 10px; line-height: 1.55; }
+.prequote-static-note b { display: block; margin-bottom: 3px; color: #fff; font-size: 10px; }
 .prequote-success { display: flex; min-height: 438px; flex-direction: column; align-items: flex-start; padding: 34px; border-top: 3px solid var(--orange); background: #151517; color: #fff; box-shadow: 16px 18px 0 rgba(12,12,13,.18); }
 .success-icon { display: grid; width: 57px; height: 57px; place-items: center; margin-bottom: 26px; border: 1px solid var(--orange); color: var(--orange-soft); box-shadow: inset 0 0 0 6px rgba(255,87,27,.08); }
 .prequote-success .micro-label { color: var(--orange-soft); }

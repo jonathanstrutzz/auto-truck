@@ -66,6 +66,8 @@ const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardi
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
 const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
 const WHATSAPP_LOCATION_SHARE_URL = `https://wa.me/?text=${encodeURIComponent(`📍 Auto Truck Estética Para Caminhões\n${OFFICIAL_ADDRESS}\n\nComo chegar: ${MAPS_ROUTE_URL}`)}`;
+const IS_STATIC_EXPORT = import.meta.env.VITE_STATIC_EXPORT === "true";
+const PORTFOLIO_HREF = IS_STATIC_EXPORT ? "#/portfolio" : "/portfolio";
 
 const teamRecords = [
   {
@@ -463,7 +465,7 @@ export default function Home() {
     const model = String(data.get("truckModel") || "Não informado");
     const service = String(data.get("service") || "Não informado");
     let vehicleImageUrl: string | null = null;
-    if (vehicleImage) {
+    if (!IS_STATIC_EXPORT && vehicleImage) {
       try {
         const dataUrl = await fileToDataUrl(vehicleImage);
         const uploadedImage = await vehiclePhotoUpload.mutateAsync({ dataUrl });
@@ -474,7 +476,10 @@ export default function Home() {
         return;
       }
     }
-    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}${vehicleImageUrl ? `\nImagem do veículo: ${vehicleImageUrl}` : ""}`;
+    const photoInstruction = IS_STATIC_EXPORT
+      ? "\n\nSe quiser enviar uma foto do veículo, use o anexo do WhatsApp depois que a conversa abrir."
+      : "";
+    const message = `Olá, quero solicitar um pré-orçamento na Auto Truck Estética.\n\nCliente: ${customerName}\nPlaca do veículo: ${plate}\nModelo do caminhão: ${model}\nServiço desejado: ${service}${vehicleImageUrl ? `\nImagem do veículo: ${vehicleImageUrl}` : ""}${photoInstruction}`;
     const whatsappUrl = `https://wa.me/5562992158095?text=${encodeURIComponent(message)}`;
     setPreQuoteConfirmation({ customerName, whatsappUrl, imageIncluded: Boolean(vehicleImageUrl) });
     if (whatsappWindow) {
@@ -660,7 +665,7 @@ export default function Home() {
                 <div className="success-icon"><CheckCircle2 size={30} strokeWidth={1.75} /></div>
                 <span className="micro-label">Solicitação preparada</span>
                 <h3>Obrigado,<br /><em>{preQuoteConfirmation.customerName}.</em></h3>
-                <p>Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto para você concluir o atendimento.{preQuoteConfirmation.imageIncluded ? " A imagem do veículo foi incluída na mensagem." : ""}</p>
+                <p>{IS_STATIC_EXPORT ? "Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto. Se desejar, envie uma foto do veículo diretamente pelo anexo da conversa." : `Seu pré-orçamento foi preparado e o WhatsApp da Auto Truck foi aberto para você concluir o atendimento.${preQuoteConfirmation.imageIncluded ? " A imagem do veículo foi incluída na mensagem." : ""}`}</p>
                 <a className="success-whatsapp" href={preQuoteConfirmation.whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Abrir WhatsApp novamente <ArrowUpRight size={16} /></a>
                 <button type="button" className="success-reset" onClick={resetPreQuote}>Fazer outro pré-orçamento</button>
               </motion.div>
@@ -686,24 +691,28 @@ export default function Home() {
                     {serviceDetails.map((service) => <option key={service.number} value={service.title}>{service.title}</option>)}
                   </select>
                 </label>
-                <div className="vehicle-photo-field">
-                  <div className="vehicle-photo-heading"><span>Imagem do veículo <small>opcional</small></span><p>Envie uma foto da área que precisa de cuidado ou fotografe agora pelo celular.</p></div>
-                  {vehicleImagePreview ? (
-                    <div className="vehicle-photo-preview">
-                      <img src={vehicleImagePreview} alt="Prévia da imagem do veículo selecionada para o pré-orçamento" />
-                      <div><b>{vehicleImage?.name}</b><span>{vehicleImage ? `${Math.ceil(vehicleImage.size / 1024)} KB` : ""}</span></div>
-                      <button type="button" onClick={() => { setVehicleImage(null); setVehicleImageError(null); }} aria-label="Remover imagem selecionada"><X size={17} /></button>
-                    </div>
-                  ) : (
-                    <div className="vehicle-photo-actions">
-                      <label className="vehicle-photo-action"><ImagePlus size={18} /><span>Selecionar imagem</span><input type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
-                      <label className="vehicle-photo-action camera-action"><Camera size={18} /><span>Usar câmera</span><input type="file" accept="image/jpeg,image/png,image/webp" capture="environment" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
-                    </div>
-                  )}
-                  {vehicleImageError && <p className="vehicle-photo-error" role="alert">{vehicleImageError}</p>}
-                </div>
-                <button type="submit" className="prequote-submit" disabled={vehiclePhotoUpload.isPending}>{vehiclePhotoUpload.isPending ? <><span className="submit-spinner" /> Enviando imagem...</> : <><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></>}</button>
-                <p className="form-privacy">A imagem é armazenada com segurança e o link segue junto ao seu pedido no WhatsApp.</p>
+                {IS_STATIC_EXPORT ? (
+                  <div className="prequote-static-note"><MessageCircle size={19} /><p><b>Envio de foto pelo WhatsApp</b>Após abrir a conversa, use o ícone de anexo para enviar as fotos do veículo diretamente à equipe.</p></div>
+                ) : (
+                  <div className="vehicle-photo-field">
+                    <div className="vehicle-photo-heading"><span>Imagem do veículo <small>opcional</small></span><p>Envie uma foto da área que precisa de cuidado ou fotografe agora pelo celular.</p></div>
+                    {vehicleImagePreview ? (
+                      <div className="vehicle-photo-preview">
+                        <img src={vehicleImagePreview} alt="Prévia da imagem do veículo selecionada para o pré-orçamento" />
+                        <div><b>{vehicleImage?.name}</b><span>{vehicleImage ? `${Math.ceil(vehicleImage.size / 1024)} KB` : ""}</span></div>
+                        <button type="button" onClick={() => { setVehicleImage(null); setVehicleImageError(null); }} aria-label="Remover imagem selecionada"><X size={17} /></button>
+                      </div>
+                    ) : (
+                      <div className="vehicle-photo-actions">
+                        <label className="vehicle-photo-action"><ImagePlus size={18} /><span>Selecionar imagem</span><input type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
+                        <label className="vehicle-photo-action camera-action"><Camera size={18} /><span>Usar câmera</span><input type="file" accept="image/jpeg,image/png,image/webp" capture="environment" onChange={(event) => selectVehicleImage(event.target.files?.[0])} /></label>
+                      </div>
+                    )}
+                    {vehicleImageError && <p className="vehicle-photo-error" role="alert">{vehicleImageError}</p>}
+                  </div>
+                )}
+                <button type="submit" className="prequote-submit" disabled={!IS_STATIC_EXPORT && vehiclePhotoUpload.isPending}>{!IS_STATIC_EXPORT && vehiclePhotoUpload.isPending ? <><span className="submit-spinner" /> Enviando imagem...</> : <><MessageCircle size={19} /> Enviar para o WhatsApp <ArrowUpRight size={17} /></>}</button>
+                <p className="form-privacy">{IS_STATIC_EXPORT ? "Versão estática: as fotos são enviadas pelo próprio WhatsApp, sem armazenamento pelo site." : "A imagem é armazenada com segurança e o link segue junto ao seu pedido no WhatsApp."}</p>
               </motion.form>
             )}
           </div>
@@ -764,7 +773,7 @@ export default function Home() {
                 <span><small>Trilha original da Auto Truck</small>{soundEnabled ? "Pausar trilha sonora" : "Ativar trilha sonora"}</span>
                 <i>{soundEnabled ? "ON" : "OFF"}</i>
               </button>
-              <a className="video-portfolio-link" href="/portfolio">Abrir portfólio completo <ArrowUpRight size={17} /></a>
+              <a className="video-portfolio-link" href={PORTFOLIO_HREF}>Abrir portfólio completo <ArrowUpRight size={17} /></a>
             </motion.div>
 
             <motion.div key={activeVideo.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.38, ease: "easeOut" }} className="video-frame">

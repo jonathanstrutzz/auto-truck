@@ -150,10 +150,15 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+const isStaticExport = process.env.VITE_STATIC_EXPORT === "true";
+const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE || "/auto-truck/";
+const plugins = isStaticExport
+  ? [react(), tailwindcss(), jsxLocPlugin()]
+  : [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,
+  base: isStaticExport ? githubPagesBase : "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

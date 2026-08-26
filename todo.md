@@ -118,3 +118,5 @@
 - [x] Preparar capas e ativos web dos novos vídeos.
 - [x] Integrar os dois vídeos ao portfólio audiovisual e aos filtros.
 - [x] Validar os novos vídeos em desktop e mobile.
+- [x] Remover a placa de logo do hero da página de vídeos.
+- [x] Validar o hero audiovisual atualizado em desktop e mobile.

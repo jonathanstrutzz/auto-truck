@@ -361,11 +361,6 @@ export default function VideoPortfolio() {
             <p>Um arquivo de cenas da Auto Truck: resultado, cuidado, estrutura e caminhões preparados para voltar à estrada.</p>
             <div><b>20</b><span>vídeos<br />selecionados</span></div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.18 }} className="portfolio-hero-plate">
-            <img src={OFFICIAL_LOGO} alt="" />
-            <span>Anápolis · GO</span>
-            <b>Estética para caminhões</b>
-          </motion.div>
         </div>
       </section>
 

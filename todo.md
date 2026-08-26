@@ -155,3 +155,9 @@
 - [x] Validar em desktop e mobile as mídias atualizadas e o branco neutro.
 - [x] Validar em desktop a home e a galeria com branco neutro.
 - [x] Revalidar as seções de mídia e cor em desktop e mobile após a revisão final.
+- [ ] Confirmar qual tipo de XML o usuário deseja baixar.
+- [ ] Gerar e validar o XML no formato confirmado.
+- [ ] Entregar o XML para download.
+- [x] Gerar pacote HTML estático para visualização local.
+- [x] Incluir instruções simples para abrir o site por HTTP local.
+- [ ] Entregar o pacote HTML para download.

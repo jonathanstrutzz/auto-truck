@@ -122,8 +122,8 @@
 - [x] Validar o hero audiovisual atualizado em desktop e mobile.
 - [x] Refinar a composição visual do cabeçalho principal.
 - [x] Validar o cabeçalho atualizado em desktop e mobile.
-- [ ] Redesenhar a linha do tempo institucional em novo estilo editorial.
-- [ ] Validar a nova linha do tempo em desktop e mobile.
+- [x] Redesenhar a linha do tempo institucional em novo estilo editorial.
+- [x] Validar a nova linha do tempo em desktop e mobile.
 - [x] Analisar os quatro novos vídeos para a galeria de serviços.
 - [x] Preparar versões web e capas próprias dos quatro vídeos.
 - [x] Inserir os quatro vídeos na galeria de serviços com classificação objetiva.

@@ -813,9 +813,11 @@ export default function Home() {
               <p>Marcos institucionais registrados no comprovante de inscrição e de situação cadastral da empresa.</p>
             </motion.div>
             <div className="company-timeline">
+              <div className="timeline-route" aria-hidden="true" />
               {timelineEvents.map((event, index) => (
                 <motion.article {...reveal} transition={{ ...reveal.transition, delay: index * 0.08 }} className="timeline-entry" key={event.year}>
-                  <div className="timeline-year"><span>{event.year}</span><i /></div>
+                  <div className="timeline-year"><span>{event.year}</span><b>0{index + 1}</b></div>
+                  <div className="timeline-station" aria-hidden="true"><i /></div>
                   <div className="timeline-detail"><span className="micro-label">{event.label}</span><p>{event.text}</p></div>
                 </motion.article>
               ))}

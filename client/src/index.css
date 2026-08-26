@@ -1327,3 +1327,32 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .vehicle-photo-heading p { max-width: none; text-align: left; }
   .vehicle-photo-actions { grid-template-columns: 1fr; }
 }
+
+/* Linha do tempo editorial: uma rota institucional contínua, com cada marco como estação de crescimento. */
+.timeline-stage { background-color: var(--cream); }
+.company-timeline { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding: 14px 0 8px; border: 0; background: transparent; }
+.timeline-route { position: absolute; top: 132px; right: 9%; left: 9%; height: 2px; background: linear-gradient(90deg, transparent, rgba(12,12,13,.42) 8%, rgba(12,12,13,.42) 92%, transparent); }
+.timeline-route::before, .timeline-route::after { content: ""; position: absolute; top: -3px; width: 8px; height: 8px; border: 1px solid var(--orange); background: var(--cream); transform: rotate(45deg); }
+.timeline-route::before { left: 7.5%; }
+.timeline-route::after { right: 7.5%; }
+.timeline-entry, .timeline-entry:nth-child(2), .timeline-entry:nth-child(3) { display: grid; min-height: 315px; margin: 0; padding: 0 22px 28px; border: 0; clip-path: none; background: transparent; box-shadow: none; }
+.timeline-entry::before { display: none; }
+.timeline-year { display: flex; align-items: flex-end; justify-content: space-between; margin: 0 0 33px; padding-bottom: 15px; border-bottom: 1px solid rgba(12,12,13,.14); }
+.timeline-year span { font-size: clamp(64px, 5.6vw, 86px); line-height: .72; }
+.timeline-year b { color: var(--orange); font: 700 10px "IBM Plex Mono", monospace; letter-spacing: .08em; }
+.timeline-station { position: relative; z-index: 1; display: grid; width: 30px; height: 30px; place-items: center; margin: -48px 0 20px; border: 2px solid var(--black); background: var(--cream); transform: rotate(45deg); }
+.timeline-station i { display: block; width: 9px; height: 9px; background: var(--orange); box-shadow: none; }
+.timeline-detail { padding: 17px 18px 18px; border-left: 2px solid var(--orange); background: linear-gradient(120deg, rgba(255,255,255,.74), rgba(255,255,255,.18)); box-shadow: 8px 9px 0 rgba(12,12,13,.08); }
+.timeline-detail .micro-label { color: #544e46; }
+.timeline-detail p { max-width: none; color: #544f48; }
+@media (max-width: 900px) {
+  .company-timeline { grid-template-columns: 1fr; gap: 0; padding: 0 0 0 4px; }
+  .timeline-route { top: 24px; bottom: 24px; left: 36px; width: 2px; height: auto; background: linear-gradient(180deg, transparent, rgba(12,12,13,.42) 7%, rgba(12,12,13,.42) 93%, transparent); }
+  .timeline-route::before, .timeline-route::after { left: -3px; }
+  .timeline-route::before { top: 7.5%; }
+  .timeline-route::after { top: auto; bottom: 7.5%; }
+  .timeline-entry, .timeline-entry:nth-child(2), .timeline-entry:nth-child(3) { grid-template-columns: 82px minmax(0, 1fr); min-height: 0; padding: 0 0 22px; }
+  .timeline-year { grid-column: 1 / -1; grid-row: 1; margin: 0 0 18px; padding: 0 0 13px; }
+  .timeline-station { grid-column: 1; grid-row: 2; width: 25px; height: 25px; margin: 5px 0 0 24px; }
+  .timeline-detail { grid-column: 2; grid-row: 2; }
+}

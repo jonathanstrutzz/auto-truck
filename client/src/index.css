@@ -1080,6 +1080,3 @@ html, body, .luxury-site { background: #fff; color: var(--black); }
   .portfolio-hero-plate { width: 184px; padding: 9px 11px; }
   .portfolio-hero-plate img { width: 135px; max-height: 44px; }
 }
-
-.hero-photo { object-position: center 62%; }
-@media (max-width: 600px) { .hero-photo { object-position: center 66%; } }

@@ -100,6 +100,3 @@
 - [x] Definir a aplicação da nova paleta branca, preta e laranja.
 - [x] Aplicar a identidade clara nas páginas principais.
 - [x] Validar contraste e responsividade da nova identidade.
-- [x] Preparar a foto real da Scania para o hero.
-- [x] Integrar a nova imagem na primeira tela.
-- [x] Validar o hero atualizado em desktop e mobile.

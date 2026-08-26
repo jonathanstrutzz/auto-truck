@@ -1,6 +1,6 @@
 /**
- * Direção visual: Auto Truck Premium Detail — branco de carroceria, preto fumê estrutural e Laranja Carga preciso.
- * Prioridade: sofisticação, clareza, contraste e conversão.
+ * Direção visual: Auto Truck Premium Detail — superfícies pretas acetinadas, laranja de alto contraste
+ * e composição editorial inspirada em acabamento automotivo. Prioridade: sofisticação, clareza e conversão.
  */
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
@@ -37,7 +37,7 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } fr
 
 const OFFICIAL_LOGO = "/manus-storage/logo-autotruck-oficial_b7a43251.png";
 const DETAIL_IMAGE = "/manus-storage/auto-truck-detailing_2e65779d.jpg";
-const HERO_IMAGE = "/manus-storage/auto-truck-hero-scania-jf-express_c783f832.png";
+const HERO_IMAGE = DETAIL_IMAGE;
 const CAB_IMAGE = "/manus-storage/auto-truck-cab_477e2cfa.jpg";
 const WORKSHOP_GALLERY_IMAGE = "/manus-storage/auto-truck-oficina_dfb7eb07.png";
 const WORKSHOP_FACADE_IMAGE = "/manus-storage/auto-truck-fachada-caminhoes-01_0298e7eb.png";
@@ -439,7 +439,7 @@ export default function Home() {
 
       <main id="conteudo" tabIndex={-1}>
         <section id="inicio" className="luxury-hero">
-          <img className="hero-photo" src={HERO_IMAGE} alt="Caminhão Scania branco com implemento azul registrado em operação" />
+          <img className="hero-photo" src={HERO_IMAGE} alt="Caminhão branco com acabamento impecável em estúdio de estética automotiva" />
           <div className="hero-tint" />
           <div className="hero-fine-grid" />
           <div className="hero-orange-line" aria-hidden="true" />

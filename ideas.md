@@ -103,4 +103,6 @@ A consolidação premium parte da paleta oficial: **Laranja Carga `#F15A24`** pa
 
 Os heróis usam um registro real de processo — espuma, polimento, lavagem, cabine ou acabamento — como matéria visual dominante, preservando a placa oficial como assinatura cerimonial. Em zonas claras de grande escala, uma linha de inspeção, costura de painel, reflexão acetinada ou recorte de cabine deve estar sempre visível; os painéis fumê entram apenas como momentos pesados de prova, conversão e decisão.
 
+A evolução cromática adiciona **cinza aço** e **grafite** entre o preto, o branco e o Laranja Carga. O branco-gelo sustenta legibilidade, o cinza cria painéis de carroceria e profundidade, o grafite forma baías e placas premium e o laranja permanece como ponto de decisão. O layout deve alternar essas quatro camadas em vez de depender de grandes extensões de branco puro.
+
 A base cromática atual usa **branco de carroceria** como superfície predominante, preto como estrutura fumê e Laranja Carga exclusivamente como sinal. As zonas claras precisam conter linhas de inspeção, sombras de pintura e recortes angulares para não parecerem uma tela branca genérica; os poucos blocos pretos funcionam como placas, baías de acabamento ou painéis de decisão, nunca como fundo dominante contínuo.

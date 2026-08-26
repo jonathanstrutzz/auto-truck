@@ -103,3 +103,6 @@
 - [x] Consolidar placas, superfícies e sinais da identidade oficial Auto Truck.
 - [x] Refinar a hierarquia visual com acabamento premium.
 - [x] Validar a identidade premium em desktop e mobile.
+- [x] Definir a aplicação de preto, cinza, branco e laranja.
+- [x] Modernizar o layout com superfícies cinza e contrastes refinados.
+- [x] Validar o novo visual em desktop e mobile.

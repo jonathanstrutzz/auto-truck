@@ -1121,3 +1121,37 @@ html, body, .luxury-site { background: #fff; color: var(--black); }
   .hero-tint { background: linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.78) 62%, rgba(12,12,13,.22)), linear-gradient(0deg, rgba(255,255,255,.82), transparent 44%); }
   .services-head::before, .timeline-heading::before, .gallery-layout::before, .portfolio-section-heading::before { left: 20%; bottom: -17px; }
 }
+
+/* Paleta modernizada Auto Truck: preto grafite, aço, branco de carroceria e Laranja Carga. */
+:root { --graphite: #17191c; --charcoal: #292d31; --steel: #aeb4ba; --silver: #e7eaed; --ice: #f5f6f7; --orange: #f15a24; --orange-soft: #ff7040; --cream: #f5f6f7; --muted-cream: #e7eaed; --smoke: #626970; --line-light: rgba(23,25,28,.14); }
+html, body, .luxury-site { background: var(--ice); }
+.premium-nav { background: rgba(245,246,247,.94); border-bottom-color: rgba(23,25,28,.16); box-shadow: inset 0 2px 0 var(--orange), 0 8px 22px rgba(23,25,28,.055); }
+.premium-nav.is-scrolled { background: rgba(245,246,247,.98); box-shadow: inset 0 2px 0 var(--orange), 0 12px 30px rgba(23,25,28,.1); }
+.luxury-hero { background: linear-gradient(118deg, #f7f8f9 0%, #e8ebee 55%, #25282c 55%, #17191c 100%); }
+.luxury-hero::before { opacity: .88; border-color: rgba(23,25,28,.18); }
+.hero-tint { background: linear-gradient(90deg, rgba(247,248,249,.985) 0%, rgba(247,248,249,.93) 40%, rgba(231,234,237,.65) 60%, rgba(23,25,28,.28) 100%), linear-gradient(0deg, rgba(247,248,249,.82), transparent 48%); }
+.hero-floating-note { background: rgba(245,246,247,.94); border-color: rgba(23,25,28,.21); }
+.luxury-hero::after { background: linear-gradient(125deg, rgba(23,25,28,.98) 0%, rgba(41,45,49,.9) 72%, rgba(241,90,36,.35) 72%); box-shadow: 19px 20px 0 rgba(23,25,28,.16); }
+.signature-band, .premium-footer { background: var(--graphite); }
+.brand-logo, .hero-brand-plate, .portfolio-hero-plate { background: linear-gradient(112deg, #101113 0%, #272a2e 80%, var(--orange) 80%); }
+
+.services-stage, .timeline-stage, .prequote-stage, .gallery-stage, .portfolio-grid-section { background-color: var(--silver); background-image: radial-gradient(ellipse at 86% 8%, rgba(255,255,255,.82), transparent 28%), linear-gradient(115deg, transparent 0 46%, rgba(23,25,28,.075) 48%, transparent 50%), repeating-linear-gradient(90deg, transparent 0 101px, rgba(23,25,28,.042) 102px 103px); }
+.service-detail-stage, .detail-experience, .video-stage, .company-story, .faq-stage, .contact-stage { background-color: var(--ice); background-image: linear-gradient(108deg, transparent 0 39%, rgba(23,25,28,.055) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(23,25,28,.03) 106px 107px); }
+.service-card, .timeline-entry, .hours-panel, .contact-map-panel, .contact-panel { background-color: rgba(255,255,255,.76); border-color: rgba(23,25,28,.18); box-shadow: 9px 10px 0 rgba(23,25,28,.1); }
+.service-card:hover { background: #fff; box-shadow: 12px 13px 0 rgba(23,25,28,.17); }
+.service-detail-row, .faq-item { background: rgba(255,255,255,.5); }
+.service-detail-row:hover, .faq-item:hover { background: linear-gradient(90deg, rgba(241,90,36,.1), rgba(255,255,255,.72)); }
+.prequote-form, .story-facts, .team-manifesto { background: linear-gradient(132deg, #15171a, #30353a); }
+.prequote-form, .team-manifesto { border-top-color: var(--orange); }
+.gallery-brand-filter button { background: rgba(255,255,255,.7); border-color: rgba(23,25,28,.22); color: #3b4147; }
+.gallery-brand-filter button:hover, .gallery-brand-filter button.active { background: var(--graphite); border-color: var(--graphite); color: #fff; }
+.team-stage { background: linear-gradient(130deg, #1b1e21 0%, #2d3237 55%, #17191c 100%); }
+.portfolio-page { background: var(--ice); }
+.portfolio-hero, .portfolio-feature, .portfolio-photo-spotlight, .portfolio-contact { background-color: var(--ice); }
+.portfolio-hero { background-image: radial-gradient(ellipse at 72% 13%, rgba(23,25,28,.08), transparent 29%), linear-gradient(115deg, #f7f8f9 0%, #e5e8eb 54%, #f7f8f9 100%); }
+.portfolio-feature, .portfolio-photo-spotlight, .portfolio-contact { background-image: linear-gradient(108deg, transparent 0 39%, rgba(23,25,28,.06) 47%, transparent 55%), repeating-linear-gradient(90deg, transparent 0 105px, rgba(23,25,28,.035) 106px 107px); }
+.portfolio-card { box-shadow: 8px 9px 0 rgba(23,25,28,.13); }
+.portfolio-card:hover { box-shadow: 12px 13px 0 rgba(23,25,28,.2); }
+.portfolio-controls, .gallery-brand-filter { border-color: rgba(23,25,28,.2); }
+.portfolio-audio, .soundtrack-control { background: rgba(255,255,255,.78); border-color: rgba(23,25,28,.2); }
+.premium-footer { border-top-color: var(--orange); }

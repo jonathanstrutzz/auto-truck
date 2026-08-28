@@ -5,12 +5,43 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import { useEffect } from "react";
 import { Route, Router as WouterRouter, Switch } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { getStaticSectionId } from "./lib/staticNavigation";
 import Home from "./pages/Home";
 import VideoPortfolio from "./pages/VideoPortfolio";
+
+function useStaticSiteLocation() {
+  const [location, navigate] = useHashLocation();
+  const sectionId = typeof window === "undefined" ? null : getStaticSectionId(window.location.hash);
+
+  return [sectionId ? "/" : location, navigate] as [string, typeof navigate];
+}
+
+function StaticSectionNavigator({ enabled }: { enabled: boolean }) {
+  useEffect(() => {
+    if (!enabled) return;
+
+    const scrollToSection = () => {
+      const sectionId = getStaticSectionId(window.location.hash);
+      if (!sectionId) return;
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    };
+
+    scrollToSection();
+    window.addEventListener("hashchange", scrollToSection);
+    return () => window.removeEventListener("hashchange", scrollToSection);
+  }, [enabled]);
+
+  return null;
+}
+
 function SiteRouter() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -31,7 +62,8 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <WouterRouter hook={isStaticExport ? useHashLocation : undefined}>
+          <WouterRouter hook={isStaticExport ? useStaticSiteLocation : undefined}>
+            <StaticSectionNavigator enabled={isStaticExport} />
             <SiteRouter />
           </WouterRouter>
         </TooltipProvider>

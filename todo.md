@@ -198,3 +198,4 @@
 - [x] Reforçar visualmente que o cartão com o logotipo da JF Express é clicável para o site oficial.
 - [x] Validar o destino do link e publicar o refinamento da parceria.
 - [x] Ajustar o workflow de GitHub Pages para habilitar a configuração de Pages automaticamente quando ainda não existir.
+- [ ] Corrigir a disponibilidade pública da mídia de pintura de rodas DAF no GitHub Pages e revalidar sua reprodução.

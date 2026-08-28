@@ -48,3 +48,9 @@
 - No preview da Auto Truck, a seção de parceria exibe o logotipo com texto alternativo, a identificação “Conexão parceira” e o link externo para o site oficial da JF Express.
 - Em desktop, o logotipo aparece em cartão branco com borda de sinalização laranja, alinhado ao texto institucional e separado do painel de dados da Auto Truck, sem competir com o pré-orçamento.
 - A captura móvel do ambiente não foi concluída por limitação de recursos do navegador. A composição possui regra específica abaixo de 900px para ocupar a largura disponível, sem largura fixa além do contêiner; a validação de tipos, testes e build foi concluída sem erros.
+
+### Novo registro audiovisual — lavagem Volvo noturna
+
+- O vídeo reenviado `IMG_9310.MOV` chegou íntegro, em 4K (3840 × 2160), HEVC, 120 fps e 18,6 segundos. O conteúdo mostra um Volvo em lavagem externa noturna com espuma e jato de alta pressão.
+- Foi preservada a fonte 4K original e preparada uma versão Full HD H.264 de 12 MB para compatibilidade no navegador, com capa derivada de um quadro real do processo.
+- No preview, o registro foi exibido como item 22 e destaque inicial. O player carregou o fallback MP4 Full HD, com 18,645 segundos, pôster correto, estado pronto para reprodução e sem erro de mídia. A apresentação móvel exibiu o novo card sem sobreposição.

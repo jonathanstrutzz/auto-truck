@@ -182,6 +182,9 @@
 - [ ] Analisar o novo vídeo real enviado e preparar uma versão web compatível com capa própria.
 - [ ] Integrar o novo vídeo ao portfólio com classificação confirmada pelo conteúdo.
 - [ ] Validar a reprodução, filtros e responsividade do novo registro e publicar a atualização.
+- [x] Verificar a integridade do arquivo reenviado IMG_9310.MOV e preparar versão compatível para web.
+- [x] Classificar e integrar o novo registro ao portfólio audiovisual da Auto Truck.
+- [ ] Registrar a publicação do novo item audiovisual validado em desktop e mobile.
 - [x] Localizar e preparar o logotipo oficial da JF Express para uso no site.
 - [x] Inserir o logotipo na seção de parceria, mantendo hierarquia clara com o pré-orçamento.
 - [x] Registrar a publicação da composição de parceria validada em desktop e pelas regras responsivas em mobile.

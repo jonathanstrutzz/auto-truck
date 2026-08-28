@@ -279,18 +279,31 @@ const portfolioVideos = [
     model: "daf",
     searchTerms: ["daf", "pintura", "rodas", "aros", "cubos", "prata metálica", "preto", "renovação", "acabamento", "processo"],
   },
+  {
+    id: "volvo-lavagem-noturna",
+    number: "22",
+    label: "Lavagem Volvo noturna",
+    title: "Espuma que anuncia o cuidado.",
+    description: "Volvo em lavagem externa noturna, com espuma aplicada na dianteira e jato de alta pressão no processo de limpeza.",
+    source: "/manus-storage/auto-truck-volvo-lavagem-noturna-hd_c46bd0bd.mp4",
+    source4k: "/manus-storage/IMG_9310_3806a178.MOV",
+    poster: "/manus-storage/auto-truck-volvo-lavagem-noturna-poster_35c51f2a.jpg",
+    category: "lavagem",
+    model: "volvo",
+    searchTerms: ["volvo", "lavagem", "noturna", "espuma", "shampoo", "jato", "alta pressão", "limpeza externa", "processo"],
+  },
 ];
 
 const portfolioDisplayVideos = [...portfolioVideos].sort((first, second) => {
-  const processPriority = ["pintura-rodas-daf", "daf-xf-polimento", "volvo-lavagem-espuma", "pintura-projeto-especial", "volvo-polimento", "lavagem", "acabamento"];
+  const processPriority = ["volvo-lavagem-noturna", "pintura-rodas-daf", "daf-xf-polimento", "volvo-lavagem-espuma", "pintura-projeto-especial", "volvo-polimento", "lavagem", "acabamento"];
   const firstRank = processPriority.indexOf(first.id);
   const secondRank = processPriority.indexOf(second.id);
   return (firstRank < 0 ? 99 : firstRank) - (secondRank < 0 ? 99 : secondRank);
 });
 
 const serviceFilters = [
-  { id: "todos", label: "Todos", count: "21" },
-  { id: "lavagem", label: "Lavagem", count: "04" },
+  { id: "todos", label: "Todos", count: "22" },
+  { id: "lavagem", label: "Lavagem", count: "05" },
   { id: "polimento", label: "Polimento", count: "04" },
   { id: "pintura", label: "Pintura", count: "01" },
   { id: "destaques", label: "Destaques", count: "12" },
@@ -298,9 +311,9 @@ const serviceFilters = [
 ] as const;
 
 const modelFilters = [
-  { id: "todos", label: "Todos os modelos", count: "20" },
+  { id: "todos", label: "Todos os modelos", count: "22" },
   { id: "volvo-fh", label: "Volvo FH", count: "05" },
-  { id: "volvo", label: "Volvo", count: "01" },
+  { id: "volvo", label: "Volvo", count: "02" },
   { id: "scania", label: "Scania", count: "04" },
   { id: "daf", label: "DAF", count: "05" },
   { id: "multimarca", label: "Multimarca", count: "02" },

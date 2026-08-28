@@ -185,18 +185,18 @@
 - [x] Verificar a integridade do arquivo reenviado IMG_9310.MOV e preparar versão compatível para web.
 - [x] Classificar e integrar o novo registro ao portfólio audiovisual da Auto Truck.
 - [x] Registrar a publicação do novo item audiovisual validado em desktop e mobile.
-- [ ] Confirmar a conexão do GitHub e as permissões para criar um repositório público.
-- [ ] Criar o repositório público da Auto Truck e enviar o código preparado para GitHub Pages.
-- [ ] Configurar a origem pública de fotos e vídeos exigida pelo site estático.
-- [ ] Ativar e validar o GitHub Pages gratuito no repositório público.
-- [ ] Configurar uma origem pública gratuita para fotos, áudio e vídeos de fallback sem depender de arquivos 4K acima do limite do GitHub.
-- [ ] Aplicar essa origem ao workflow do GitHub Pages e verificar a publicação automatizada.
-- [ ] Manter as fontes 4K na versão principal e carregar somente os fallbacks compatíveis na exportação gratuita.
+- [x] Confirmar a conexão do GitHub e as permissões para criar um repositório público.
+- [x] Criar o repositório público da Auto Truck e enviar o código preparado para GitHub Pages.
+- [x] Configurar a origem pública de fotos e vídeos exigida pelo site estático.
+- [x] Ativar e validar o GitHub Pages gratuito no repositório público.
+- [x] Configurar uma origem pública gratuita para fotos, áudio e vídeos de fallback sem depender de arquivos 4K acima do limite do GitHub.
+- [x] Aplicar essa origem ao workflow do GitHub Pages e verificar a publicação automatizada.
+- [x] Manter as fontes 4K na versão principal e carregar somente os fallbacks compatíveis na exportação gratuita.
 - [x] Localizar e preparar o logotipo oficial da JF Express para uso no site.
 - [x] Inserir o logotipo na seção de parceria, mantendo hierarquia clara com o pré-orçamento.
 - [x] Registrar a publicação da composição de parceria validada em desktop e pelas regras responsivas em mobile.
 - [x] Reforçar visualmente que o cartão com o logotipo da JF Express é clicável para o site oficial.
 - [x] Validar o destino do link e publicar o refinamento da parceria.
 - [x] Ajustar o workflow de GitHub Pages para habilitar a configuração de Pages automaticamente quando ainda não existir.
-- [ ] Corrigir a disponibilidade pública das mídias acima do limite da CDN no GitHub Pages e validar diretamente a reprodução de todos os fallbacks.
-- [ ] Corrigir os links internos da página inicial para funcionar com o roteamento em hash do GitHub Pages.
+- [x] Corrigir a disponibilidade pública das mídias acima do limite da CDN no GitHub Pages e validar diretamente a reprodução de todos os fallbacks.
+- [x] Corrigir os links internos da página inicial para funcionar com o roteamento em hash do GitHub Pages.

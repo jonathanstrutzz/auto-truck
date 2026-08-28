@@ -803,9 +803,9 @@ export default function Home() {
                 <span className="origin-rule" />
                 <p>Um padrão de cuidado pensado para a máquina que carrega a força do seu trabalho.</p>
               </div>
-              <a className="story-partner-link" href={JF_EXPRESS_URL} target="_blank" rel="noreferrer" aria-label="Abrir o site da JF Express">
+              <a className="story-partner-link" href={JF_EXPRESS_URL} target="_blank" rel="noreferrer" aria-label="Visitar o site oficial da JF Express, abre em nova guia" title="Visitar o site oficial da JF Express">
                 <span className="story-partner-logo"><img src={JF_EXPRESS_LOGO} alt="JF Express Transportadora" /></span>
-                <span className="story-partner-copy"><small>Conexão parceira</small><b>JF Express</b><em>Conheça o site da transportadora</em></span>
+                <span className="story-partner-copy"><small>Conexão parceira · clique no logo</small><b>JF Express</b><em>Visitar o site oficial da transportadora</em></span>
                 <ArrowUpRight className="story-partner-arrow" size={18} />
               </a>
             </motion.div>

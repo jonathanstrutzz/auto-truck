@@ -185,3 +185,5 @@
 - [x] Localizar e preparar o logotipo oficial da JF Express para uso no site.
 - [x] Inserir o logotipo na seção de parceria, mantendo hierarquia clara com o pré-orçamento.
 - [x] Registrar a publicação da composição de parceria validada em desktop e pelas regras responsivas em mobile.
+- [x] Reforçar visualmente que o cartão com o logotipo da JF Express é clicável para o site oficial.
+- [x] Validar o destino do link e publicar o refinamento da parceria.

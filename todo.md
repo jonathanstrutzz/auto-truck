@@ -179,3 +179,9 @@
 - [x] Adaptar o pré-orçamento para enviar os dados diretamente ao WhatsApp sem upload de foto.
 - [x] Criar o workflow de GitHub Actions para publicar a pasta estática gerada.
 - [x] Validar a versão estática e preparar a entrega para publicação gratuita.
+- [ ] Analisar o novo vídeo real enviado e preparar uma versão web compatível com capa própria.
+- [ ] Integrar o novo vídeo ao portfólio com classificação confirmada pelo conteúdo.
+- [ ] Validar a reprodução, filtros e responsividade do novo registro e publicar a atualização.
+- [x] Localizar e preparar o logotipo oficial da JF Express para uso no site.
+- [x] Inserir o logotipo na seção de parceria, mantendo hierarquia clara com o pré-orçamento.
+- [x] Registrar a publicação da composição de parceria validada em desktop e pelas regras responsivas em mobile.

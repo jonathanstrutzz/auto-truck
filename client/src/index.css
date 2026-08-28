@@ -1348,11 +1348,16 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
 .timeline-detail { padding: 17px 18px 18px; border-left: 2px solid var(--orange); background: linear-gradient(120deg, rgba(255,255,255,.74), rgba(255,255,255,.18)); box-shadow: 8px 9px 0 rgba(12,12,13,.08); }
 .timeline-detail .micro-label { color: #544e46; }
 .timeline-detail p { max-width: none; color: #544f48; }
-.story-partner-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 27px; padding: 11px 0 10px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.12); color: #fff; font: 700 11px "Manrope", sans-serif; letter-spacing: .015em; text-decoration: none; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 160ms var(--ease-out); }
-.story-partner-link span { color: rgba(255,255,255,.58); font: 700 8px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
-.story-partner-link b { color: var(--orange-soft); font-size: 14px; text-transform: uppercase; }
-.story-partner-link:hover { border-top-color: var(--orange); color: var(--orange-soft); transform: translateX(3px); }
-.story-partner-link:active { transform: translateX(3px) scale(.98); }
+.story-partner-link { display: inline-flex; align-items: center; gap: 14px; width: min(100%, 440px); margin-top: 28px; padding: 12px 14px 12px 12px; border: 1px solid rgba(12,12,13,.2); border-left: 3px solid var(--orange); background: #fff; box-shadow: 7px 8px 0 rgba(12,12,13,.1); color: var(--black); text-decoration: none; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), transform 160ms var(--ease-out); }
+.story-partner-logo { display: grid; width: 108px; height: 58px; flex: 0 0 auto; place-items: center; padding: 5px; border-right: 1px solid rgba(12,12,13,.13); }
+.story-partner-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.story-partner-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 2px; }
+.story-partner-copy small { color: #746f67; font: 700 7px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.story-partner-copy b { color: var(--black); font: 800 18px/.95 "Barlow Condensed", sans-serif; letter-spacing: .02em; text-transform: uppercase; }
+.story-partner-copy em { overflow: hidden; color: #625e57; font: 600 9px "Manrope", sans-serif; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
+.story-partner-arrow { flex: 0 0 auto; color: var(--orange); }
+.story-partner-link:hover { border-color: var(--orange); box-shadow: 10px 10px 0 rgba(241,90,36,.18); transform: translate(2px, -2px); }
+.story-partner-link:active { transform: translate(2px, -2px) scale(.98); }
 @media (max-width: 900px) {
   .company-timeline { grid-template-columns: 1fr; gap: 0; padding: 0 0 0 4px; }
   .timeline-route { top: 24px; bottom: 24px; left: 36px; width: 2px; height: auto; background: linear-gradient(180deg, transparent, rgba(12,12,13,.42) 7%, rgba(12,12,13,.42) 93%, transparent); }
@@ -1363,6 +1368,7 @@ html, body, .luxury-site { background: var(--black); color: #f7f4ef; }
   .timeline-year { grid-column: 1 / -1; grid-row: 1; margin: 0 0 18px; padding: 0 0 13px; }
   .timeline-station { grid-column: 1; grid-row: 2; width: 25px; height: 25px; margin: 5px 0 0 24px; }
   .timeline-detail { grid-column: 2; grid-row: 2; }
+  .story-partner-link { width: 100%; }
 }
 
 /* Branco de carroceria: superfícies claras neutras, sem pigmento amarelado. */

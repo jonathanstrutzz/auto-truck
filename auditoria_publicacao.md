@@ -41,3 +41,10 @@
 - O HTML e os bundles de CSS e JavaScript responderam com sucesso, mas o elemento raiz permaneceu vazio. A investigação aponta para a inicialização do cliente, não para a disponibilidade dos arquivos estáticos.
 - Ao iniciar a prévia com o mesmo caminho base de GitHub Pages, a página inicial estática renderizou com navegação, formulário, atalhos e seções institucionais. As imagens apontaram para a origem pública configurável de mídia, como esperado.
 - A rota `#/portfolio` carregou corretamente no servidor HTTP sem reescrita de backend. O pré-orçamento da versão estática apresentou a orientação de anexar fotos diretamente no WhatsApp.
+
+### Parceria JF Express
+
+- O logotipo utilizado na parceria foi obtido do cabeçalho do site oficial informado da JF Express e salvo como ativo dedicado, preservando a referência institucional fornecida pelo usuário.
+- No preview da Auto Truck, a seção de parceria exibe o logotipo com texto alternativo, a identificação “Conexão parceira” e o link externo para o site oficial da JF Express.
+- Em desktop, o logotipo aparece em cartão branco com borda de sinalização laranja, alinhado ao texto institucional e separado do painel de dados da Auto Truck, sem competir com o pré-orçamento.
+- A captura móvel do ambiente não foi concluída por limitação de recursos do navegador. A composição possui regra específica abaixo de 900px para ocupar a largura disponível, sem largura fixa além do contêiner; a validação de tipos, testes e build foi concluída sem erros.

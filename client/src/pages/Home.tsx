@@ -62,6 +62,7 @@ const WHATSAPP_URL = "https://wa.me/5562992158095?text=Ol%C3%A1%2C%20quero%20sab
 const PHONE_URL = "tel:+5562992158095";
 const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
 const JF_EXPRESS_URL = "https://jfexpress-3wipvnwe.manus.space/";
+const JF_EXPRESS_LOGO = "/manus-storage/jf-express-logo-oficial_fc1b6b55.png";
 const OFFICIAL_ADDRESS = "Rua Maurício Santos Veloso, Quadra 02, Lote 37, Jardim Flor de Liz, Anápolis - GO, 75103-170";
 const MAPS_ROUTE_URL = "https://www.google.com/maps/dir/?api=1&destination=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170";
 const MAPS_EMBED_URL = "https://www.google.com/maps?q=Rua%20Mauricio%20Santos%20Veloso%2C%20Quadra%2002%20Lote%2037%2C%20Jardim%20Flor%20de%20Liz%2C%20Anapolis%2C%20GO%2C%2075103-170&output=embed";
@@ -803,7 +804,9 @@ export default function Home() {
                 <p>Um padrão de cuidado pensado para a máquina que carrega a força do seu trabalho.</p>
               </div>
               <a className="story-partner-link" href={JF_EXPRESS_URL} target="_blank" rel="noreferrer" aria-label="Abrir o site da JF Express">
-                <span>Conheça também o site da</span><b>JF Express</b><ArrowUpRight size={17} />
+                <span className="story-partner-logo"><img src={JF_EXPRESS_LOGO} alt="JF Express Transportadora" /></span>
+                <span className="story-partner-copy"><small>Conexão parceira</small><b>JF Express</b><em>Conheça o site da transportadora</em></span>
+                <ArrowUpRight className="story-partner-arrow" size={18} />
               </a>
             </motion.div>
 

@@ -11,7 +11,8 @@ const SOUNDTRACK_URL = "/manus-storage/auto-truck-trilha_bafe5a39.mp3";
 const SCANIA_SPOTLIGHT_IMAGE = "/manus-storage/auto-truck-scania-vermelha_d1b7fe78.png";
 const WHATSAPP_URL = "https://wa.me/5562992158095?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20Auto%20Truck.";
 const INSTAGRAM_URL = "https://www.instagram.com/autotruck.estetica_?igsh=MXVkZTF4dmo1d256Zg==";
-const HOME_HREF = import.meta.env.VITE_STATIC_EXPORT === "true" ? "#/" : "/";
+const IS_STATIC_EXPORT = import.meta.env.VITE_STATIC_EXPORT === "true";
+const HOME_HREF = IS_STATIC_EXPORT ? "#/" : "/";
 
 const portfolioVideos = [
   {
@@ -408,7 +409,7 @@ export default function VideoPortfolio() {
         <div className="portfolio-width feature-grid">
           <motion.div key={activeVideo.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="feature-player">
             <video autoPlay muted loop playsInline controls preload="metadata" poster={activeVideo.poster} aria-label={activeVideo.title}>
-              {activeVideo.source4k && <source src={activeVideo.source4k} type="video/quicktime" />}
+              {!IS_STATIC_EXPORT && activeVideo.source4k && <source src={activeVideo.source4k} type="video/quicktime" />}
               <source src={activeVideo.source} type="video/mp4" />
               Seu navegador não suporta reprodução de vídeo.
             </video>

@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
-      VITE_MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL }}
+      VITE_MEDIA_BASE_URL: https://cdn.jsdelivr.net/gh/jonathanstrutzz/auto-truck-media@main/public-media
     steps:
       - name: Baixar código
         uses: actions/checkout@v4

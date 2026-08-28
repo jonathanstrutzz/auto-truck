@@ -179,12 +179,19 @@
 - [x] Adaptar o pré-orçamento para enviar os dados diretamente ao WhatsApp sem upload de foto.
 - [x] Criar o workflow de GitHub Actions para publicar a pasta estática gerada.
 - [x] Validar a versão estática e preparar a entrega para publicação gratuita.
-- [ ] Analisar o novo vídeo real enviado e preparar uma versão web compatível com capa própria.
-- [ ] Integrar o novo vídeo ao portfólio com classificação confirmada pelo conteúdo.
-- [ ] Validar a reprodução, filtros e responsividade do novo registro e publicar a atualização.
+- [x] Substituir o arquivo inicial inválido pelo reenvio íntegro de IMG_9310.MOV, com versão web e capa própria.
+- [x] Integrar o registro reenviado ao portfólio com classificação confirmada como lavagem Volvo noturna.
+- [x] Validar a reprodução, filtros e responsividade do registro reenviado e publicar a atualização.
 - [x] Verificar a integridade do arquivo reenviado IMG_9310.MOV e preparar versão compatível para web.
 - [x] Classificar e integrar o novo registro ao portfólio audiovisual da Auto Truck.
-- [ ] Registrar a publicação do novo item audiovisual validado em desktop e mobile.
+- [x] Registrar a publicação do novo item audiovisual validado em desktop e mobile.
+- [ ] Confirmar a conexão do GitHub e as permissões para criar um repositório público.
+- [ ] Criar o repositório público da Auto Truck e enviar o código preparado para GitHub Pages.
+- [ ] Configurar a origem pública de fotos e vídeos exigida pelo site estático.
+- [ ] Ativar e validar o GitHub Pages gratuito no repositório público.
+- [ ] Configurar uma origem pública gratuita para fotos, áudio e vídeos de fallback sem depender de arquivos 4K acima do limite do GitHub.
+- [ ] Aplicar essa origem ao workflow do GitHub Pages e verificar a publicação automatizada.
+- [ ] Manter as fontes 4K na versão principal e carregar somente os fallbacks compatíveis na exportação gratuita.
 - [x] Localizar e preparar o logotipo oficial da JF Express para uso no site.
 - [x] Inserir o logotipo na seção de parceria, mantendo hierarquia clara com o pré-orçamento.
 - [x] Registrar a publicação da composição de parceria validada em desktop e pelas regras responsivas em mobile.

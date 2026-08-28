@@ -200,3 +200,6 @@
 - [x] Ajustar o workflow de GitHub Pages para habilitar a configuração de Pages automaticamente quando ainda não existir.
 - [x] Corrigir a disponibilidade pública das mídias acima do limite da CDN no GitHub Pages e validar diretamente a reprodução de todos os fallbacks.
 - [x] Corrigir os links internos da página inicial para funcionar com o roteamento em hash do GitHub Pages.
+- [ ] Diagnosticar e corrigir a reprodução de vídeos reportada no GitHub Pages público.
+- [ ] Converter os vídeos publicados em H.264 de 10 bits para H.264 de 8 bits, preservando resolução sem upscale.
+- [ ] Fixar a versão atualizada da biblioteca de mídia no workflow do GitHub Pages para evitar cache antigo da CDN.

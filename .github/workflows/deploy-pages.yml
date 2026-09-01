@@ -21,7 +21,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
-      VITE_GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
+      VITE_GITHUB_PAGES_BASE: /
       VITE_MEDIA_BASE_URL: https://cdn.jsdelivr.net/gh/jonathanstrutzz/auto-truck-media@3b99d5c2b9a0e6b4693bb196a916a51f218a6759/public-media
     steps:
       - name: Baixar código

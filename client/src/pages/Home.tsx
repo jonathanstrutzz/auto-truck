@@ -2,7 +2,7 @@
  * Direção visual: Auto Truck Premium Detail — hero em vídeo, preto acetinado e Laranja Carga como sinal de ação.
  * Prioridade: impacto visual real, legibilidade e conversão.
  */
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDownRight,
   ArrowUp,
@@ -116,7 +116,7 @@ const navItems = [
   { label: "Serviços", href: "#servicos" },
   { label: "Pré-orçamento", href: "#pre-orcamento" },
   { label: "Experiência", href: "#experiencia" },
-  { label: "Vídeos", href: PORTFOLIO_HREF },
+  { label: "Vídeos", href: "/portfolio" },
   { label: "Galeria", href: "#galeria" },
   { label: "Bastidores", href: "#bastidores" },
   { label: "História", href: "#historia" },
@@ -342,10 +342,10 @@ const serviceGalleryVideos = [
 ];
 
 const reveal = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 18 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.18 },
-  transition: { duration: 0.55, ease: "easeOut" as const },
+  viewport: { once: true, amount: 0.14, margin: "0px 0px -8% 0px" },
+  transition: { duration: 0.62, ease: [0.23, 1, 0.32, 1] as const },
 };
 
 function BrandLogo({ footer = false }: { footer?: boolean }) {
@@ -505,7 +505,8 @@ export default function Home() {
   };
 
   return (
-    <div className="luxury-site">
+    <MotionConfig reducedMotion="user">
+      <div className="luxury-site">
       <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
       <div className="reading-progress" aria-hidden="true"><span style={{ width: `${scrollProgress}%` }} /></div>
       <header className={`premium-nav ${scrolled ? "is-scrolled" : ""}`}>
@@ -1128,6 +1129,7 @@ export default function Home() {
           <div className="footer-details"><a className="footer-instagram" href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram size={14} /> Instagram · @autotruck.estetica_</a><span>Anápolis, Goiás</span><span>© 2026 Auto Truck</span></div>
         </div>
       </footer>
-    </div>
+      </div>
+    </MotionConfig>
   );
 }

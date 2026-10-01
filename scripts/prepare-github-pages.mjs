@@ -1,4 +1,4 @@
-import { copyFile, readdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const outputDir = resolve("dist/github-pages");
@@ -40,5 +40,7 @@ for (const file of files) {
 }
 
 console.log(`[GitHub Pages] ${changedFiles} arquivo(s) atualizado(s) para usar ${mediaBaseUrl}.`);
+await mkdir(resolve(outputDir, "portfolio"), { recursive: true });
+await copyFile(resolve(outputDir, "index.html"), resolve(outputDir, "portfolio/index.html"));
 await copyFile(resolve(outputDir, "index.html"), resolve(outputDir, "404.html"));
-console.log("[GitHub Pages] Fallback 404.html criado para preservar as rotas diretas do site estático.");
+console.log("[GitHub Pages] portfolio/index.html e fallback 404.html criados para preservar as rotas diretas do site estático.");

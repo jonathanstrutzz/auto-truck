@@ -116,7 +116,7 @@ const navItems = [
   { label: "Serviços", href: "#servicos" },
   { label: "Pré-orçamento", href: "#pre-orcamento" },
   { label: "Experiência", href: "#experiencia" },
-  { label: "Vídeos", href: "/portfolio" },
+  { label: "Vídeos", href: PORTFOLIO_HREF },
   { label: "Galeria", href: "#galeria" },
   { label: "Bastidores", href: "#bastidores" },
   { label: "História", href: "#historia" },

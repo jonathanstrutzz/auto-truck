@@ -17,8 +17,9 @@ import VideoPortfolio from "./pages/VideoPortfolio";
 function useStaticSiteLocation() {
   const [location, navigate] = useHashLocation();
   const sectionId = typeof window === "undefined" ? null : getStaticSectionId(window.location.hash);
+  const directPortfolio = typeof window !== "undefined" && window.location.pathname.replace(/\/+$/, "").endsWith("/portfolio");
 
-  return [sectionId ? "/" : location, navigate] as [string, typeof navigate];
+  return [sectionId ? "/" : directPortfolio ? "/portfolio" : location, navigate] as [string, typeof navigate];
 }
 
 function StaticSectionNavigator({ enabled }: { enabled: boolean }) {

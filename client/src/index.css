@@ -1383,3 +1383,12 @@ html, body, .luxury-site { background: #ffffff; }
 .timeline-detail { background-image: linear-gradient(120deg, rgba(255,255,255,.92), rgba(244,247,249,.45)); }
 .timeline-detail .micro-label { color: #45515c; }
 .timeline-detail p { color: #4f5963; }
+
+/* Cabeçalho do portfólio: preserva o logo inteiro e evita o recorte do texto auxiliar. */
+.portfolio-nav .portfolio-brand { width: 260px; min-height: 64px; gap: 0; padding: 4px 18px 4px 12px; border-left: 2px solid var(--orange); background: linear-gradient(105deg, #0c0c0d 0%, #0c0c0d 87%, rgba(255,87,27,.22) 87%); box-shadow: 8px 9px 0 rgba(12,12,13,.14); }
+.portfolio-nav .portfolio-brand img { display: block; width: 184px; height: 56px; flex: 0 0 auto; object-fit: contain; object-position: left center; }
+.portfolio-nav .portfolio-brand span { display: none; }
+@media (max-width: 600px) {
+  .portfolio-nav .portfolio-brand { width: 190px; min-height: 54px; padding-left: 9px; }
+  .portfolio-nav .portfolio-brand img { width: 148px; height: 46px; }
+}
